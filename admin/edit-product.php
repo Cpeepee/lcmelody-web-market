@@ -56,6 +56,8 @@
             <h1 style="font-size:35px;margin:15px 2.50%;">ویرایش محصول</h1>
             <div id="buttons-divider">
                   <section id="right-side" class="sides-style">
+      <form action="./actions/a-edit-product.php" method="post">
+
                     <div class="divider-inputs">
                       <h2 class="labels-style floatright">عنوان محصول</h2>
                       <input class="inputs-style" type="text" value="<?php echo $ptitle;?>" name="ptitle">
@@ -121,34 +123,36 @@
                    <h2 class="title-more-description">توضیحات تکمیلی</h2>
                    <textarea id="final-information" class="textareas-more-description" value="<?php echo $pdescription;?>" name="pdescription"></textarea>
                 </div>
+        </form>
+
                 <br/>
               </section>
 
               <section id="section-pictures">
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures"> تصویر یک</h2>
-                    <input type="file">
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=1');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر دو</h2>
-                    <input type="file">
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=2');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر سه</h2>
-                    <input type="file">
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=3');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر چهار</h2>
-                    <input type="file">
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=4');">browse</button>
                 </div>
               </section>
 
               <section id="base-buttons">
                   <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" name="button">حذف محصول</button>
-                  <button id="button-save-edits-product" class="style-buttons cursor-pointer" type="button" name="button">ذخیره تغییرات</button>
+                  <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات">
               </section>
         </section>
 
@@ -157,3 +161,4 @@
     </div>
   </body>
 </html>
+<?php require './actions/includes/footer.php';?>

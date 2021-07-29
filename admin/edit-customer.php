@@ -117,3 +117,4 @@
 
   </body>
 </html>
+<?php require './actions/includes/footer.php';?>

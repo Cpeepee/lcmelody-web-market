@@ -102,6 +102,4 @@ include ('./includes/the-banner.php'); ?>
 
   </body>
 </html>
-<?php
-require './actions/includes/footer.php';
-?>
+<?php require './actions/includes/footer.php';?>
