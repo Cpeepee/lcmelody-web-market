@@ -1,0 +1,94 @@
+
+#main-layer
+{
+  width:100%;height:100%;margin-top:10px;
+}
+
+#base-banner-edit
+{
+  width:80%;border-radius:10px;float:left;margin-left:15px;margin-top:15px;
+}
+
+
+#button-save-account-edits
+{
+  border:1px solid green;color:green;float:left;
+}
+
+#button-delete-account
+{
+  border:1px solid red;color:red;float:right;
+}
+
+.button-style
+{
+  font-size:20px;
+  width:45%;height:60px;background-color:transparent;border-radius:15px;
+}
+
+#parrent-section-style
+{
+  width:100%;height:100%;
+}
+
+#buttons-divider
+{
+  width:100%;height:390px;
+}
+
+.sides-style
+{
+  width:45%;height:100%;margin-right:2.50%;
+
+}
+#right-side
+{
+  float:right;
+}
+#left-side
+{
+  float:left;
+}
+
+.labels-style
+{
+  margin-right:5px;
+}
+
+.second-label-style
+{
+  float:left;margin-left:15px;
+}
+
+.floatright
+{
+  float:right;
+}
+
+
+.divider-inputs
+{
+  width:100%;height:60px;
+}
+
+
+.inputs-style
+{
+  height:40px;width:50%;float:left;margin-left:15px;margin-top:15px;
+}
+
+.dirltr
+{
+  direction:ltr;
+}
+
+
+#user-attemps
+{
+  width:7%;
+}
+
+#buttons-base
+{
+  width:50%;margin:10px auto 100px auto;
+}

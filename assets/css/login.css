@@ -1,0 +1,44 @@
+@font-face
+{
+  font-family: bnazanin;
+  src: url('./fonts/BNazanin.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#main-layer
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: 2px solid gray;
+  border-radius: 10px;
+  height:600px;
+}
+
+.text-inputs
+{
+  width: 400px;
+  margin: 0 30px;
+  height: 40px;
+}
+
+.buttons
+{
+  height: 50px;
+  width: 400px;
+  margin: 0.5% 0;
+  background-color: #102b68;
+  color:white;
+  font-size: 22px;
+  border-radius: 10px;
+}
+.buttons:hover { cursor: pointer; }
+
+.set-the-font
+{
+  font-family: 'bnazanin';
+}

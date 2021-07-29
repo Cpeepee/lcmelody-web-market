@@ -1,0 +1,95 @@
+#base-send-ticket
+{
+  width:90%;
+  border-radius:15px;
+  margin:30px auto;
+  height:auto;
+}
+
+#title
+{
+  padding-right:40px;
+}
+
+#base-title-email
+{
+  width:95%;
+  height:120px;
+  margin:0px auto;
+}
+
+.style-title-email-sides
+{
+  width:50%;
+  height:100%;
+}
+
+#title-right { float:right; }
+#email-left { float:left; }
+
+.style-label
+{
+  margin-right: 5%;
+}
+
+.input-style
+{
+  width: 90%;
+  margin:-10px 5%;
+  height: 40px;
+  font-size:25px;
+  border-radius:10px;
+}
+
+
+#base-message
+{
+  width:100%;
+  height:auto;
+}
+
+
+#text-ticket
+{
+  width:90%;
+  margin:0px 5%;
+  border-radius:15px;
+  padding: 10px;
+  font-size:20px;
+}
+
+#base-buttons
+{
+  width:45%;
+  margin:0px auto;
+  height:60px;
+}
+
+#send-button
+{
+  float:right;
+  background-color:lightgreen;
+  border-color:green;
+}
+
+#cancel-button
+{
+  float:left;
+  background-color:red;
+  border-color:darkred;
+}
+
+.buttons-style
+{
+  width:40%;
+  text-align:center;
+  height:100%;
+  border:1px solid;
+  border-radius:20px;
+  color:black;
+}
+
+.button-text-style
+{
+  margin-top:15px;
+}

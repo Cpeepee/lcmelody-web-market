@@ -1,0 +1,133 @@
+
+#main-layer
+{
+  width:100%;height:100%;margin-top:10px;
+}
+
+#base-order-edit
+{
+  width:80%;border-radius:10px;float:left;margin-left:15px;margin-top:15px;
+}
+
+
+#button-save-order-edits
+{
+  border:1px solid green;color:green;float:left;
+}
+
+#button-order-owner
+{
+  border:1px solid red;color:red;float:right;
+}
+
+.button-style
+{
+  font-size:20px;
+  width:45%;height:60px;background-color:transparent;border-radius:15px;
+}
+
+#parrent-section-style
+{
+  width:100%;height:100%;
+}
+
+#buttons-divider
+{
+  width:100%;height:390px;
+}
+
+.sides-style
+{
+  width:45%;height:100%;margin-right:2.50%;
+
+}
+#right-side
+{
+  float:right;
+}
+#left-side
+{
+  float:left;
+}
+
+.second-label-style
+{
+  float:left;margin-left:15px;
+}
+
+.floatright
+{
+  float:right;
+}
+
+
+.divider-inputs
+{
+  width:100%;height:60px;
+}
+
+
+.inputs-style
+{
+  height:40px;width:50%;float:left;margin-left:15px;margin-top:15px;
+}
+
+.inputs-small-style
+{
+  width:40%;
+}
+
+.dirltr
+{
+  direction:ltr;
+}
+
+#base-buttons
+{
+  width:50%;margin:10px auto 100px auto;
+}
+
+#section-products
+{
+  width:95%;margin-left:auto;margin-right:auto;margin-top:2.50%;
+}
+
+.combobox-style
+{
+  width:50%;
+  height:40px;
+  float:left;
+  margin-top:15px;
+  margin-left:15px;
+  padding-right:15px;
+}
+
+#products-title
+{
+  border-bottom:1px solid black;
+}
+
+
+#section-product-list
+{
+  width:95%;height:auto;display:flex;flex-flow:wrap;margin:2%;
+}
+
+.divider-product-images
+{
+  width:10%;height:10%;margin:0.50%;
+}
+
+.product-image-style
+{
+  width:100%;height:100%;float:left;
+}
+
+.button-product-delete-style
+{
+  width:30%;height:30%;float:right;margin-top:-99%;
+}
+#title-form
+{
+  margin-right:20px;
+}

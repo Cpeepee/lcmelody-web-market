@@ -1,0 +1,42 @@
+#base-total-prices
+{
+  width:50%;height:auto;margin:10px auto;text-align:center;
+}
+
+.text-button-remove-style
+{
+  display:flex;justify-content: center;align-items: center;flex-flow:wrap;color:white;
+}
+
+.button-remove-style
+{
+  border-radius:15px;float:left;width:150px;height:70px;background-color:red;margin-top:65px;margin-left:10px;
+}
+
+.item-price-unit
+{
+    float:right;margin-right:-130px;margin-top:152.50px;
+}
+
+
+.item-price
+{
+  float:right;margin-right:-245px;margin-top:150px;
+}
+
+.item-picture-style
+{
+  float:right;margin-right:1.50%;margin-top:13px;width:170px;height:170px;
+}
+
+
+.item-style
+{
+  width:95%;height:200px;margin:25px auto;
+}
+
+
+.item-title
+{
+  float:right;margin-right:15px;width:250px;
+}

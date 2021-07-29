@@ -1,0 +1,77 @@
+.text-inputs
+{
+  width: 50%;
+  /* margin: 0 30px; */
+  height: 40px;
+}
+
+#main-layer
+{
+  width:100%;height:100%;margin-top:10px;
+}
+
+#base-banner-edit
+{
+  width:80%;border-radius:10px;float:left;margin-left:15px;margin-top:15px;
+}
+
+.upload-image-input-styles
+{
+  width:100%;margin-top:20px;
+}
+
+#top-banner
+{
+  margin-right:100px;
+}
+
+
+.upload-banner-label-style
+{
+  margin:8px;margin-right:50px;float:right;
+}
+
+#banner-bottom-link-base
+{
+  width:100%;margin-top:70px;
+}
+
+#bottom-banner-upload
+{
+  margin-top:10px;margin-right:20px;
+}
+
+#top-banner-upload
+{
+  margin-top:10px;margin-right:40px;
+}
+
+#bottom-banner
+{
+  margin-right:82.50px;
+}
+
+#section-special-sell-product-inputs
+{
+  display:flex;width:100%;margin-top:70px;flex-flow:wrap;
+}
+
+.special-product-style
+{
+  margin-right:2%;;width:30%;margin-top:15px;
+}
+
+.text-sepcial-product-style
+{
+  float:right;margin-right:8%;
+}
+
+.input-product-id-style
+{
+  height:40px;margin:10px auto auto 0px;display:block;width:90%;direction:ltr;
+}
+
+#button-save-banners-edits
+{
+  margin: 15px auto 50px auto;width:20%;display:block;height:60px;background-color:transparent;border:1px solid green; border-radius:15px;color:green;font-size:20px;
+}

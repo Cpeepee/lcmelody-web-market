@@ -1,0 +1,64 @@
+else
+{
+
+  ?>
+      <script>
+          if((window.location.href).indexOf("/actions/")!==-1)
+          {//
+            alert("first");
+            window.location='../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>';
+
+          }
+          else
+          {
+            alert("sec");
+            window.open='./result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>';
+          }
+      </script>
+  <?php
+}
+
+
+
+
+
+// if($window=="current")
+// {
+  ?>
+      <script>
+          window.location=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+      </script>
+   <?php
+// }
+// else
+// {
+//   >
+//       <script>
+//           window.open=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;>&text=<?php echo $text;>&button=<?php echo $button;>&target=<?php echo $target;>&title=<?php echo $title;>');
+//       </script>
+//    <php
+// }
+
+
+
+
+
+
+
+
+
+// window.location='./result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>';
+
+
+
+// if((window.location.href).indexOf("/actions/")!==-1)
+w
+
+
+function convert_error_2str($text)
+{
+  $text2 = str_replace("'","\'",$text);
+  $text2 = str_replace(""","\"",$text);
+  $text2 = str_replace("`","\`",$text);
+  return $text2;
+}

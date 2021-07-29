@@ -1,0 +1,150 @@
+.bg-answered
+{
+  background-color:lightblue;
+}
+
+.bg-closed
+{
+  background-color:gray;
+  color:white;
+}
+
+.bg-workingon
+{
+    background-color:lightgreen;
+}
+
+.bg-waiting
+{
+  background-color:#e75480;
+}
+
+
+#ticket-title
+{
+  /* margin:20px 5%; */
+  margin-right:3%;
+}
+
+#base
+{
+  border-radius:15px;float:left;
+  width:75%;height:auto;display:block;
+  overflow:hidden;margin-left:40px;margin-top:15px;
+}
+
+#base-ticket
+{
+  border-radius:15px;
+  width:95%;display:block;
+  overflow:hidden;
+}
+
+#button-appendix
+{
+  margin:0px auto 20px 30px;width:40%;height:65px;border:1px solid blue;border-radius:10px;
+}
+
+#button-send
+{
+  margin:0px 30px 20px auto;float:right;;width:40%;height:65px;border:1px solid green;border-radius:10px;
+}
+
+#your-response-text
+{
+  width:85%;height:200px;border-radius:15px;font-size:18px;padding:20px;margin:10px auto;display:block;
+}
+
+#base-buttons
+{
+  margin:30px auto;width:80%;height:70px;
+}
+
+.message-appendixes-style
+{
+  margin-right:25px;color:blue;
+}
+
+
+.message-date-style
+{
+  margin-right:auto;margin-left:0px;width:220px;
+}
+
+.message-appendix-title
+{
+  margin:25px;color:blue;
+}
+
+.message-text-style
+{
+  margin:25px;
+}
+
+
+.message-sender
+{
+  margin:25px 25px 0px 0px;
+}
+
+
+.message-style
+{
+  width:95%;height:auto;border-radius:5px;margin:25px auto;
+}
+
+
+#base-your-response
+{
+  width:95%;height:auto;border-radius:5px;margin:25px auto;
+}
+
+#title-you-lable
+{
+  margin:25px 6% 0px 0px;
+}
+
+
+#ticket-date-time-style
+{
+  margin-left:10px;margin-right:auto;width:170px;margin-top:0px;float:left;
+}
+
+#ticket-status
+{
+  margin-right:15px;float:right;width:135px;height:35px;text-align:center;border-radius:10px;direction:rtl
+}
+
+#ticket-info-base
+{
+  width:95%;height:40px;margin:0px auto;
+}
+
+#ticket-status-title
+{
+  margin-right:10px;float:right;margin-top:0px;
+}
+
+#section-style
+{
+  width:100%;margin:2.50%;
+}
+
+#ticket-stats
+{
+  margin-top:5px;
+}
+
+#button-send-text-style
+{
+  text-align:center;color:green;
+}
+#button-appendix-text-style
+{
+  text-align:center;color:blue;
+}
+
+#main-layer
+{
+  width:100%;
+}

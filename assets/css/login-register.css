@@ -1,0 +1,65 @@
+@font-face
+{
+  font-family: bnazanin;
+  src: url('./fonts/BNazanin.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.unselectable {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;-o-user-select: none;user-select: none}
+.set-the-font {font-family: 'bnazanin';}
+.cursor-pointer {cursor:pointer;}
+
+
+#main-layer
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: 2px solid gray;
+  border-radius: 10px;
+  height:600px;
+  width:70%;
+}
+
+.text-inputs
+{
+  width: 400px;
+  margin: 0 30px;
+  height: 40px;
+}
+
+#login
+{
+  float:right;
+}
+
+#create
+{
+  float:left;
+}
+
+.button-style
+{
+  width:25%;
+  height:200px;
+  border:1px solid black;
+  border-radius:10px;
+  margin:5% 10% 0% 10%;
+  text-align:center;
+}
+.icon-box-style
+{
+  margin-top:20px;
+  display:flex;justify-content: center;align-items: center;flex-flow:wrap;
+}
+
+.icon-style
+{
+  width:100px;
+  height:100px;
+
+}

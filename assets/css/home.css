@@ -1,0 +1,103 @@
+#offer-a
+{
+  display:block;margin-left:auto;margin-right:auto; background-color:transparent;width:85%;height:465px;border:1px solid gray;border-radius:15px;margin-top:35px;
+}
+.title-offer-a-b
+{
+  font-size:35px;height:10px;margin-top:20px;margin-right:5%;
+}
+.base-sepcial-product-a-b
+{
+  display:flex; flex-direction:row;background-color:transparent;height:75%;width:92.50%;margin-left:auto;margin-right:auto;margin-top:50px;
+
+}
+.product-style
+{
+  width:33.33%;height:100%;background-color:transparent;border-radius:15px;margin: 0px 10px;border:1px solid gray;display:block;
+}
+.product-style:hover
+{
+  cursor:pointer;
+}
+
+.product-one-titles-box
+{
+  width:100%;height:65%;background-color:transparent;border-radius:10px 10px 0px 0px;display:grid;
+}
+.product-picture
+{
+  display: block;margin-left: auto;margin-right: auto;width: 145px;height:145px ;margin-top:6px;
+}
+.product-title
+{
+  font-family:'Times New Roman' , 'bnazanin';font-size:18px;margin-right:5%;margin-top:5px;
+}
+.product-detials-box
+{
+  display:grid;background-color:transparent;width:100%;height:35%;border-radius:0px 0px 10px 10px;
+}
+.unit-no-offer-and-counter
+{
+  margin-right:auto;margin-left:10px;margin-top:80px;
+}
+.product-price-no-offer-and-counter
+{
+  margin-right:auto;margin-left:50px;margin-top:-50px;
+}
+.product-is-unavailable
+{
+  font-size:25px;color:gray;margin-left:auto;margin-right:auto;margin-top:75px;
+}
+.product-discount-box
+{
+  margin-right:auto;margin-left:10px;;background-color:red;border-radius:20px;width:30px;height:30px;
+}
+.product-discount-number
+{
+  color:white;margin-top:5px;font-size:17px;
+}
+.percentage-symbol
+{
+  font-size:15px;
+}
+.product-discount-priced
+{
+  margin-right:auto;margin-left:50px;margin-top:-28px;font-size:22.50px;
+}
+.unit-with-offer-and-counter
+{
+  margin-right:auto;margin-left:10px;margin-top:-10px;
+}
+.product-price-with-offer-and-counter
+{
+  margin-right:auto;margin-left:50px;margin-top:-50px;
+}
+.product-counter-with-offer
+{
+  margin-top:-10px;margin-right:10px;
+}
+.unit-no-offer-with-counter
+{
+  margin-right:auto;margin-left:10px;margin-top:40px;
+}
+.product-price-no-offer-with-counter
+{
+  margin-right:auto;margin-left:50px;margin-top:-50px;
+}
+.product-counter-no-offer
+{
+  margin-top:0px;margin-right:10px;
+}
+.unit-no-counter-with-offer
+{
+  margin-right:auto;margin-left:10px;margin-top:0px;
+}
+.product-price-no-counter-with-offer
+{
+  margin-right:auto;margin-left:50px;margin-top:-50px;
+}
+
+#offer-b
+{
+  display:block;margin-left:auto;margin-right:auto; background-color:transparent;width:85%;height:465px;border:1px solid gray;border-radius:15px;margin-top:35px;
+}

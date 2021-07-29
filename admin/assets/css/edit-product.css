@@ -1,0 +1,146 @@
+
+#main-layer
+{
+  width:100%;height:100%;margin-top:10px;
+}
+
+#base-edit-product
+{
+  width:80%;border-radius:10px;float:left;margin-left:15px;margin-top:15px;
+}
+
+
+#parrent-section-style
+{
+  width:100%;height:100%;
+}
+
+#buttons-divider
+{
+  width:100%;height:490px;
+}
+
+.sides-style
+{
+  width:45%;height:100%;margin-right:2.50%;
+
+}
+#right-side
+{
+  float:right;
+}
+#left-side
+{
+  float:left;
+}
+
+.labels-style
+{
+  margin-right:5px;
+}
+
+.second-label-style
+{
+  float:left;margin-left:15px;
+}
+
+.floatright
+{
+  float:right;
+}
+
+
+.divider-inputs
+{
+  width:100%;height:60px;
+}
+
+
+.inputs-style
+{
+  height:40px;width:50%;float:left;margin-left:15px;margin-top:15px;
+}
+
+.dirltr
+{
+  direction:ltr;
+}
+
+
+#user-attemps
+{
+  width:7%;
+}
+
+.title-more-description
+{
+  margin-right:50px;padding-top:25px;
+}
+
+
+.textareas-more-description
+{
+  width:85%;display:block;margin:25px auto;resize:none;
+}
+
+#technical-information
+{
+  height:100px;
+}
+
+#final-information
+{
+  height:70%;
+}
+#section-more-information
+{
+  width:100%;height:600px;margin-top:0px;
+}
+
+#divider-technical-info
+{
+  height:30%;width:100%;
+}
+
+#divider-final-information
+{
+  height:70%;width:100%;
+}
+
+#section-pictures
+{
+  width:100%;height:200px;margin:10px auto;
+}
+
+.divider-base-pictures
+{
+  float:right;width:50%;height:50%;display:flex;justify-content: center;align-items: center;flex-flow:wrap;
+}
+.text-upload-pictures
+{
+  margin-left: 5px;
+}
+
+.style-buttons
+{
+  background-color:transparent;font-size:20px;display:block;border-radius:10px;width:45%;height:100%;
+}
+
+
+#button-delete-product
+{
+  color:red;border:1px solid red;float:right;
+}
+#button-save-edits-product
+{
+  color:green;border:1px solid green;float:left;
+}
+#base-buttons
+{
+  width:50%;height:60px;margin:35px auto;
+}
+
+#checkbox-product-active
+{
+  width:30px;height:30px;margin-top:20px;float:left;margin-left:15px;
+}

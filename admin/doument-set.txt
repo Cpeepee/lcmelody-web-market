@@ -1,0 +1,7 @@
+function show_result , validation data write on documnet admin section functions
+delete banner down from douments
+add a_banner.php to admin algo
+remove target banner top
+add banner id to banner database doument
+whire algorightm convert_error_2str
+take maxlenth for admin inputs from database data giving

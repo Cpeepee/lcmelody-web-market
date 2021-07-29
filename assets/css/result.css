@@ -1,0 +1,33 @@
+#main-divider
+{
+  border:1px solid gray; border-radius:10px;width:50%;height:auto;margin:auto;text-align:center;margin-top:10%;
+}
+
+#logo
+{
+  width:300px;height:150px;
+}
+
+#situation-icon
+{
+  width:90px;height:90px;
+}
+
+#message-success
+{
+  color:green;
+}
+
+#message-error
+{
+  color:red;
+}
+#message-warning
+{
+  color:orange;
+}
+
+#button
+{
+  border:1px solid black;margin:auto;width:50%;border-radius:20px;
+}

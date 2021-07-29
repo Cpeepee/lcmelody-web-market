@@ -1,0 +1,10 @@
+#base-page
+{
+  width:100%;height:100%;
+}
+#base-order
+{
+  border-radius:15px;float:left;
+  width:75%;height:auto;display:block;
+  overflow:hidden;margin-left:40px;margin-top:15px;
+}

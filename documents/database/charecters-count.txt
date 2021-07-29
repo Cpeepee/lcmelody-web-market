@@ -1,0 +1,41 @@
+------------------------------------------------------------------------------------------------/p/
+page : ticket.php
+title : 159
+text : 2500
+appendix : 650 (5 upload allowed)
+------------------------------------------------
+page : send-ticket.php
+title : 159
+text : 2500
+email : 60
+------------------------------------------------
+page : register.php
+name and family : 60
+phone : 15
+email : 60
+address : 250
+password : 250
+------------------------------------------------
+page : product.php
+title: 65
+insureance : 67
+suggested : 3
+amount : 2
+price : 10
+---introdu+ce product: 1717
+technical title : 13
+technical detail : 13
+customer comment : 301
+------------------------------------------------
+page : order.php
+order id : 4
+order date: 10
+post price : 11
+order price : 11
+item in order amount : 2
+------------------------------------------------
+page : header.php
+search box : 50
+
+
+------------------------------------------------------------------------------------------------/admin/

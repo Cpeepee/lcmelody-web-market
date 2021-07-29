@@ -1,0 +1,22 @@
+@font-face
+{
+  font-family: bnazanin;
+  src: url('./fonts/BNazanin.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#main-layer
+{
+  border: 2px solid gray;
+  border-radius: 10px;
+  height:auto;
+  width:50%;
+  margin:auto;
+  margin-top:50px;
+}
+
+.set-the-font
+{
+  font-family: 'bnazanin';
+}

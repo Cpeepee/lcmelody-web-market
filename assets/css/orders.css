@@ -1,0 +1,72 @@
+#base-orders
+{
+  text-align:center;border-radius:15px;float:left;
+  width:75%;height:auto;display:block;/*flex-flow:wrap;*/
+  overflow:hidden;margin-left:40px;margin-top:15px;
+}
+
+#menu-order
+{
+  width:100%;height:50px;display:flex;border-bottom:1px solid gray;
+}
+
+
+.menu-order-titles-style
+{
+  padding:10px;margin-top:0px;margin-right:40px;
+}
+
+
+.order-style
+{
+  width:98%;height:150px;;background-color:transparent;margin:15px auto;border:1px solid gray; border-radius:5px;
+}
+
+.order-titles-style
+{
+  width:100%;height:15px;margin-top:10px;
+}
+
+.order-quick-info-style
+{
+  margin-top:0px;margin-right:25px;
+}
+
+
+.order-id-style
+{
+  float:right;margin-top:0px;margin-right:25px;
+}
+
+
+.order-price-style
+{
+  float:left;margin-top:0px;margin-left:25px;
+}
+
+
+.picture-style
+{
+  width:75px;height:75px;float:right;margin-right:5px;border-radius:5px;
+}
+
+
+.pictures-box-style
+{
+  float:right;background-color:transparent;width:73%;height:75px;
+}
+
+.btn-show-me-detials-style
+{
+  width:150px;height:50px;/*border:1px solid #031b51;*/border-radius:5px;float:left;margin:13.50px 0px 0px 13.50px;
+}
+
+.txt-btn-show-order-style
+{
+  margin-top:10px;color:#031b51;
+}
+
+.base-pictures-and-button-details
+{
+  width:100%;height:75px;
+}
