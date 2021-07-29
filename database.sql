@@ -30,7 +30,6 @@ CREATE TABLE t_ticket
     `t_subject` VARCHAR (159) NOT NULL,
     `t_email` VARCHAR (60) NOT NULL,
     `t_main_text` TEXT (2500) NOT NULL,
-    -- `t_FL_name` VARCHAR (250) NOT NULL,
     `t_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`t_id`)
 );

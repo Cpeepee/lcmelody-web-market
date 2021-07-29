@@ -13,7 +13,10 @@ include ('./includes/the-banner.php'); ?>
         <?php
         $id = $_GET['id'];
         $id = (int)$id;
-
+        if (empty($_GET))
+        {
+          show_result("error","please enter admin id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+        }
         // show_result("warning");
 
         //fetch admin info
@@ -33,8 +36,8 @@ include ('./includes/the-banner.php'); ?>
         }
         else
         {
-          // show_result("success","Admin (id=$id) has been updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-            show_result("error","Admin (id=$id) isn't exists","","","Lc Melody","current");
+          show_result("error","Admin (id=$id) isn\'t exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            // show_result("error","Admin (id=$id) isn't exists","","","Lc Melody","current");
         }
 
         ?>
