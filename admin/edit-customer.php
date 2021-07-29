@@ -1,4 +1,4 @@
-<?php require ('./includes/the-security.php'); ?>
+<?php require './actions/includes/header.php';?>
 <?php include ('./includes/the-header.php');?>
 <title>ویرایش مشتری  - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/edit-customer.css">
@@ -9,50 +9,94 @@
       <?php include('./includes/the-menu.php'); ?>
       <div id="base-banner-edit" class="def-border set-two-font">
 
+
+        <?php
+        //get id and check that
+        $c_id = $_GET['id'];
+        $c_id = (int)$c_id;
+        if(empty($_GET))
+        {
+          show_result("error","please enter customer id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+        }
+
+
+
+        //fetch customer information
+        $sql_search = "SELECT c_FL_name,c_password,c_phonenumer,c_email,c_attempts_TL,c_address,c_registration FROM t_customer WHERE c_id='$c_id';";
+        $result_search = $conn->query($sql_search);
+        if ($result_search->num_rows > 0)
+        {
+          while($row = $result_search->fetch_assoc())
+          {
+                 $c_name_family = $row['c_FL_name'];
+                 $c_password = $row['c_password'];
+                 $c_phone = $row['c_phonenumer'];
+                 $c_email = $row['c_email'];
+                 $c_attempts = $row['c_attempts_TL'];
+                 $c_address = $row['c_address'];
+                 $c_registeration_date = $row['c_registration'];
+          }
+        }
+        else
+        {
+          show_result("error","Customer (id=$c_id) isn\'t exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+        }
+
+
+        //cut name from family
+        $c_name = substr($c_name_family, 0 ,strpos($c_name_family," ")); //after first space customer name ends
+        $c_family = substr($c_name_family, strpos($c_name_family," "));
+
+
+        ?>
+
         <section id="parrent-section-style">
               <div id="buttons-divider">
                 <form action="./actions/a-edit-customer.php" method="post">
                     <section id="right-side" class="sides-style">
-                      <h2 class="labels-style">شناسه کاربر<span id="user-id" class="second-label-style">۱۲۳۴</span></h2>
+
+                      <div class="divider-inputs">
+                        <h2 class="labels-style">شناسه کاربر</h2>
+                        <input class="inputs-style" type="text" value="<?php echo $c_id;?>" name="id" style="margin-top:-50px;direction:ltr;" readonly>
+                      </div>
+
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">نام</h2>
-                        <input id="user-name" class="inputs-style" type="text" value="محمد رضااکبر">
+                        <input id="user-name" class="inputs-style" type="text" value="<?php echo $c_name;?>" name="name">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">نام خانوادگی</h2>
-                         <input id="user-family" class="inputs-style" type="text" value="رضایی رضازاده ای">
+                         <input id="user-family" class="inputs-style" type="text" value="<?php echo $c_family;?>" name="family">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کلمه عبور</h2>
-                         <input id="user-password" class="inputs-style dirltr" type="text" value="ABc263+$#@kmoifewH%$IKO34">
+                         <input id="user-password" class="inputs-style dirltr" type="text" value="<?php echo $c_password;?>" name="password">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">تلاش به ورود</h2>
-                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="5">
+                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $c_attempts;?>" name="attempts">
                       </div>
                     </section>
 
 
-
-
                     <section id="left-side" class="sides-style">
-                      <h2 class="labels-style">تاریخ ثبت نام<span id="user-register" class="second-label-style">۱۴۰۰/۱۲/۴</span></h2>
+                      <h2 class="labels-style">تاریخ ثبت نام<span id="user-register" class="second-label-style"><?php echo $c_registeration_date;?></span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">شماره موبایل</h2>
-                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="09170000000">
+                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="<?php echo $c_phone;?>" name="phone">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">پست الکترونیک</h2>
-                         <input id="user-email" class="inputs-style dirltr" type="text" value="some@some.some">
+                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $c_email;?>" name="email">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">آدرس</h2>
-                         <textarea id="user-address" >Sq some St where LM where</textarea>
+                         <textarea id="user-address" name="address"><?php echo $c_address;?></textarea>
                       </div>
                     </section>
                 </div>
@@ -61,7 +105,7 @@
           <div id="buttons-base">
             <input id="button-save-account-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
           </form>
-            <button id="button-delete-account" class="button-style cursor-pointer" type="button" onclick="window.open('./actions/a-delete-user.php?mode=customer&id=<?php echo $id;?>');">حذف حساب</button>
+            <button id="button-delete-account" class="button-style cursor-pointer" type="button" onclick="window.open('./actions/a-delete-user.php?mode=customer&id=<?php echo $c_id;?>');">حذف حساب</button>
           </div>
 
         </section>

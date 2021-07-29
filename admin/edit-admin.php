@@ -11,13 +11,13 @@ include ('./includes/the-banner.php'); ?>
       <div id="base-banner-edit" class="def-border set-two-font">
 
         <?php
+        //get id and check that
         $id = $_GET['id'];
         $id = (int)$id;
         if (empty($_GET))
         {
           show_result("error","please enter admin id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
-        // show_result("warning");
 
         //fetch admin info
         $sql_search = "SELECT a_email,a_attempts_TL,a_first_pass,a_second_pass,a_third_pass FROM t_admin WHERE a_id=$id;";
@@ -37,7 +37,6 @@ include ('./includes/the-banner.php'); ?>
         else
         {
           show_result("error","Admin (id=$id) isn\'t exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-            // show_result("error","Admin (id=$id) isn't exists","","","Lc Melody","current");
         }
 
         ?>

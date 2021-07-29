@@ -5,3 +5,4 @@ remove target banner top
 add banner id to banner database doument
 whire algorightm convert_error_2str
 take maxlenth for admin inputs from database data giving
+custoemr phone numbeber has been changed from int to varchar cuz int cant be more than 12

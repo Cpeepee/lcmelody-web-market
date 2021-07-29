@@ -3,7 +3,7 @@ CREATE TABLE t_customer
     `c_id` INT (4) NOT NULL AUTO_INCREMENT,
     `c_FL_name` VARCHAR (60) NOT NULL,
     `c_password` VARCHAR (250) NOT NULL,
-    `c_phonenumer` INT (15) NOT NULL,
+    `c_phonenumer` VARCHAR (15) NOT NULL,
     `c_email` VARCHAR (60) NOT NULL,
     `c_attempts_TL` INT (1) NOT NULL DEFAULT('0'),
     `c_address` TEXT (250) NOT NULL,
