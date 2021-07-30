@@ -8,3 +8,4 @@
 -custoemr phone numbeber has been changed from int to varchar cuz int cant be more than 12
 -edit product picture changed target=ep for upload_file.php
 -check inputs later maybe they have useless id
+-add if empty $_POST to all action files

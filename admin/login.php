@@ -1,4 +1,4 @@
-<!-- php require ('./includes/the-security.php'); ?> -->
+<?php require ('./includes/the-security.php'); ?>
 <?php include ('./includes/the-header.php');?>
 <title>ورود مدیر - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/login.css">
@@ -8,6 +8,7 @@
     <div id='main-layer'>
       <center>
           <h1 class='set-the-font'>ورود به حساب</h1>
+          <form action="./actions/a-login.php" method="post">
 
             <h3 class='set-the-font'>پست الکترونیک خود را وارد کنید</h3>
             <input id='email' class='text-inputs' type="text" name="email" placeholder="the@example.com" autofocus dir="ltr">
@@ -23,7 +24,9 @@
 
             <br/><br/>
 
-            <input class='buttons set-the-font' type="button" name="login" value="ورود" onclick=''>
+            <input class='buttons set-the-font' type="submit" name="login" value="ورود">
+          </form>
+
               <br/>
         </center>
     </div>
