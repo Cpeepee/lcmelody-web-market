@@ -99,7 +99,7 @@
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">برند</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pbrand;?>" name="pbrand">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pbrand;?>" name="pbrandd">
                     </div>
                     <br/>
                     <div class="divider-inputs">
@@ -123,7 +123,6 @@
                    <h2 class="title-more-description">توضیحات تکمیلی</h2>
                    <textarea id="final-information" class="textareas-more-description" value="<?php echo $pdescription;?>" name="pdescription"></textarea>
                 </div>
-        </form>
 
                 <br/>
               </section>
@@ -153,6 +152,7 @@
               <section id="base-buttons">
                   <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" name="button">حذف محصول</button>
                   <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات">
+                </form>
               </section>
         </section>
 
