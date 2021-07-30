@@ -10,6 +10,8 @@ $mail = $_POST['email'];
 $address = $_POST['address'];
 
 $id = (int)$id;
+$mail = strtolower($mail);
+
 
  $thequery = "UPDATE t_customer SET `c_FL_name` = '$name $family',`c_password`= '$pass',`c_phonenumer`= '$phone',`c_email`= '$mail',`c_attempts_TL`= '$attempts',`c_address`= '$address' WHERE `c_id`='$id';";
 

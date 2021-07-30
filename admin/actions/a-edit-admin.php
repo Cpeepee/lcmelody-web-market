@@ -8,6 +8,8 @@ $pass2 = $_POST['password-2'];
 $pass3 = $_POST['password-3'];
 
 $id = (int)$id;
+$mail = strtolower($mail);
+
 
  $thequery = "UPDATE t_admin SET `a_email` ='$mail',`a_attempts_TL`= '$attempts',`a_first_pass`= '$pass1',`a_second_pass`= '$pass2',`a_third_pass`= '$pass3' WHERE `a_id`='$id'";
 

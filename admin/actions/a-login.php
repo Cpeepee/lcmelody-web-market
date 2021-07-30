@@ -6,50 +6,60 @@ $password1 = $_POST['password-a'];
 $password2 = $_POST['password-b'];
 $password3 = $_POST['password-c'];
 
+$email = strtolower($email);
+
 if (empty($_POST))
 {
   show_result("error","please enter inputs!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
 
 
-
-
-
 //fetch admin info
-$sql_search = "SELECT a_email,a_attempts_TL,a_first_pass,a_second_pass,a_third_pass FROM t_admin WHERE a_email='$email'
-AND a_first_pass='$password1' AND a_second_pass='$password2' AND a_third_pass='$password3';";
+$sql_search = "SELECT a_id,a_email,a_attempts_TL,a_first_pass,a_second_pass,a_third_pass FROM t_admin WHERE a_email='$email';";
 $result_search = $conn->query($sql_search);
 if ($result_search->num_rows > 0)
 {
   while($row = $result_search->fetch_assoc())
   {
-         $admininfo = array("id"=>"$row['a_id']", "email"=>"$row['a_email']","attempts"=>"$row['a_attempts_TL']");
+      $admininfo = array("attempts"=>"$row['a_attempts_TL']", "pass1"=>"$row['a_first_pass']", "pass2"=>"$row['a_second_pass']", "pass3"=>"$row['a_third_pass']");
   }
+
+
+      //check login information
+      if($password1 == $admininfo['pass1'] && $password2 == $admininfo['pass2'] && $password3 == $admininfo['pass3'])
+      {
+        //set session key to admin ! -----------------------------------------------------------------------
+        //redirect to /admin/index.php--------------------------------------------------------------------
+      }
+      else
+      {
+        //login failed
+        $admininfo['attempts']++;
+        $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_email`='$email';";
+        if ($conn->query($thequery) === TRUE)
+              show_result("error","incorrect email or passwords","","","Lc Melody","current");
+        else
+        {
+             $te = convert_error_2str($conn->error);
+             show_result("error","$te","","","Lc Melody","current");
+        }
+      }
+
 }
 else
 {
-
-  // show_result("error","incorrect email or passwords","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-
-
-  //plus 1 attempts to that admin
-  $admininfo['attempts']++;
-  $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_id`='$admininfo['id']';";
-  if ($conn->query($thequery) === TRUE)
-  {
-       show_result("success","Admin (id=$id) has been updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-  }
-  else
-  {
-       $te = convert_error_2str($conn->error);
-       show_result("error","$te","","","Lc Melody","current");
-  }
-
+  //search query failed
+  $te = convert_error_2str($conn->error);
+  show_result("error","$te","","","Lc Melody","current");
 }
 
 
+
+
+
+
 //function validation protect sql injection and validate data
-function insql($p1,$p2,$p3,$p4) //parameters for login (4)
+function insql($p1,$p2,$p3,$p4)
 {
   $output = array();
   //do something to detect and remove sql injection codes from input parameters--------------------------------------------------
