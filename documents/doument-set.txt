@@ -10,4 +10,4 @@
 -check inputs later maybe they have useless id
 -add if empty $_POST to all action files
 -make all inputs in action files to lower case !!!!!!!!
--add function insql to admin algorightm 
+-add function insql to admin algorightm

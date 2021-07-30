@@ -11,15 +11,17 @@
         <h1 id="title-form">ویرایش سفارش</h1>
         <section id="parrent-section-style">
               <div id="buttons-divider">
+                <form action="./actions/a-order.php" method="post">
+
                     <section id="right-side" class="sides-style">
                       <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style">۱۲۳۴</span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">وضعیت سفارش</h2>
-                          <select id="order-status" class="combobox-style">
-                            <option value="waiting-for-pay-order">در انتظار پرداخت</option>
-                            <option value="working-on-order">درحال پردازش</option>
-                            <option value="delivered-order">تحویل شده</option>
-                            <option value="canceled-order">لغو شده</option>
+                          <select id="order-status" class="combobox-style" name="order-status">
+                            <option value="3">در انتظار پرداخت</option>
+                            <option value="2">درحال پردازش</option>
+                            <option value="1">تحویل شده</option>
+                            <option value="0">لغو شده</option>
                           </select>
                       </div>
 
@@ -27,20 +29,20 @@
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">وضعیت پرداخت</h2>
-                         <select id="payment-status" class="combobox-style">
-                           <option value="paid">انجام شده</option>
-                           <option value="not-paid">انجام نشده است</option>
+                         <select id="payment-status" class="combobox-style" name="payment-status">
+                           <option value="1">انجام شده</option>
+                           <option value="0">انجام نشده است</option>
                          </select>
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">هزینه پست</h2>
-                         <input id="order-post-price" class="inputs-style inputs-small-style dirltr" type="text" value="ABc263+$#@kmoifewH%$IKO34">
+                         <input id="order-post-price" class="inputs-style inputs-small-style dirltr" type="text" value="" name="post-price">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کد پیگیری پرداخت</h2>
-                         <input id="order-payment-tracking-code" class="inputs-style inputs-small-style dirltr" type="text" value="5">
+                         <input id="order-payment-tracking-code" class="inputs-style inputs-small-style dirltr" type="text" value="" name="payment-tracking-code">
                       </div>
                     </section>
 
@@ -50,7 +52,7 @@
                     <section id="left-side" class="sides-style">
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">تاریخ ثبت سفارش</h2>
-                        <input id="order-registration-date" class="inputs-style inputs-small-style dirltr" type="text" value="۱۴۰۰/۱۲/۱۲">
+                        <input id="order-registration-date" class="inputs-style inputs-small-style dirltr" type="text" value="۱۴۰۰/۱۲/۱۲" name="order-submited-date">
                       </div>
                       <br/>
                       <div class="divider-inputs">
@@ -78,9 +80,11 @@
 
                 </section>
           <br/>
-          <!-- <h3></h3> -->
+
           <div id="base-buttons">
-            <button id="button-save-order-edits" class="button-style cursor-pointer" type="button" name="button">ذخیره تغییرات</button>
+            <input id="button-save-order-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
+          </form>
+
             <button id="button-order-owner" class="button-style cursor-pointer" type="button" name="button">مشخصات سفارش دهنده</button>
           </div>
 
