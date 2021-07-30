@@ -44,7 +44,8 @@
         }
         else
         {
-          show_result("error","Product (id=$pid) isn\'t exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          $te = convert_error_2str($conn->error);
+          show_result("error","Product (id=$pid) isn\'t exists error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
         ?>
 

@@ -11,3 +11,4 @@
 -add if empty $_POST to all action files
 -make all inputs in action files to lower case !!!!!!!!
 -add function insql to admin algorightm
+=== last code was working on total cost price 000.000.000
