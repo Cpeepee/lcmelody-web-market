@@ -95,17 +95,6 @@ CREATE TABLE t_orders_items
     PRIMARY KEY (`oi_o_id`,`oi_p_id`),
     FOREIGN KEY (`oi_o_id`) REFERENCES t_orders(`o_id`),
     FOREIGN KEY (`oi_p_id`) REFERENCES t_product(`p_id`)
-
-
-    pid = 1
-    5 1k 500
-    1 5k 0
-    50 10k 1k
-    3 100 0
-
-
-    861400
-    457800
 );
 
 CREATE TABLE t_cart_list

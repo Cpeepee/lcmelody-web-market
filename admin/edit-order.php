@@ -164,13 +164,15 @@
 
                                       $sql_search = "SELECT oi_p_id,oi_amount,oi_price,oi_discount FROM t_orders_items WHERE oi_o_id=$id;";
                                       $result_search = $conn->query($sql_search);
+                                      $total_order_cost = 0;
+
                                       if ($result_search->num_rows > 0)
                                         while($row = $result_search->fetch_assoc())
                                         {
                                           array_push($o_products,$row['oi_p_id']);
-                                          array_push($o_amounts,$row["oi_amount"]);
-                                          array_push($o_price,$row["oi_price"]);
-                                          array_push($o_discount,$row["oi_discount"]);
+
+                                          //calculate order total cost : product_price = price - discount * amount------------------------------------------------------------------
+                                          $total_order_cost += $row['oi_price'] - $row['oi_discount'] * $row['oi_amount'];
                                         }
                                       else
                                       {
@@ -180,12 +182,13 @@
 
 
 
-                                      //calculate order total cost : product_price = price - discount * amount------------------------------------------------------------------
-                                      $total_order_cost = 0;
-                                      array_map(function ($o_price,$o_discount,$o_amounts)
-                                      {
-                                          $total_order_cost = $o_price - $o_discount * $o_amounts;
-                                      }, $o_price,$o_discount,$o_amounts);
+                                      // array_push($o_amounts,$row["oi_amount"]);
+                                      // array_push($o_price,$row["oi_price"]);
+                                      // array_push($o_discount,$row["oi_discount"]);
+                                      // array_map(function ($o_price,$o_discount,$o_amounts)
+                                      // {
+                                      //     $total_order_cost = $o_price - $o_discount * $o_amounts;
+                                      // }, $o_price,$o_discount,$o_amounts);
                                       ?>
 
 
