@@ -25,11 +25,22 @@
 
 function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
 {
+    if($window=="new")
+    {
+      ?>
+        <script>
+            window.open('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+        </script>
+      <?php
+    }
+    else
+    {
     ?>
         <script>
             window.location=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
      <?php
+    }
 
 }
 

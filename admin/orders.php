@@ -11,7 +11,7 @@
         <h1 id="title-form">سفارش ها</h1>
 
         <section id="parrent-section-style">
-          <button id="button-search" type="button" onclick="window.location('search.php?for=order');">جستجو</button>
+          <button id="button-search" type="button" onclick="window.open('search.php?for=order');">جستجو</button>
 
           <?php
           //fetch orders
@@ -21,9 +21,6 @@
           {
             while($row = $result_search->fetch_assoc())
             {
-                   $row['o_status'];
-                   ;
-
                    ?>
                        <div class="order-items cursor-pointer def-border">
                          <div class="make-center-details">
@@ -65,7 +62,7 @@
                            <h3 class="order-summer-info-style"><span>وضعیت</span> : <span><?php echo $order_status_text;?><span></h3>
                            <h3 class="order-summer-info-style"><span>وضعیت پرداخت</span> : <span><?php echo $order_payment_status_text;?><span></h3>
                            <h3 class="order-summer-info-style"><span>تاریخ</span> : <span><?php echo $row['o_date'];?><span></h3>
-                             <button class="button-show-more-info cursor-pointer" type="button" onclick="window.location('edit-order.php?id=<?php echo $row['o_id'];?>');">جزئیات</button>
+                             <button class="button-show-more-info cursor-pointer" type="button" onclick="window.open('edit-order.php?id=<?php echo $row['o_id'];?>');">جزئیات</button>
                          </div>
                        </div>
                    <?php
@@ -88,3 +85,4 @@
     </div>
   </body>
 </html>
+<?php require './actions/includes/footer.php';?>
