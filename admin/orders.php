@@ -11,7 +11,7 @@
         <h1 id="title-form">سفارش ها</h1>
 
         <section id="parrent-section-style">
-          <button type="button" name="search-order" style="width: 25%;height:50px;display: block;margin: auto;">جستجو</button>
+          <button type="button" name="search-order" style="width: 25%;height:50px;display: block;margin: auto;" onclick="window.location('');">جستجو</button>
             <div class="order-items cursor-pointer def-border">
               <div class="make-center-details">
                 <h3 class="order-summer-info-style"><span>سفارش</span> : <span>۱۲۳۴۵۶<span></h3>
