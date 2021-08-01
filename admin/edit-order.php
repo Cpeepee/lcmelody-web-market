@@ -60,8 +60,8 @@
                               case 1:
                               {
                                 ?>
-                                <option value="3">در انتظار پرداخت</option>
-                                <option value="2">درحال پردازش</option>
+                                <option value="3">درحال پردازش</option>
+                                <option value="2">در انتظار پرداخت</option>
                                 <option value="1" selected>تحویل شده</option>
                                 <option value="0">لغو شده</option>
                                 <?php
@@ -70,8 +70,8 @@
                               case 2:
                               {
                                 ?>
-                                <option value="3">در انتظار پرداخت</option>
-                                <option value="2" selected>درحال پردازش</option>
+                                <option value="3" selected>درحال پردازش</option>
+                                <option value="2">در انتظار پرداخت</option>
                                 <option value="1">تحویل شده</option>
                                 <option value="0">لغو شده</option>
                                 <?php
@@ -80,8 +80,8 @@
                               case 3:
                               {
                                 ?>
-                                <option value="3">در انتظار پرداخت</option>
-                                <option value="2" selected>درحال پردازش</option>
+                                <option value="3" selected>درحال پردازش</option>
+                                <option value="2">در انتظار پرداخت</option>
                                 <option value="1">تحویل شده</option>
                                 <option value="0">لغو شده</option>
                                 <?php
@@ -90,8 +90,8 @@
                               default:
                               {
                                 ?>
-                                <option value="3">در انتظار پرداخت</option>
-                                <option value="2">درحال پردازش</option>
+                                <option value="3">درحال پردازش</option>
+                                <option value="2">در انتظار پرداخت</option>
                                 <option value="1">تحویل شده</option>
                                 <option value="0" selected>لغو شده</option>
                                 <?php

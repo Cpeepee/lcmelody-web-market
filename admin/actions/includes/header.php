@@ -41,21 +41,21 @@ function convert_error_2str($text="") //sql errors've some special charecters ca
 }
 
 
-function divide_money($value)
-{
-  $result;
-  $len = strlen($value);
-  if($len == 3 || $len == 6 || $len ==9)
-    $len--;
-  for($a=0;$a<=;$a++)
-  {
-    $result = substr($value,6);
-
-
-
-
-  }
-}
+// function divide_money($value)
+// {
+//   $result;
+//   $len = strlen($value);
+//   if($len == 3 || $len == 6 || $len ==9)
+//     $len--;
+//   for($a=0;$a<=;$a++)
+//   {
+//     $result = substr($value,6);
+//
+//
+//
+//
+//   }
+// }
 
 
 
