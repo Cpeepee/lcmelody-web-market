@@ -21,7 +21,6 @@
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <?php
         $searched = $_POST['searched'];
-        $searched = strtolower($searched);
 
          $sql_search = "SELECT p_id,p_title,p_price,p_pictures FROM t_product WHERE p_id LIKE '%$searched%' OR p_title LIKE '%$searched%';";
          if ($conn->query($sql_search) === TRUE)

@@ -14,7 +14,6 @@
 <?php
 $searched = $_POST['searched'];
 
-$searched = strtolower($searched);
 
  $sql_search = "SELECT c_id,c_FL_name FROM t_customer WHERE c_id LIKE '%$searched%' OR c_FL_name LIKE '%$searched%';";
  if ($conn->query($sql_search) === TRUE)

@@ -13,7 +13,6 @@
               <?php
               $searched = $_POST['searched'];
 
-              $searched = strtolower($searched);
 
               //fetch from comfirm
               $sql_search = "SELECT cc_c_id,cc_p_id,cc_text FROM t_comment_confirm WHERE cc_text LIKE '%$searched%' OR cc_c_id LIKE '%$searched%' OR cc_p_id LIKE '%$searched%';";
