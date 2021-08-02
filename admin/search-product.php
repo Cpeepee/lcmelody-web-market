@@ -8,8 +8,10 @@
       <?php include('./includes/the-menu.php'); ?>
       <div id="base" class="def-border set-two-font">
           <div id="base-search-customer">
-              <input id="input-search-customer" type="text" name="search-customer" placeholder="جستجوی محصول">
+            <form action="./actions/a-search-product-result.php" method="post">
+              <input id="input-search-customer" type="text" name="searched" placeholder="جستجوی محصول">
               <div id="button-search-customer" class="def-border cursor-pointer unselectable">جستجو</div>
+            </form>
           </div>
       </div>
     </div>

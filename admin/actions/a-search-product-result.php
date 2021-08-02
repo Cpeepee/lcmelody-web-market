@@ -19,163 +19,32 @@
             <h1>نتیجه جستجوی محصول</h1>
         </div>
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <?php
+        $searched = $_POST['searched'];
+        $searched = strtolower($searched);
 
-        <div id="item-x" class="item-style def-border set-two-font unselectable">
-          <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-          </h2>
-          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-          <h3 class="item-price-unit">تومان</h3>
-            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-              <h2 class="text-button-remove-style">ویرایش</h2>
-            </div>
-        </div>
+         $sql_search = "SELECT p_id,p_title,p_price,p_pictures FROM t_product WHERE p_id LIKE '%$searched%' OR p_title LIKE '%$searched%';";
+         if ($conn->query($sql_search) === TRUE)
+         {
+              ?>
+              <div id="item-x" class="item-style def-border set-two-font unselectable">
+                <img class="item-picture-style" src="../../assets/img/p-images/<?php echo $row['p_id'];?>-a.jpg" alt="<?php echo $row['p_title'];?>"/>
+                <h2 class="item-title"><?php echo $row['p_title'];?>
+                </h2>
+                <h2 class="item-price"><?php echo $row['p_price'];?></h2>
+                <h3 class="item-price-unit">تومان</h3>
+                  <div class="cursor-pointer button-remove-style" id="button-remove-x" onclick="window.open('../edit-product?id=<?php echo $row['p_id'];?>');">
+                    <h2 class="text-button-remove-style">ویرایش</h2>
+                  </div>
+              </div>
+              <?php
+         }
+         else
+         {
+              $te = convert_error_2str($conn->error);
+              show_result("error","$te","","","Lc Melody","current");
+         }?>
 
-        <div id="item-x" class="item-style def-border set-two-font unselectable">
-          <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-          </h2>
-          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-          <h3 class="item-price-unit">تومان</h3>
-            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-              <h2 class="text-button-remove-style">ویرایش</h2>
-            </div>
-        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                  <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                  </h2>
-                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                  <h3 class="item-price-unit">تومان</h3>
-                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                      <h2 class="text-button-remove-style">ویرایش</h2>
-                    </div>
-                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                          <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                          </h2>
-                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                          <h3 class="item-price-unit">تومان</h3>
-                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                              <h2 class="text-button-remove-style">ویرایش</h2>
-                            </div>
-                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                  <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                  </h2>
-                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                  <h3 class="item-price-unit">تومان</h3>
-                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                    </div>
-                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                          <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                          </h2>
-                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                          <h3 class="item-price-unit">تومان</h3>
-                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                            </div>
-                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                  <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                  </h2>
-                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                  <h3 class="item-price-unit">تومان</h3>
-                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                    </div>
-                                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                          <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                          </h2>
-                                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                          <h3 class="item-price-unit">تومان</h3>
-                                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                                            </div>
-                                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                  <img class="item-picture-style" src="../../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                  </h2>
-                                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                  <h3 class="item-price-unit">تومان</h3>
-                                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                    </div>
-                                                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                          <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                          </h2>
-                                                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                          <h3 class="item-price-unit">تومان</h3>
-                                                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                            </div>
-                                                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                  <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                  </h2>
-                                                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                  <h3 class="item-price-unit">تومان</h3>
-                                                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                    </div>
-                                                                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                          <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                          </h2>
-                                                                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                          <h3 class="item-price-unit">تومان</h3>
-                                                                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                            </div>
-                                                                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                                  <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                                  </h2>
-                                                                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                                  <h3 class="item-price-unit">تومان</h3>
-                                                                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                                    </div>
-                                                                                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                                          <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                                          </h2>
-                                                                                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                                          <h3 class="item-price-unit">تومان</h3>
-                                                                                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                                            </div>
-                                                                                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                                                  <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                                                  </h2>
-                                                                                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                                                  <h3 class="item-price-unit">تومان</h3>
-                                                                                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                                                    </div>
-                                                                                                                </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                                                          <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                                                          <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                                                          </h2>
-                                                                                                                          <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                                                          <h3 class="item-price-unit">تومان</h3>
-                                                                                                                            <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                                                              <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                                                            </div>
-                                                                                                                        </div>        <div id="item-x" class="item-style def-border set-two-font unselectable">
-                                                                                                                                  <img class="item-picture-style" src="../assets/img/p-images/p1000.jpg" alt="pro-100-img"/>
-                                                                                                                                  <h2 class="item-title">میکروفن داینامیک شور مدل Shure SMS8
-                                                                                                                                  </h2>
-                                                                                                                                  <h2 class="item-price">۱۰,۰۰۰,۰۰۰</h2>
-                                                                                                                                  <h3 class="item-price-unit">تومان</h3>
-                                                                                                                                    <div class="cursor-pointer button-remove-style" id="button-remove-x">
-                                                                                                                                      <h2 class="text-button-remove-style">ویرایش</h2>
-                                                                                                                                    </div>
-                                                                                                                                </div>
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <br/><br/> <!-- while scrolling down , the menu javascript code have problem (when items are less than 5) this BRs fix this issues (auto scroll to up)-->
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
