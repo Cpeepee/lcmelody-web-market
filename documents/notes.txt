@@ -12,4 +12,6 @@
 -make all inputs in action files to lower case !!!!!!!!
 -add function insql to admin algorightm
 === last code was working on total cost price 000.000.000
-- add algo search and search result 
+- add algo search and search result
+- check inputs action is empty
+- remove comment verfied and comfirm SS from ER

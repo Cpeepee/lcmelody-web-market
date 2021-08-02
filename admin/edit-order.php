@@ -50,7 +50,7 @@
                 <form action="./actions/a-order.php" method="post">
 
                     <section id="right-side" class="sides-style">
-                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style"><?php echo $id;?></span></h2>
+                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style" name="oid"><?php echo $id;?></span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">وضعیت سفارش</h2>
                           <select id="order-status" class="combobox-style" name="order-status">
