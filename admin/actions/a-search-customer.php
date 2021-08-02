@@ -1,5 +1,5 @@
-<?php include ('./includes/the-header.php'); ?>
-<?php require "../includes/header.php";?>
+<?php include ('./includes/header.php'); ?>
+<?php require "../includes/the-header.php";?>
 <title>نتیجه جستجو - ال سی ملودی</title>
 <link rel="stylesheet" href="../assets/css/search-user-result.css">
 <?php include ('../includes/the-close-head.php');?>
