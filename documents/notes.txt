@@ -15,3 +15,5 @@
 - add algo search and search result
 - check inputs action is empty
 - remove comment verfied and comfirm SS from ER
+- add algo comfirm comment
+- add algo delete commentw

@@ -123,14 +123,14 @@ CREATE TABLE t_comment_verified
 
 CREATE TABLE t_comment_confirm
 (
-  `cv_c_id` INT (4) NOT NULL,
-  `cv_p_id` INT (3) NOT NULL,
-  `cv_text` VARCHAR (301) NOT NULL,
+  `cc_c_id` INT (4) NOT NULL,
+  `cc_p_id` INT (3) NOT NULL,
+  `cc_text` VARCHAR (301) NOT NULL,
   -- `cv_SS` INT (1) NOT NULL,
-  `cv_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`cv_c_id`,`cv_p_id`),
-  FOREIGN KEY (`cv_c_id`) REFERENCES t_customer(`c_id`),
-  FOREIGN KEY (`cv_p_id`) REFERENCES t_product(`p_id`)
+  `cc_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`cc_c_id`,`cc_p_id`),
+  FOREIGN KEY (`cc_c_id`) REFERENCES t_customer(`c_id`),
+  FOREIGN KEY (`cc_p_id`) REFERENCES t_product(`p_id`)
 );
 
 
