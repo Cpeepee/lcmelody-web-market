@@ -13,6 +13,48 @@
         <section id="section-style">
 
 
+
+          <?php
+          //get id and check that
+          $pid = $_GET['id'];
+          $pid = (int)$pid;
+          if(empty($_GET))
+          {
+            show_result("error","please enter product id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          }
+
+
+
+          //fetch customer information
+          $sql_search = "SELECT p_brand,p_model,p_title,p_description,p_status,p_priority_TS,p_discount,p_summary_desc,p_type,p_price,p_amount FROM t_product WHERE p_id='$pid';";
+          $result_search = $conn->query($sql_search);
+          if ($result_search->num_rows > 0)
+          {
+            while($row = $result_search->fetch_assoc())
+            {
+                   $ptitle = $row['p_title'];
+                   $pbrand = $row['p_brand'];
+                   $pmodel = $row['p_model'];
+                   $pdescription = $row['p_description'];
+                   $pvisible = $row['p_status'];
+                   $pprioirty = $row['p_priority_TS'];
+                   $pdiscount = $row['p_discount'];
+                   $ptechincal = $row['p_summary_desc'];
+                   $pgroup = $row['p_type'];
+                   $pprice = $row['p_price'];
+                   $pamount = $row['p_amount'];
+            }
+          }
+          else
+          {
+            $te = convert_error_2str($conn->error);
+            show_result("error","Product (id=$pid) isn\'t exists error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          }
+          ?>
+
+
+
+
           <div id="base-ticket">
                   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <h2 id="ticket-title">موضوع:

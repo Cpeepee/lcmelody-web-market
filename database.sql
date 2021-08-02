@@ -28,6 +28,7 @@ CREATE TABLE t_ticket
 (
     `t_id` INT (5) NOT NULL,
     `t_subject` VARCHAR (159) NOT NULL,
+    `t_status` INT (1) DEFAULT('0'),
     `t_email` VARCHAR (60) NOT NULL,
     `t_main_text` TEXT (2500) NOT NULL,
     `t_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
