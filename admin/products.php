@@ -10,7 +10,7 @@
     <section class="set-two-font">
       <h1 style="text-align:center;">محصول</h1>
       <style>.button-search-create-style{width: 25%;height:50px;display: block;margin: auto;margin-top:25px;}</style>
-      <button class="button-search-create-style cursor-pointer" type="button" onclick="window.open('search.php?for=product');">جستجو</button>
+      <button class="button-search-create-style cursor-pointer" type="button" onclick="window.open('search-product.php');">جستجو</button>
       <button class="button-search-create-style cursor-pointer" type="button" onclick="window.location=('add-product.php');">ایجاد </button>
     </section>
 

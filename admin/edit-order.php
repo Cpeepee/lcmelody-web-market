@@ -1,4 +1,4 @@
-<?php require ('./includes/the-security.php'); ?>
+<?php require './actions/includes/header.php';?>
 <?php include ('./includes/the-header.php');?>
 <title>ویرایش سفارش  - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/order.css">
@@ -50,7 +50,8 @@
                 <form action="./actions/a-order.php" method="post">
 
                     <section id="right-side" class="sides-style">
-                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style" name="oid"><?php echo $id;?></span></h2>
+                      <input type="hidden" name="oid" value="<?php echo $id;?>">
+                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style"><?php echo $id;?></span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">وضعیت سفارش</h2>
                           <select id="order-status" class="combobox-style" name="order-status">

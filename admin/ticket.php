@@ -47,7 +47,7 @@
                 case 0:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-closed">
+                    <select id="ticket-status" class="bg-closed" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
@@ -59,7 +59,7 @@
                 case 1:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-answered">
+                    <select id="ticket-status" class="bg-answered" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1" selected>پاسخ داده شده</option>
@@ -71,7 +71,7 @@
                 case 2:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-workingon">
+                    <select id="ticket-status" class="bg-workingon" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2" selected>درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
@@ -83,7 +83,7 @@
                 default:
                 {
                   ?>
-                  <select id="ticket-status" class="bg-waiting">
+                  <select id="ticket-status" class="bg-waiting" onchange="changeStatusTicket(this.value)">
                     <option value="3" selected>در انتظار پاسخ</option>
                     <option value="2">درحال رسیدگی</option>
                     <option value="1">پاسخ داده شده</option>
@@ -201,6 +201,47 @@
       </div>
     </div>
 
+
+    <!-- changeStatusTicket -->
+    <script>
+    //- - - - - ajax for modify status ticket
+    function changeStatusTicket(status_value)
+    {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function()
+          {
+             if (this.readyState == 4 && this.status == 200)
+             {
+                if(this.responseText == "success")
+                {
+                    switch (parseInt(status_value))
+                    {
+                      case 0:
+                          document.getElementById("ticket-status").className = 'bg-closed';
+                        break;
+                      case 1:
+                          document.getElementById("ticket-status").className = 'bg-answered';
+                        break;
+
+                      case 2:
+                          document.getElementById("ticket-status").className = 'bg-workingon';
+                        break;
+
+                      default:
+                          document.getElementById("ticket-status").className = 'bg-waiting';
+                        break;
+                    }
+                }
+                else
+                {
+                    alert("Error while updating ticket status");
+                }
+             }
+          };
+          xhttp.open("GET", "./actions/a-change-status-ticket.php?id=<?php echo $id;?>&status="+status_value, true);
+          xhttp.send();
+    }
+    </script>
 
   </body>
 </html>

@@ -28,7 +28,7 @@ CREATE TABLE t_ticket
 (
     `t_id` INT (5) NOT NULL,
     `t_subject` VARCHAR (159) NOT NULL,
-    `t_status` INT (1) DEFAULT('0'),
+    `t_status` INT (1) DEFAULT('3'),
     `t_email` VARCHAR (60) NOT NULL,
     `t_main_text` TEXT (2500) NOT NULL,
     `t_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -92,7 +92,7 @@ CREATE TABLE t_orders_items
     `oi_p_id` INT (3) NOT NULL,
     `oi_amount` INT (2),
     `oi_price` VARCHAR (10) DEFAULT('1,000'),
-    `oi_discount` INT (2) DEFAULT('0'),
+    `oi_discount` VARCHAR (10) DEFAULT('0'),
     PRIMARY KEY (`oi_o_id`,`oi_p_id`),
     FOREIGN KEY (`oi_o_id`) REFERENCES t_orders(`o_id`),
     FOREIGN KEY (`oi_p_id`) REFERENCES t_product(`p_id`)

@@ -20,6 +20,13 @@
 - add admin status on admin and customer ticket messages at ER
 - careful about admin id session used in ticket.php button add appendix for defuatl is wrote 0 admin id instant admin session key
 ---*********BUG APPENDIX UPLOAD HAVE PROBLEM HOW TO SOLVE THAT? /admin/ticket.php
+----****** BUG actions a-delete-user.php!!!!!! from admin and customer edit page
+-****BUG button show owner order not working
+---** BUG remoge item from order !
+---BUG DELETE PRODUCT
+-----BUG ADD SEARCH ORDER FOR PAGE ORDERS
+---BUG SEARCH COMMENT , ADMIN , Product , Customer are NOT WORKING WITHOUT ERROR !
+
 
 
 ===

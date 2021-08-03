@@ -117,12 +117,12 @@
               <section id="section-more-information">
                 <div id="divider-techniocal-info">
                    <h2 class="title-more-description">مشخصات فنی</h2>
-                   <textarea id="technical-information" class="textareas-more-description" value="<?php echo $ptechincal;?>" name="ptechincal"></textarea>
+                   <textarea id="technical-information" class="textareas-more-description" name="ptechincal"><?php echo $ptechincal;?></textarea>
                 </div>
 
                 <div id="divider-final-information">
                    <h2 class="title-more-description">توضیحات تکمیلی</h2>
-                   <textarea id="final-information" class="textareas-more-description" value="<?php echo $pdescription;?>" name="pdescription"></textarea>
+                   <textarea id="final-information" class="textareas-more-description" name="pdescription"><?php echo $pdescription;?></textarea>
                 </div>
 
                 <br/>

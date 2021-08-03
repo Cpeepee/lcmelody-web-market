@@ -9,8 +9,10 @@ $paymenttracking = $_POST['payment-tracking-code'];
 $ordersubmit = $_POST['order-submited-date'];
 
 $id = (int)$id;
+$paymentstatus = (int)$paymentstatus;
 
- $thequery = "UPDATE t_orders SET `o_status` = '$status',`o_PSC`= '$paymenttracking', `o_PP`= '$postprice', `o_date`='$ordersubmit' WHERE `o_id`='$id';";
+
+ $thequery = "UPDATE t_orders SET `o_status` = '$status',`o_PSC`='$paymentstatus',`o_PTC`= '$paymenttracking', `o_PP`= '$postprice', `o_date`='$ordersubmit' WHERE `o_id`='$id';";
 
  if ($conn->query($thequery) === TRUE)
  {

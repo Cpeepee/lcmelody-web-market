@@ -6,7 +6,7 @@ $ticket_id = $_POST['tid'];
 
 
  $thequery = "INSERT INTO t_ticket_admin_message (tm_t_id,tm_a_id,tm_message_text)
- VALUES ('$ticket_id','0','$message_response');"; // admin id must use here but i wrote that to deafult 0
+ VALUES ('$ticket_id','1','$message_response');"; // admin id must use here but i wrote that to deafult 0
  if ($conn->query($thequery) === TRUE)
  {
       show_result("success","Message Submited","","","Result response ticket Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
