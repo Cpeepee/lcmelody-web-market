@@ -151,7 +151,7 @@
               </section>
 
               <section id="base-buttons">
-                  <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" name="button">حذف محصول</button>
+                  <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" onclick="window.open('./actions/a-delete-product.php?id=<?php echo $pid;?>');">حذف محصول</button>
                   <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات">
                 </form>
               </section>

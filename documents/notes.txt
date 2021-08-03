@@ -17,10 +17,9 @@
 - remove comment verfied and comfirm SS from ER
 - add algo comfirm comment
 - add algo delete comment
--
-
-
-
+- add admin status on admin and customer ticket messages at ER
+- careful about admin id session used in ticket.php button add appendix for defuatl is wrote 0 admin id instant admin session key
+---*********BUG APPENDIX UPLOAD HAVE PROBLEM HOW TO SOLVE THAT? /admin/ticket.php
 
 
 ===

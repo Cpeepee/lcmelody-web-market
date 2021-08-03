@@ -142,6 +142,7 @@ CREATE TABLE t_ticket_customer_message
     `tm_message_text` TEXT (2500) NOT NULL,
     `tm_appendixes` VARCHAR (650) DEFAULT('0'),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `tm_admin_mode` INT (1) DEFAULT('0'),
     FOREIGN KEY (`tm_c_id`) REFERENCES t_customer(`c_id`),
     FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`)
 );
@@ -153,6 +154,7 @@ CREATE TABLE t_ticket_admin_message
     `tm_message_text` TEXT (1000) NOT NULL,
     `tm_appendixes` VARCHAR (500) DEFAULT('0'),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `tm_admin_mode` INT (1) DEFAULT('1'),
     FOREIGN KEY (`tm_a_id`) REFERENCES t_admin(`a_id`),
     FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`)
 );
