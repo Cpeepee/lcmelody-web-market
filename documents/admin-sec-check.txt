@@ -1,5 +1,8 @@
 edit-admin DELETE NOT WORK (page needed)
 edit-customer DELETE NOT WORK (oage needed)
+edit-product DELTE NOT WORK
+
+
 edit-order DELTE ITEM NOT WORK
 
 edit-product UPLOAD NOT WORK , DELTE NOT WORK
