@@ -24,7 +24,7 @@
       <?php include('../includes/the-menu.php'); ?>
       <div id="base" class="def-border set-two-font">
           <div id="base-search-user">
-              <h1>نتیجه جستجو مدیران</h1>
+              <h1>نتیجه جستجو مشتری</h1>
 
 
 <?php
@@ -32,7 +32,7 @@ $searched = $_POST['q'];
 $searched = strtolower($searched);
 
 
-$sql_search = "SELECT  a_id,a_email FROM t_admin WHERE a_email LIKE '%$searched%' OR a_id LIKE '%$searched%';";
+$sql_search = "SELECT c_id,c_FL_name FROM t_customer WHERE c_FL_name LIKE '%$searched%' OR c_id LIKE '%$searched%' OR c_email LIKE '%$searched%' OR c_phonenumer LIKE '%$searched%';";
 $result_search = $conn->query($sql_search);
 if ($result_search->num_rows > 0)
 {
@@ -40,9 +40,9 @@ if ($result_search->num_rows > 0)
   {
     ?>
     <div class="style-result-user make-center-content">
-        <h3 class="text-style">ایمیل : <span><?php echo $row['a_email'];?></span></h3>
-        <h3 class="text-style">شناسه : <span><?php echo $row['a_id'];?></span></h3>
-        <div class="button-edit-style def-border cursor-pointer unselectable make-center-content" onclick="window.open('../edit-admin.php?id=<?php echo $row['a_id'];?>');">
+        <h3 class="text-style">نام : <span><?php echo $row['c_FL_name'];?></span></h3>
+        <h3 class="text-style">شناسه : <span><?php echo $row['c_id'];?></span></h3>
+        <div class="button-edit-style def-border cursor-pointer unselectable make-center-content" onclick="window.open('../edit-customer.php?id=<?php echo $row['c_id'];?>');">
           <h3>ویرایش</h3>
         </div>
     </div>

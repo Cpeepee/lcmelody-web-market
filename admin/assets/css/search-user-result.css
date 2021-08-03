@@ -35,3 +35,9 @@
 {
   display:flex;text-align:center;justify-content: center;align-items: center;
 }
+
+.style-button-delete
+{
+  background-color: red;
+  color:white;
+}

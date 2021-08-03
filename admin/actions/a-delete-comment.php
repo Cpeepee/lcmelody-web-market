@@ -8,7 +8,7 @@ $cid = (int)$cid;
 $pid = (int)$pid;
 
   $thequery;
-  if($type=="comfirm")
+  if($type=="confirm")
     $thequery = "DELETE FROM t_comment_confirm WHERE `cc_c_id`='$cid' AND `cc_p_id`='$pid';";
   else
     $thequery = "DELETE FROM t_comment_verified WHERE `cv_c_id`='$cid' AND `cv_p_id`='$pid';";
