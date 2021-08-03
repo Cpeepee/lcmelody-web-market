@@ -94,7 +94,7 @@
                 }break;
               }
               ?>
-                  <h2 id="ticket-date-time-style"><span>تاریخ</span> : <span><?php echo $row['t_date'];?></span></h2>
+                  <h2 id="ticket-date-time-style" class="set-the-font"><span>تاریخ</span> : <br/><span><?php echo $row['t_date'];?></span></h2>
                 </div>
 
                 <!-- load main text -->
@@ -105,6 +105,11 @@
               <?php
 
             }
+          }
+          else
+          {
+            $te = convert_error_2str($conn->error);
+            show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           }
 
 
@@ -153,7 +158,7 @@
 
 
                   ?>
-                  <h2 class="message-date-style"><span>۱۲:۳۴:۳۰</span> - <span><?php echo $row['tm_date'];?></span></h2>
+                  <h2 class="message-date-style set-the-font"><span><?php echo $row['tm_date'];?></span></h2>
               </div>
               <?php
             }
@@ -201,8 +206,6 @@
       </div>
     </div>
 
-
-    <!-- changeStatusTicket -->
     <script>
     //- - - - - ajax for modify status ticket
     function changeStatusTicket(status_value)

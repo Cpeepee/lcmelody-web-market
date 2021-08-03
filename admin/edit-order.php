@@ -58,6 +58,16 @@
                             <?php
                             switch ($o_status)
                             {
+                              case 0:
+                              {
+                                ?>
+                                <option value="3">درحال پردازش</option>
+                                <option value="2">در انتظار پرداخت</option>
+                                <option value="1">تحویل شده</option>
+                                <option value="0" selected>لغو شده</option>
+                                <?php
+                              }break;
+
                               case 1:
                               {
                                 ?>
@@ -71,18 +81,8 @@
                               case 2:
                               {
                                 ?>
-                                <option value="3" selected>درحال پردازش</option>
-                                <option value="2">در انتظار پرداخت</option>
-                                <option value="1">تحویل شده</option>
-                                <option value="0">لغو شده</option>
-                                <?php
-                              }break;
-
-                              case 3:
-                              {
-                                ?>
-                                <option value="3" selected>درحال پردازش</option>
-                                <option value="2">در انتظار پرداخت</option>
+                                <option value="3">درحال پردازش</option>
+                                <option value="2" selected>در انتظار پرداخت</option>
                                 <option value="1">تحویل شده</option>
                                 <option value="0">لغو شده</option>
                                 <?php
@@ -91,10 +91,10 @@
                               default:
                               {
                                 ?>
-                                <option value="3">درحال پردازش</option>
+                                <option value="3" selected>درحال پردازش</option>
                                 <option value="2">در انتظار پرداخت</option>
                                 <option value="1">تحویل شده</option>
-                                <option value="0" selected>لغو شده</option>
+                                <option value="0">لغو شده</option>
                                 <?php
                               }break;
                             }
@@ -228,7 +228,7 @@
             <input id="button-save-order-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
           </form>
 
-            <button id="button-order-owner" class="button-style cursor-pointer" type="button" name="button">مشخصات سفارش دهنده</button>
+            <button id="button-order-owner" class="button-style cursor-pointer" type="button" onclick="window.open('edit-customer.php?id=<?php echo $o_owner;?>');">مشخصات سفارش دهنده</button>
           </div>
 
         </section>

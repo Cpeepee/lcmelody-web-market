@@ -26,7 +26,6 @@ include ('./includes/the-banner.php'); ?>
         {
           while($row = $result_search->fetch_assoc())
           {
-
                  $adminmail = $row['a_email'];
                  $adminattempts = $row['a_attempts_TL'];
                  $adminpass1 = $row['a_first_pass'];
@@ -48,7 +47,7 @@ include ('./includes/the-banner.php'); ?>
                     <section id="right-side" class="sides-style">
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">شناسه</h2>
-                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $id;?>" name="id" disabled>
+                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $id;?>" name="id" readonly>
                       </div>
 
 
