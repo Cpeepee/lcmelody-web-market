@@ -3,6 +3,7 @@
 $pid = $_GET['id'];
 $pid = (int)$pid;
 
+
   $thequery = "DELETE FROM t_product WHERE `p_id`='$pid';";
   if ($conn->query($thequery) === TRUE)
   {

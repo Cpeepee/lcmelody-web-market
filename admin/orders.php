@@ -11,7 +11,6 @@
         <h1 id="title-form">سفارش ها</h1>
 
         <section id="parrent-section-style">
-          <button id="button-search" type="button" onclick="window.open('search.php?for=order');">جستجو</button>
 
           <?php
           //fetch orders
