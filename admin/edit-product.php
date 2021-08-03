@@ -153,6 +153,7 @@
               <section id="base-buttons">
                   <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات">
                 </form>
+                <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" onclick="window.open('./actions/a-delete-product.php?id=<?php echo $pid;?>');">حذف محصول</button>
               </section>
         </section>
 

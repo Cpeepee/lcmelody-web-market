@@ -1,15 +1,20 @@
 banner OK
-edit-admin DELETE NOT WORK
-edit-customer DELETE NOT WORK
+edit-admin DELETE NOT WORK (page needed)
+edit-customer DELETE NOT WORK (oage needed)
 edit-order DELTE ITEM NOT WORK
-edit-product UPLOAD NOT WORK
-login and a-login not work
+
+edit-product UPLOAD NOT WORK , DELTE NOT WORK
+
+login and a-login not work4
+
 orders search order not work (page needed)
+
 search admin not work
 search comment not WORK
 search customer not WORK
 search product not work
-ticket errors not show good , upload appendix not work
+
+ticket upload appendix not work (errors not show greatly)
 
 
 do it for all

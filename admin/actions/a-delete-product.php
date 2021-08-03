@@ -19,5 +19,3 @@ $pid = (int)$pid;
   }
 
 require "./includes/footer.php";?>
-
-<button id="button-delete-product" class="style-buttons cursor-pointer" type="button" onclick="window.open('./actions/a-delete-product.php?id=<?php echo $pid;?>');">حذف محصول</button>
