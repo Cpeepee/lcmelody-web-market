@@ -21,7 +21,7 @@
                 <input type="hidden" name="p" value="<?php echo $place;?>">
                 <h1 class='set-the-font'>فایل مورد نظر را انتخاب کنید</h1>
                 <br/>
-                <input class='text-inputs' type="file" name="selfile" style="text-align: center;">
+                <input class='text-inputs' type="file" name="uploaded_file" style="text-align: center;">
                 <br/><br/>
             <input class='buttons set-the-font' type="submit" value="بارگذاری">
           </form>
