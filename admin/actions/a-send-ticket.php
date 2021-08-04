@@ -18,3 +18,19 @@ $ticket_id = $_POST['tid'];
  }
 
 require "./includes/footer.php";?>
+
+
+
+
+
+
+
+
+
+~ cut element
+
+
+<div id="button-appendix" class="cursor-pointer unselectable" onclick="window.open('upload-file.php?target=ap&id=<?php echo $id;?>');">
+  <h2 id="button-appendix-text-style">افزودن فایل - ضمیمه</h2>
+</div>
+<button no / cancel

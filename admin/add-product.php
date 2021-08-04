@@ -77,30 +77,8 @@
                 <br/>
             </section>
 
-              <section id="section-pictures">
-                <div class="divider-base-pictures">
-                    <h2 class="text-upload-pictures"> تصویر یک</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=p&product=<?php echo $pid;?>&place=1');">browse</button>
-                </div>
-
-                <div class="divider-base-pictures">
-                    <h2 class="text-upload-pictures">تصویر دو</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=p&product=<?php echo $pid;?>&place=2');">browse</button>
-                </div>
-
-                <div class="divider-base-pictures">
-                    <h2 class="text-upload-pictures">تصویر سه</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=p&product=<?php echo $pid;?>&place=3');">browse</button>
-                </div>
-
-                <div class="divider-base-pictures">
-                    <h2 class="text-upload-pictures">تصویر چهار</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=p&product=<?php echo $pid;?>&place=4');">browse</button>
-                </div>
-              </section>
-
               <section id="base-buttons">
-                  <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات"></button>
+                  <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره"></button>
                 </form>
               </section>
         </section>

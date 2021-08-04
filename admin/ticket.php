@@ -183,14 +183,8 @@
                           <input type="hidden" name="tid" value="<?php echo $id;?>">
                           <textarea id="your-response-text" name="response" class="def-border" placeholder="پاسخ شما"></textarea>
                         <div id="base-buttons">
-                          <!-- <div id="button-send" class="cursor-pointer unselectable">
-                            <h2 id="button-send-text-style">ارسال</h2>
-                          </div> -->
                           <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
                         </form>
-                          <div id="button-appendix" class="cursor-pointer unselectable" onclick="window.open('upload-file.php');">
-                            <h2 id="button-appendix-text-style">افزودن فایل - ضمیمه</h2>
-                          </div>
                         </div>
                     </div>
 

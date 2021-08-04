@@ -131,22 +131,22 @@
               <section id="section-pictures">
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures"> تصویر یک</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=1');">browse</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&id=<?php echo $pid;?>&place=1');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر دو</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=2');">browse</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&id=<?php echo $pid;?>&place=2');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر سه</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=3');">browse</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&id=<?php echo $pid;?>&place=3');">browse</button>
                 </div>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">تصویر چهار</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ep&product=<?php echo $pid;?>&place=4');">browse</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ep&id=<?php echo $pid;?>&place=4');">browse</button>
                 </div>
               </section>
 

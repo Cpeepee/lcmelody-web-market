@@ -22,14 +22,32 @@ $pamount = (int)$pamount;
  $thequery = "INSERT INTO t_product (p_title,p_type,p_discount,p_amount,p_priority_TS,p_status,p_brand,p_model,p_price,p_summary_desc,p_description,p_creator_aid)
  VALUES ('$ptitle','$ptype','$pdiscount','$pamount','$ppriority','$pstatus','$pbrand','$pmodel','$pprice','$ptechnical','$pdescriptions','1');";//admin id is deautl to 1
 
- if ($conn->query($thequery) === TRUE)
- {
-      show_result("success","Product has been created.","","","Result add product Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
- }
- else
+ if ($conn->query($thequery) === FALSE)
  {
    $te = convert_error_2str($conn->error);
    show_result("error","$te","","","Result add product Lc Melody","current");
  }
+
+ //check product is exists and get that id
+ $sql_search = "SELECT p_id FROM t_product WHERE p_title = '$ptitle' AND p_type = '$ptype' AND p_discount = '$pdiscount' AND p_brand = '$pbrand';";
+ $result_search = $conn->query($sql_search);
+ if ($result_search->num_rows > 0)
+ {
+   while($row = $result_search->fetch_assoc())
+   {
+     ?>
+     <script>
+         window.location=('../add-picture-to-product.php?id=<?php echo $row['p_id'];?>');
+     </script>
+     <?php
+   }
+ }
+ else
+ {
+   $te = convert_error_2str($conn->error);
+   show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+ }
+
+
 
 require "./includes/footer.php";?>
