@@ -20,7 +20,7 @@
 
 
     <div id='main-layer'>
-      <?php include('../includes/the-menu.php'); ?>
+      <?php include('./includes/the-menu.php'); ?>
       <div id="base" class="def-border set-two-font">
           <div id="base-search-user">
               <h1>نتیجه جستجو نظرها</h1>

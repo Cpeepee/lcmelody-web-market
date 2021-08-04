@@ -149,7 +149,7 @@
                       $pos_backslash = strpos($appendixes_main,"~");
                       $cuted_appendix = substr($appendixes_main,0,$pos_backslash+1);
                       ?>
-                          <h4><a class="message-appendixes-style cursor-pointer" href="<?php echo $cuted_appendix;?>">appendix <?php echo $i;?></a></h4>
+                          <h4 class="message-appendixes-style cursor-pointer" onclick="window.open('../assets/appendixes/<?php echo $cuted_appendix;?>');">ضمیمه <?php echo $i;?></h4>
                       <?php
                       $appendixes_main = substr($appendixes_main,$pos_backslash+1);
                     }

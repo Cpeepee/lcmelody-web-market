@@ -20,7 +20,7 @@
       <br/>
 
     <div id='main-layer'>
-      <?php include('../includes/the-menu.php'); ?>
+      <?php include('./includes/the-menu.php'); ?>
       <div id="base" class="def-border set-two-font">
 
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->

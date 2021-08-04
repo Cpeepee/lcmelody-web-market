@@ -1,11 +1,7 @@
 login and a-login not work4
-
------
 edit order total cast not work
-
 
 do it for all
 - max length inputs
-- links for buttons menu
 - check comments and empty inputs
 - change language errors to Persian

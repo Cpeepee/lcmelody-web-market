@@ -3,43 +3,43 @@
 
 
   <!-- CM = Customer Menu -->
-  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('products.php');">
+  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('../products.php');">
     <h2>محصول ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('orders.php');">
+  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('../orders.php');">
     <h2>سفارش ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-tickets" class="CMB-style def-border cursor-pointer" onclick="window.location=('search-customer.php');">
+  <div id="CM-button-tickets" class="CMB-style def-border cursor-pointer" onclick="window.location=('../search-customer.php');">
     <h2>مشتری ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-cartlist" class="CMB-style def-border cursor-pointer" onclick="window.location=('search-admin.php');">
+  <div id="CM-button-cartlist" class="CMB-style def-border cursor-pointer" onclick="window.location=('../search-admin.php');">
     <h2>مدیر ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('search-customer.php');">
+  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('../search-customer.php');">
     <h2>نظر ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('tickets.php');">
+  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('../tickets.php');">
     <h2>تیکت ها</h2>
   </div>
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('banners.php');">
+  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('../banners.php');">
     <h2>بنر ها</h2>
   </div>
 
