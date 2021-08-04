@@ -2,9 +2,6 @@ add-product & edit-product & banner UPLOAD NOT WORK , DELETE NOT WORK
 
 login and a-login not work4
 
-ticket upload appendix not work (errors not show greatly)
-
-
 
 -----
 edit order total cast not work
