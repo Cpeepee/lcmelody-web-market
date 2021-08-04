@@ -16,32 +16,32 @@
                   <section id="right-side" class="sides-style">
                     <div class="divider-inputs">
                       <h2 class="labels-style floatright">عنوان محصول</h2>
-                      <input  class="inputs-style" type="text" name="p-title">
+                      <input  class="inputs-style" type="text" name="p-title" maxlength="65">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">دسته بندی</h2>
-                       <input  class="inputs-style" type="text" name="p-type">
+                       <input  class="inputs-style" type="text" name="p-type" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">تخفیف</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-discount">
+                       <input  class="inputs-style dirltr" type="text" name="p-discount" maxlength="10">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">تعداد موجودی</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-amount">
+                       <input  class="inputs-style dirltr" type="text" name="p-amount" maxlength="3">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">اولویت در نمایش</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-priority">
+                       <input  class="inputs-style dirltr" type="text" name="p-priority" maxlength="1">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">نمایش داده شود</h2>
-                       <input class="inputs-style dirltr" type="text" name="" value="" name="p-visible">
+                       <input class="inputs-style dirltr" type="text" name="" value="" name="p-visible" maxlength="5">
                     </div>
                   </section>
 
@@ -50,29 +50,29 @@
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">برند</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-brand">
+                       <input  class="inputs-style dirltr" type="text" name="p-brand" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">مدل</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-model">
+                       <input  class="inputs-style dirltr" type="text" name="p-model" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">قیمت</h2>
-                       <input  class="inputs-style dirltr" type="text" name="p-price">
+                       <input  class="inputs-style dirltr" type="text" name="p-price" maxlength="10">
                     </div>
                   </section>
               </div>
             <section id="section-more-information">
                 <div id="divider-techniocal-info">
                    <h2 class="title-more-description">مشخصات فنی</h2>
-                   <textarea id="technical-information" class="textareas-more-description" name="p-technical"></textarea>
+                   <textarea id="technical-information" class="textareas-more-description" name="p-technical" maxlength="1000"></textarea>
                 </div>
 
                 <div id="divider-final-information">
                    <h2 class="title-more-description">توضیحات تکمیلی</h2>
-                   <textarea id="final-information" class="textareas-more-description" name="p-description"></textarea>
+                   <textarea id="final-information" class="textareas-more-description" name="p-description" maxlength="2000"></textarea>
                 </div>
                 <br/>
             </section>

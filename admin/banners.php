@@ -45,32 +45,32 @@
         <section id="section-special-sell-product-inputs">
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>یک</span><h2>
-                <input type="text" class="input-product-id-style" name="product-special-1" value="<?php echo $spcial_a;?>">
+                <input type="text" class="input-product-id-style" name="product-special-1" value="<?php echo $spcial_a;?>" maxlength="4">
             </div>
 
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>دو</span><h2>
-                <input type="text" class="input-product-id-style" name="product-special-2" value="<?php echo $spcial_b;?>">
+                <input type="text" class="input-product-id-style" name="product-special-2" value="<?php echo $spcial_b;?>" maxlength="4">
             </div>
 
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>سه</span><h2>
-                <input type="text" class="input-product-id-style" name="product-special-3" value="<?php echo $spcial_c;?>">
+                <input type="text" class="input-product-id-style" name="product-special-3" value="<?php echo $spcial_c;?>" maxlength="4">
             </div>
 
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>چهار</span><h2>
-                <input type="text" class="input-product-id-style" name="product-special-4" value="<?php echo $spcial_d;?>">
+                <input type="text" class="input-product-id-style" name="product-special-4" value="<?php echo $spcial_d;?>" maxlength="4">
             </div>
 
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>پنج</span><h2>
-                <input type="text" class="input-product-id-style" name="product-special-5" value="<?php echo $spcial_e;?>">
+                <input type="text" class="input-product-id-style" name="product-special-5" value="<?php echo $spcial_e;?>" maxlength="4">
             </div>
 
             <div class="special-product-style">
               <h2 class="text-sepcial-product-style">شناسه محصول ویژه <span>شش</span><h2>
-              <input type="text" class="input-product-id-style" name="product-special-6" value="<?php echo $spcial_f;?>">
+              <input type="text" class="input-product-id-style" name="product-special-6" value="<?php echo $spcial_f;?>" maxlength="4">
             </div>
         </section>
 

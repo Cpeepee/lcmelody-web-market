@@ -18,9 +18,9 @@ CREATE TABLE t_admin
     `a_id` INT (1) NOT NULL AUTO_INCREMENT,
     `a_email` VARCHAR (50) NOT NULL,
     `a_attempts_TL` INT (1) NOT NULL,
-    `a_first_pass` VARCHAR (500) NOT NULL,
-    `a_second_pass` VARCHAR (500) NOT NULL,
-    `a_third_pass` VARCHAR (500) NOT NULL,
+    `a_first_pass` VARCHAR (250) NOT NULL,
+    `a_second_pass` VARCHAR (250) NOT NULL,
+    `a_third_pass` VARCHAR (250) NOT NULL,
     PRIMARY KEY (`a_id`)
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE t_product
     `p_CC_like` INT (4) NOT NULL DEFAULT('0'),
     `p_CC_dislike` INT (4) NOT NULL DEFAULT('0'),
     `p_priority_TS` INT (1) NOT NULL DEFAULT('0'),
-    `p_discount` INT (2) NOT NULL DEFAULT('0'),
+    `p_discount` VARCHAR (10) NOT NULL DEFAULT('0'),
     `p_summary_desc` varchar(1000) NOT NULL,
     `p_visited` INT (20) NOT NULL DEFAULT('0'),
     `p_guest_visited` INT (30) NOT NULL DEFAULT('0'),
@@ -153,7 +153,7 @@ CREATE TABLE t_ticket_admin_message
     `tm_id` INT (4) NOT NULL AUTO_INCREMENT,
     `tm_t_id` INT (5) NOT NULL,
     `tm_a_id` INT (1) NOT NULL,
-    `tm_message_text` TEXT (1000) NOT NULL,
+    `tm_message_text` TEXT (2500) NOT NULL,
     `tm_appendixes` VARCHAR (500),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('1'),

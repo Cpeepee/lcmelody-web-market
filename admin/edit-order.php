@@ -135,12 +135,12 @@
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">هزینه پست</h2>
-                         <input id="order-post-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_post_price;?>" name="post-price">
+                         <input id="order-post-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_post_price;?>" name="post-price" maxlength="11">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کد پیگیری پرداخت</h2>
-                         <input id="order-payment-tracking-code" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_payment_tracig_code;?>" name="payment-tracking-code">
+                         <input id="order-payment-tracking-code" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_payment_tracig_code;?>" name="payment-tracking-code" maxlength="20">
                       </div>
                     </section>
 
@@ -148,7 +148,7 @@
                     <section id="left-side" class="sides-style">
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">تاریخ ثبت سفارش</h2>
-                        <input id="order-registration-date" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_date;?>" name="order-submited-date">
+                        <input id="order-registration-date" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $o_date;?>" name="order-submited-date" maxlength="50">
                       </div>
                       <br/>
 
@@ -213,7 +213,7 @@
 
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">مبلغ کل سفارش</h2>
-                        <input id="order-total-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $total_order_cost;?>">
+                        <input id="order-total-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $total_order_cost;?>" readonly>
                       </div>
 
                     </section>

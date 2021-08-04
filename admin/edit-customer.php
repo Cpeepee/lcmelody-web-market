@@ -58,27 +58,27 @@
 
                       <div class="divider-inputs">
                         <h2 class="labels-style">شناسه کاربر</h2>
-                        <input class="inputs-style" type="text" value="<?php echo $c_id;?>" name="id" style="margin-top:-50px;direction:ltr;" readonly>
+                        <input class="inputs-style" type="text" value="<?php echo $c_id;?>" name="id" style="margin-top:-50px;direction:ltr;" maxlength="4" readonly>
                       </div>
 
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">نام</h2>
-                        <input id="user-name" class="inputs-style" type="text" value="<?php echo $c_name;?>" name="name">
+                        <input id="user-name" class="inputs-style" type="text" value="<?php echo $c_name;?>" name="name" maxlength="20">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">نام خانوادگی</h2>
-                         <input id="user-family" class="inputs-style" type="text" value="<?php echo $c_family;?>" name="family">
+                         <input id="user-family" class="inputs-style" type="text" value="<?php echo $c_family;?>" name="family" maxlength="40">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کلمه عبور</h2>
-                         <input id="user-password" class="inputs-style dirltr" type="text" value="<?php echo $c_password;?>" name="password">
+                         <input id="user-password" class="inputs-style dirltr" type="text" value="<?php echo $c_password;?>" name="password" maxlength="">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">تلاش به ورود</h2>
-                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $c_attempts;?>" name="attempts">
+                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $c_attempts;?>" name="attempts" maxlength="1">
                       </div>
                     </section>
 
@@ -87,17 +87,17 @@
                       <h2 class="labels-style">تاریخ ثبت نام<span id="user-register" class="second-label-style"><?php echo $c_registeration_date;?></span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">شماره موبایل</h2>
-                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="<?php echo $c_phone;?>" name="phone">
+                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="<?php echo $c_phone;?>" name="phone" maxlength="15">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">پست الکترونیک</h2>
-                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $c_email;?>" name="email">
+                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $c_email;?>" name="email" maxlength="60">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">آدرس</h2>
-                         <textarea id="user-address" name="address"><?php echo $c_address;?></textarea>
+                         <textarea id="user-address" name="address" maxlength="250"><?php echo $c_address;?></textarea>
                       </div>
                     </section>
                 </div>

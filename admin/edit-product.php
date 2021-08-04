@@ -61,33 +61,33 @@
 
                     <div class="divider-inputs">
                       <h2 class="labels-style floatright">عنوان محصول</h2>
-                      <input class="inputs-style" type="text" value="<?php echo $ptitle;?>" name="ptitle">
+                      <input class="inputs-style" type="text" value="<?php echo $ptitle;?>" name="ptitle" maxlength="65">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">دسته بندی</h2>
-                       <input  class="inputs-style" type="text" value="<?php echo $pgroup;?>" name="pgroup">
+                       <input  class="inputs-style" type="text" value="<?php echo $pgroup;?>" name="pgroup" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">تخفیف</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pdiscount;?>" name="pdiscount">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pdiscount;?>" name="pdiscount" maxlength="10">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">تعداد موجودی</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pamount;?>" name="pamount">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pamount;?>" name="pamount" maxlength="3">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">اولویت در نمایش</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pprioirty;?>" name="ppriority">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pprioirty;?>" name="ppriority" maxlength="1">
                     </div>
 
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">نمایش داده شود</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pvisible;?>" name="pvisible">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pvisible;?>" name="pvisible" maxlength="5">
                     </div>
                   </section>
 
@@ -100,29 +100,29 @@
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">برند</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pbrand;?>" name="pbrandd">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pbrand;?>" name="pbrandd" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">مدل</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pmodel;?>" name="pmodel">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pmodel;?>" name="pmodel" maxlength="15">
                     </div>
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">قیمت</h2>
-                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pprice;?>" name="pprice">
+                       <input  class="inputs-style dirltr" type="text" value="<?php echo $pprice;?>" name="pprice" maxlength="10">
                     </div>
                   </section>
               </div>
               <section id="section-more-information">
                 <div id="divider-techniocal-info">
                    <h2 class="title-more-description">مشخصات فنی</h2>
-                   <textarea id="technical-information" class="textareas-more-description" name="ptechincal"><?php echo $ptechincal;?></textarea>
+                   <textarea id="technical-information" class="textareas-more-description" name="ptechincal" maxlength="1000"><?php echo $ptechincal;?></textarea>
                 </div>
 
                 <div id="divider-final-information">
                    <h2 class="title-more-description">توضیحات تکمیلی</h2>
-                   <textarea id="final-information" class="textareas-more-description" name="pdescription"><?php echo $pdescription;?></textarea>
+                   <textarea id="final-information" class="textareas-more-description" name="pdescription" maxlength="2000"><?php echo $pdescription;?></textarea>
                 </div>
 
                 <br/>

@@ -181,7 +181,7 @@
                         <h2 id="title-you-lable">شما</h2>
                         <form action="./actions/a-send-ticket.php" method="post">
                           <input type="hidden" name="tid" value="<?php echo $id;?>">
-                          <textarea id="your-response-text" name="response" class="def-border" placeholder="پاسخ شما"></textarea>
+                          <textarea id="your-response-text" name="response" class="def-border" placeholder="پاسخ شما" maxlength="2500"></textarea>
                         <div id="base-buttons">
                           <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
                         </form>

@@ -47,19 +47,19 @@ include ('./includes/the-banner.php'); ?>
                     <section id="right-side" class="sides-style">
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">شناسه</h2>
-                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $id;?>" name="id" readonly>
+                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $id;?>" name="id" maxlength="1" readonly>
                       </div>
 
 
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">پست الکترونیک</h2>
-                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $adminmail;?>" name="email">
+                         <input id="user-email" class="inputs-style dirltr" type="text" value="<?php echo $adminmail;?>" name="email" maxlength="50">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">تلاش به ورود</h2>
-                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $adminattempts;?>" name="attempts">
+                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $adminattempts;?>" name="attempts" maxlength="1">
                       </div>
                     </section>
 
@@ -70,17 +70,17 @@ include ('./includes/the-banner.php'); ?>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کلمه عبور یک</h2>
-                         <input id="user-family" class="inputs-style dirltr" type="text" value="<?php echo $adminpass1;?>" name="password-1">
+                         <input id="user-family" class="inputs-style dirltr" type="text" value="<?php echo $adminpass1;?>" name="password-1" maxlength="250">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">کلمه عبور دو</h2>
-                         <input id="user-password" class="inputs-style dirltr" type="text" value="<?php echo $adminpass2;?>" name="password-2">
+                         <input id="user-password" class="inputs-style dirltr" type="text" value="<?php echo $adminpass2;?>" name="password-2" maxlength="250">
                       </div>
                       <br/>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">کلمه عبور سه</h2>
-                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="<?php echo $adminpass3;?>" name="password-3">
+                        <input id="user-phonenumber" class="inputs-style dirltr" type="text" value="<?php echo $adminpass3;?>" name="password-3" maxlength="250">
                       </div>
 
                     </section>
