@@ -6,13 +6,7 @@ ticket upload appendix not work (errors not show greatly)
 
 
 
-
-
-
-
-
 -----
-a confirm comment errur :  Duplicate entry 1-1 for key PRIMARY  (comment deleted but not created!)
 edit order total cast not work
 
 

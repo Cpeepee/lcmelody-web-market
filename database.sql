@@ -26,7 +26,7 @@ CREATE TABLE t_admin
 
 CREATE TABLE t_ticket
 (
-    `t_id` INT (5) NOT NULL,
+    `t_id` INT (5) NOT NULL AUTO_INCREMENT,
     `t_subject` VARCHAR (159) NOT NULL,
     `t_status` INT (1) DEFAULT('3'),
     `t_email` VARCHAR (60) NOT NULL,
