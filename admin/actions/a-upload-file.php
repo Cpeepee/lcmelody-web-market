@@ -22,7 +22,8 @@ if (empty($_POST))
             {
               if(!empty($_FILES['uploaded_file']))
               {
-                $path = "../../assets/img/p-images/";
+                $directory = "../../assets/img/p-images/";
+                $path = $directory;
                 $path = $path . basename( $_FILES['uploaded_file']['name']);
 
                 if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path))
@@ -50,10 +51,10 @@ if (empty($_POST))
                         show_result("error","Place value is invalid","","","Lc Melody","current");
                       break;
                   }
-                  $fileNameLen = strlen($_FILES['uploaded_file']['name']);
-                  $fileUploadedType = substr($fileNameLen,$fileNameLen - 4);
-                  rename($path.$_FILES['uploaded_file']['name'],$id."-".$placeChar.$fileUploadedType);
-                  show_result("success","file uploaded for product","","","Lc Melody","current");
+                  $fileNameLen = strlen($path);
+                  $fileUploadedType = substr($path,$fileNameLen - 4);
+                  rename($path,$directory.$id."-".$placeChar.$fileUploadedType);
+                  show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
 
                 }
 
@@ -66,20 +67,83 @@ if (empty($_POST))
 
             case 'ep':
             {
+              if(!empty($_FILES['uploaded_file']))
+              {
+                $directory = "../../assets/img/p-images/";
+                $placeChar;
+                switch ($place)
+                {
+                  case 1:
+                    $placeChar = "a";
+                    break;
 
-              //delete last file on that place
-              // target=ep
-              // id=pid
-              // place=1-4
+                  case 2:
+                    $placeChar = "b";
+                    break;
+
+                  case 3:
+                    $placeChar = "c";
+                    break;
+
+                  case 4:
+                    $placeChar = "d";
+                    break;
+
+                  default:
+                      show_result("error","Place value is invalid","","","Lc Melody","current");
+                    break;
+                }
+                if(file_exists($directory.$id."-".$placeChar))
+                {
+                  unlink($directory.$id."-".$placeChar);
+                }
+                $path = $directory;
+                $path = $path . basename( $_FILES['uploaded_file']['name']);
+
+                if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path))
+                {
+                  $fileNameLen = strlen($path);
+                  $fileUploadedType = substr($path,$fileNameLen - 4);
+                  rename($path,$directory.$id."-".$placeChar);
+                  show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
+                }
+
+                else
+                {
+                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                }
+              }
             }break;
 
             case 'b':
             {
-              //check for last file for banner
-              //if file exiedst remove that
-              //make 1 b-stickt-top where bid = 0
+              if(!empty($_FILES['uploaded_file']))
+              {
+                $directory = "../../assets/img/banner/";
+                if(file_exists($directory."header.jpg"))
+                {
+                  unlink($directory."header.jpg");
+                }
+                $path = $directory;
+                $path = $path . basename( $_FILES['uploaded_file']['name']);
 
-              // banner: target=b
+                if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path))
+                {
+                  $fileNameLen = strlen($path);
+                  $fileUploadedType = substr($path,$fileNameLen - 4);
+                  if($fileUploadedType != ".jpg")
+                  {
+                    show_result("error","banner picture format must be .jpg","","","Lc Melody","current");
+                  }
+                  rename($path,$directory."header.jpg");
+                  show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
+                }
+
+                else
+                {
+                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                }
+              }
             }break;
 
             case 'ap':

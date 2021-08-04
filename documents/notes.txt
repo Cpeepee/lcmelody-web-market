@@ -27,7 +27,7 @@
 -----BUG ADD SEARCH ORDER FOR PAGE ORDERS
 ---BUG SEARCH COMMENT , ADMIN , Product , Customer are NOT WORKING WITHOUT ERROR !
 --remove p_prictures from t_product ER
-
+- remove sicky banner from banner ER
 ===
 ticket
 tickets.php

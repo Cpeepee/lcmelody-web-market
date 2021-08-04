@@ -76,7 +76,6 @@ CREATE TABLE t_orders
 CREATE TABLE t_banners
 (
     `b_id` INT (1) NOT NULL,
-    `b_sticky_top_add` VARCHAR (500) DEFAULT('0'),
     `special_product_a` VARCHAR (4) DEFAULT('0'),
     `special_product_b` VARCHAR (4) DEFAULT('0'),
     `special_product_c` VARCHAR (4) DEFAULT('0'),
