@@ -1,4 +1,5 @@
-<?php require ('./includes/the-security.php'); ?>
+<?php require './actions/includes/header.php';?>
+<!-- <php require ('./includes/the-security.php'); ?> -->
 <?php include ('./includes/the-header.php');?>
 <title>ویرایش بنر  - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/banners.css">
@@ -19,7 +20,6 @@
 
         <?php
         //fetch special products
-        require './actions/includes/header.php';
         $sql_search = "SELECT  special_product_a,special_product_b,special_product_c,special_product_d,special_product_e,special_product_f FROM t_banners WHERE b_id='0';";
         $result_search = $conn->query($sql_search);
         if ($result_search->num_rows > 0)

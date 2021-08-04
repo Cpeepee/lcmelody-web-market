@@ -136,24 +136,28 @@ CREATE TABLE t_comment_confirm
 
 CREATE TABLE t_ticket_customer_message
 (
+    `tm_id` INT (4) NOT NULL AUTO_INCREMENT,
     `tm_t_id` INT (5) NOT NULL,
     `tm_c_id` INT (4) NOT NULL,
     `tm_message_text` TEXT (2500) NOT NULL,
     `tm_appendixes` VARCHAR (650) DEFAULT('0'),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('0'),
+    PRIMARY KEY (`tm_id`),
     FOREIGN KEY (`tm_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
     FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_ticket_admin_message
 (
+    `tm_id` INT (4) NOT NULL AUTO_INCREMENT,
     `tm_t_id` INT (5) NOT NULL,
     `tm_a_id` INT (1) NOT NULL,
     `tm_message_text` TEXT (1000) NOT NULL,
-    `tm_appendixes` VARCHAR (500) DEFAULT('0'),
+    `tm_appendixes` VARCHAR (500),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('1'),
+    PRIMARY KEY (`tm_id`),
     FOREIGN KEY (`tm_a_id`) REFERENCES t_admin(`a_id`) ON DELETE CASCADE,
     FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`) ON DELETE CASCADE
 );

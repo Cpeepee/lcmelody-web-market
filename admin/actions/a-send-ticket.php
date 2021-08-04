@@ -13,10 +13,26 @@ $ticket_id = $_POST['tid'];
    show_result("error","$te","","","response ticket Lc Melody","current");
  }
 
+
+ //fetch ticket message id
+ $sql_search = "SELECT tm_id FROM t_ticket_admin_message WHERE tm_message_text = '$message_response' AND tm_t_id= '$ticket_id'";
+ $result_search = $conn->query($sql_search);
+ if ($result_search->num_rows > 0)
+ {
+   while($row = $result_search->fetch_assoc())
+   {
+          $tmid = $row['tm_id'];
+   }
+ }
+ else
+ {
+   $te = convert_error_2str($conn->error);
+   show_result("error","Admin (id=$id) isn\'t exists error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+ }
     //goto page appendixes upload
     ?>
       <script>
-          window.location=('../ticket-appendix.php?tid=<?php echo $ticket_id?>;');
+          window.location=('../ticket-appendix.php?tid=<?php echo $ticket_id?>&tmid=<?php echo $tmid;?>;');
       </script>
 
 <?php require "./includes/footer.php";?>

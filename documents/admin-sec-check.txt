@@ -1,7 +1,4 @@
-add-product & edit-product & banner UPLOAD NOT WORK , DELETE NOT WORK
-
 login and a-login not work4
-
 
 -----
 edit order total cast not work

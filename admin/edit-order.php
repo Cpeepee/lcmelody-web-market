@@ -165,19 +165,15 @@
 
                                       $sql_search = "SELECT oi_p_id,oi_amount,oi_price,oi_discount FROM t_orders_items WHERE oi_o_id=$id;";
                                       $result_search = $conn->query($sql_search);
-                                      $total_order_cost = 0;
-
                                       if ($result_search->num_rows > 0)
                                         while($row = $result_search->fetch_assoc())
                                         {
                                           array_push($o_products,$row['oi_p_id']);
 
-                                          $row['oi_price'] = str_replace(",","",$row['oi_price']);
-                                          $row['oi_discount'] = str_replace(",","",$row['oi_discount']);
-                                          $row['oi_amount'] = str_replace(" ","",$row['oi_amount']);
-
-                                          //calculate order total cost : product_price = price - discount * amount------------------------------------------------------------------
-                                          $total_order_cost += $row['oi_price'] - $row['oi_discount'] * $row['oi_amount'];
+                                          //for total cost
+                                          array_push($o_amounts,str_replace(",","",$row['oi_amount']));
+                                          array_push($o_price,str_replace(",","",$row['oi_price']));
+                                          array_push($o_discount,str_replace(",","",$row['oi_discount']));
                                         }
                                       else
                                       {
@@ -186,20 +182,37 @@
                                       }
 
 
+                                      //count total cost
+                                      $total_order_cost=0;
+                                      array_map(function ($o_price,$o_discount,$o_amounts)
+                                      {
 
-                                      // array_push($o_amounts,$row["oi_amount"]);
-                                      // array_push($o_price,$row["oi_price"]);
-                                      // array_push($o_discount,$row["oi_discount"]);
-                                      // array_map(function ($o_price,$o_discount,$o_amounts)
-                                      // {
-                                      //     $total_order_cost = $o_price - $o_discount * $o_amounts;
-                                      // }, $o_price,$o_discount,$o_amounts);
+                                          $total = $o_price - $o_discount;
+                                          $total_order_cost = $total*$o_amounts;
+                                          ?>
+                                            <!-- <script>
+                                            console.log("o_price="+<?php echo $o_price;?>);
+                                            console.log("$o_discount="+<?php echo $o_discount;?>);
+                                            console.log("$o_amounts="+<?php echo $o_amounts;?>);
+                                            console.log("$total_order_cost="+<?php echo $total_order_cost;?>);
+                                            console.log("--------------");
+                                            </script> -->
+                                          <?php
+                                      }, $o_price,$o_discount,$o_amounts);
+
+                                      // $total_order_cost += $o_post_price;
+                                      ?>
+                                        <script>
+                                        // console.log("------============--------");
+                                        // console.log("$total_order_cost="+<?php echo $total_order_cost;?>);
+                                        // console.log("------============--------");
+                                        </script>
+                                      <?php
                                       ?>
 
 
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">مبلغ کل سفارش</h2>
-                        <!-- fetch data from orderitems sorted by order id , (price-discount*amount)+ $postprice-->
                         <input id="order-total-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $total_order_cost;?>">
                       </div>
 

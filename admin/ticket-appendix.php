@@ -10,30 +10,30 @@
           <h1>افزودن ضمیمه</h1>
 
           <?php
-          $tid = $_GET['tid'];
+          $tmid = $_GET['tmid'];
 
           ?>
               <section id="section-pictures">
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">ضمیمه یک</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tid;?>&place=1');">انتخاب</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tmid;?>');">انتخاب</button>
                 </div>
                 <br/>
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">ضمیمه دو</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tid;?>&place=2');">انتخاب</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tmid;?>');">انتخاب</button>
                 </div>
                 <br/>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">ضمیمه سه</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tid;?>&place=3');">انتخاب</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tmid;?>');">انتخاب</button>
                 </div>
                 <br/>
 
                 <div class="divider-base-pictures">
                     <h2 class="text-upload-pictures">ضمیمه چهار</h2>
-                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tid;?>&place=4');">انتخاب</button>
+                    <button type="button" onclick="window.open('upload-file.php?target=ap&id=<?php echo $tmid;?>');">انتخاب</button>
                 </div>
               </section>
     </div>
