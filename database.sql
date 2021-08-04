@@ -57,7 +57,7 @@ CREATE TABLE t_product
     `p_amount` INT (3) NOT NULL DEFAULT('0'),
     `p_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`p_id`),
-    FOREIGN KEY (`p_creator_aid`) REFERENCES t_admin(`a_id`)
+    FOREIGN KEY (`p_creator_aid`) REFERENCES t_admin(`a_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_orders
@@ -70,7 +70,7 @@ CREATE TABLE t_orders
     `o_owner_cid` INT (4) NOT NULL,
     `o_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`o_id`),
-    FOREIGN KEY (`o_owner_cid`) REFERENCES t_customer(`c_id`)
+    FOREIGN KEY (`o_owner_cid`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_banners
@@ -94,8 +94,8 @@ CREATE TABLE t_orders_items
     `oi_price` VARCHAR (10) DEFAULT('1,000'),
     `oi_discount` VARCHAR (10) DEFAULT('0'),
     PRIMARY KEY (`oi_o_id`,`oi_p_id`),
-    FOREIGN KEY (`oi_o_id`) REFERENCES t_orders(`o_id`),
-    FOREIGN KEY (`oi_p_id`) REFERENCES t_product(`p_id`)
+    FOREIGN KEY (`oi_o_id`) REFERENCES t_orders(`o_id`) ON DELETE CASCADE,
+    FOREIGN KEY (`oi_p_id`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_cart_list
@@ -104,8 +104,8 @@ CREATE TABLE t_cart_list
     `cl_p_id` INT (4) NOT NULL,
     `cl_p_amount` INT (2) NOT NULL,
     PRIMARY KEY (`cl_p_id`,`cl_c_id`),
-    FOREIGN KEY (`cl_c_id`) REFERENCES t_customer(`c_id`),
-    FOREIGN KEY (`cl_p_id`) REFERENCES t_product(`p_id`)
+    FOREIGN KEY (`cl_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
+    FOREIGN KEY (`cl_p_id`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 
@@ -117,8 +117,8 @@ CREATE TABLE t_comment_verified
   -- `cv_SS` INT (1) NOT NULL,
   `cv_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cv_c_id`,`cv_p_id`),
-  FOREIGN KEY (`cv_c_id`) REFERENCES t_customer(`c_id`),
-  FOREIGN KEY (`cv_p_id`) REFERENCES t_product(`p_id`)
+  FOREIGN KEY (`cv_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
+  FOREIGN KEY (`cv_p_id`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 
@@ -130,8 +130,8 @@ CREATE TABLE t_comment_confirm
   -- `cv_SS` INT (1) NOT NULL,
   `cc_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cc_c_id`,`cc_p_id`),
-  FOREIGN KEY (`cc_c_id`) REFERENCES t_customer(`c_id`),
-  FOREIGN KEY (`cc_p_id`) REFERENCES t_product(`p_id`)
+  FOREIGN KEY (`cc_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
+  FOREIGN KEY (`cc_p_id`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 
@@ -143,8 +143,8 @@ CREATE TABLE t_ticket_customer_message
     `tm_appendixes` VARCHAR (650) DEFAULT('0'),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('0'),
-    FOREIGN KEY (`tm_c_id`) REFERENCES t_customer(`c_id`),
-    FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`)
+    FOREIGN KEY (`tm_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
+    FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_ticket_admin_message
@@ -155,6 +155,6 @@ CREATE TABLE t_ticket_admin_message
     `tm_appendixes` VARCHAR (500) DEFAULT('0'),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('1'),
-    FOREIGN KEY (`tm_a_id`) REFERENCES t_admin(`a_id`),
-    FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`)
+    FOREIGN KEY (`tm_a_id`) REFERENCES t_admin(`a_id`) ON DELETE CASCADE,
+    FOREIGN KEY (`tm_t_id`) REFERENCES t_ticket(`t_id`) ON DELETE CASCADE
 );

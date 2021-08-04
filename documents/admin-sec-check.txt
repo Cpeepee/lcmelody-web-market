@@ -1,7 +1,3 @@
-edit-product DELTE NOT WORK
-
-edit-order DELTE ITEM NOT WORK
-
 add-product & edit-product & banner UPLOAD NOT WORK , DELTE NOT WORK
 
 login and a-login not work4
@@ -9,6 +5,18 @@ login and a-login not work4
 ticket upload appendix not work (errors not show greatly)
 
 
+
+
+
+
+
+
+-----
+a confirm comment errur :  Duplicate entry 1-1 for key PRIMARY  (comment deleted but not created!)
+edit order total cast not work
+
+
 do it for all
 - max length inputs
 - links for buttons menu
+- check comments and empty inputs

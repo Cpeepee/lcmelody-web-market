@@ -172,6 +172,10 @@
                                         {
                                           array_push($o_products,$row['oi_p_id']);
 
+                                          $row['oi_price'] = str_replace(",","",$row['oi_price']);
+                                          $row['oi_discount'] = str_replace(",","",$row['oi_discount']);
+                                          $row['oi_amount'] = str_replace(" ","",$row['oi_amount']);
+
                                           //calculate order total cost : product_price = price - discount * amount------------------------------------------------------------------
                                           $total_order_cost += $row['oi_price'] - $row['oi_discount'] * $row['oi_amount'];
                                         }
@@ -213,10 +217,20 @@
                   <h2 id="products-title">محصولات</h2>
                   <section id="section-product-list" class="unselectable">
 
-                    <div class="divider-product-images">
-                      <img class="product-image-style cursor-pointer" src="../assets/img/p-images/p100.jpg" alt="some"/>
-                      <img class="button-product-delete-style cursor-pointer" src="../assets/img/icons/delete-50.png" alt="delete"/>
-                    </div>
+                    <?php
+                    foreach ($o_products as $valuee4)
+                    {
+                      ?>
+                          <div id="p<?php echo $valuee4;?>" class="divider-product-images">
+                            <img class="product-image-style cursor-pointer" src="../assets/img/p-images/<?php echo $valuee4;?>-a.jpg" alt="product-<?php echo $valuee4;?>"/>
+                            <img class="button-product-delete-style cursor-pointer" src="../assets/img/icons/delete-50.png" alt="delete"/  onclick="deleteItem(<?php echo $valuee4;?>)">
+                          </div>
+                      <?php
+                    }
+                    ?>
+
+
+
 
                   </section>
 
@@ -237,6 +251,31 @@
       </div>
     </div>
 
+
+    <script>
+    //- - - - - ajax for delete an item from order
+    function deleteItem(pid)
+    {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function()
+          {
+             if (this.readyState == 4 && this.status == 200)
+             {
+                if(this.responseText == "success")
+                {
+                    var del_item = document.getElementById("p"+pid);
+                    del_item.remove();
+                }
+                else
+                {
+                    alert("Error while removing item from order");
+                }
+             }
+          };
+          xhttp.open("GET", "./actions/a-delete-item-from-order.php?pid="+pid+"&oid=<?php echo $id;?>", true);
+          xhttp.send();
+    }
+    </script>
 
   </body>
 </html>

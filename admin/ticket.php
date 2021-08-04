@@ -99,7 +99,7 @@
 
                 <!-- load main text -->
                 <div class="message-style def-border">
-                  <h2 class="message-sender">شما</h2>
+                  <h2 class="message-sender">مشتری</h2>
                     <h2 class="message-text-style"><?php echo $row['t_main_text'];?></h2>
                 </div>
               <?php
@@ -109,13 +109,12 @@
           else
           {
             $te = convert_error_2str($conn->error);
-            show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            show_result("error","q1,error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           }
 
 
 
           //fetch messages from customer and admin table
-
           $sql_search_customer_messages = "SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_customer_message WHERE tm_t_id='$id' AND tm_c_id='$ticket_owner' UNION SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_admin_message WHERE tm_t_id='$id' ORDER BY tm_date;";
           $result_search2 = $conn->query($sql_search_customer_messages);
           if ($result_search2->num_rows > 0)
@@ -128,7 +127,7 @@
                 if($row['tm_admin_mode']==0)
                 {
                   ?>
-                  <h2 class="message-sender">شما</h2>
+                  <h2 class="message-sender">مشتری</h2>
                   <?php
                 }
                 else
@@ -163,11 +162,11 @@
               <?php
             }
           }
-          else
-          {
-            $te = convert_error_2str($conn->error);
-            show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-          }
+          // else
+          // {
+          //   $te = convert_error_2str($conn->error);
+          //   show_result("error","q2,error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          // }
           ?>
 
 
