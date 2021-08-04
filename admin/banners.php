@@ -38,7 +38,7 @@
         else
         {
           $te = convert_error_2str($conn->error);
-          show_result("error","special products are not loaded error: $te","","","Lc Melody","current");
+          show_result("error","خطا در بارگیری شناسه محصولات ویژه <br/>.$te","","","Lc Melody","current");
         }
         ?>
         <form action="./actions/a-banner.php" method="POST">

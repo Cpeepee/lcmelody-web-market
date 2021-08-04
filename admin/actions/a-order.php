@@ -16,12 +16,12 @@ $paymentstatus = (int)$paymentstatus;
 
  if ($conn->query($thequery) === TRUE)
  {
-      show_result("success","Order (id=$id) updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+      show_result("success","محصول با موفقیت ویرایش شد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
  else
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","$te","","","Lc Melody","current");
+   show_result("error","خطا در ویرایش محصول <br/>.$te","","","Lc Melody","current");
  }
 
 require "./includes/footer.php";?>

@@ -16,7 +16,7 @@ include ('./includes/the-banner.php'); ?>
         $id = (int)$id;
         if (empty($_GET))
         {
-          show_result("error","please enter admin id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا شناسه مدیر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
         //fetch admin info
@@ -36,7 +36,7 @@ include ('./includes/the-banner.php'); ?>
         else
         {
           $te = convert_error_2str($conn->error);
-          show_result("error","Admin (id=$id) isn\'t exists error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","مدیر پیدا نشد  <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
         ?>

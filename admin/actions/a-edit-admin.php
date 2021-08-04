@@ -15,12 +15,12 @@ $mail = strtolower($mail);
 
  if ($conn->query($thequery) === TRUE)
  {
-      show_result("success","Admin (id=$id) has been updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+      show_result("success","مدیر با موفقیت ویرایش شد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
  else
  {
       $te = convert_error_2str($conn->error);
-      show_result("error","$te","","","Lc Melody","current");
+      show_result("error","مدیر ویرایش نشد <br/>.$te","","","Lc Melody","current");
  }
 
 require "./includes/footer.php";?>

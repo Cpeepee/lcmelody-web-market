@@ -20,7 +20,7 @@
           $id = (int)$id;
           if(empty($_GET))
           {
-            show_result("error","please enter ticket id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            show_result("error","لطفا شناسه تیکت را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           }
           ?>
           <div id="base-ticket">
@@ -109,7 +109,7 @@
           else
           {
             $te = convert_error_2str($conn->error);
-            show_result("error","q1,error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            show_result("error","خطا در دریافت اطلاعات تیکت <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           }
 
 
@@ -230,7 +230,7 @@
                 }
                 else
                 {
-                    alert("Error while updating ticket status");
+                    alert("وضعیت تیکت ویرایش نشد");
                 }
              }
           };

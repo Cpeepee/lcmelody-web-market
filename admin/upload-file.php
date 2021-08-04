@@ -1,6 +1,6 @@
 <?php require ('./includes/the-security.php'); ?>
 <?php include ('./includes/the-header.php');?>
-<title>ورود مدیر - ال سی ملودی</title>
+<title>بارگذاری فایل - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/login.css">
 <?php include ('./includes/the-close-head.php');?>
 <?php include ('./includes/the-banner.php'); ?>

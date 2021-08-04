@@ -13,7 +13,7 @@ $place = (int)$place;
 //if empty all check or file is empty show error
 if (empty($_POST))
 {
-  show_result("error","please enter inputs!","","","Lc Melody","current");
+  show_result("error","لطفا مقادیر درست را وارد کنید","","","Lc Melody","current");
 }
 
           switch ($target)
@@ -48,7 +48,7 @@ if (empty($_POST))
                       break;
 
                     default:
-                        show_result("error","Place value is invalid","","","Lc Melody","current");
+                        show_result("error","مقدار ورودی نامعتبر","","","Lc Melody","current");
                       break;
                   }
                   $fileNameLen = strlen($path);
@@ -60,7 +60,7 @@ if (empty($_POST))
 
                 else
                 {
-                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                    show_result("error","تصویر بارگذاری نشد","","","Lc Melody","current");
                 }
               }
             }break;
@@ -90,7 +90,7 @@ if (empty($_POST))
                     break;
 
                   default:
-                      show_result("error","Place value is invalid","","","Lc Melody","current");
+                      show_result("error","مقدار ورودی نامعتبر","","","Lc Melody","current");
                     break;
                 }
                 if(file_exists($directory.$id."-".$placeChar))
@@ -110,7 +110,7 @@ if (empty($_POST))
 
                 else
                 {
-                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                    show_result("error","تصویر بارگذاری نشد","","","Lc Melody","current");
                 }
               }
             }break;
@@ -133,7 +133,7 @@ if (empty($_POST))
                   $fileUploadedType = substr($path,$fileNameLen - 4);
                   if($fileUploadedType != ".jpg")
                   {
-                    show_result("error","banner picture format must be .jpg","","","Lc Melody","current");
+                    show_result("error","فرمت تصویر بنر نامعتبر است باید .jpg باشد","","","Lc Melody","current");
                   }
                   rename($path,$directory."header.jpg");
                   show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
@@ -141,7 +141,7 @@ if (empty($_POST))
 
                 else
                 {
-                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                    show_result("error","تصویر بارگذاری نشد","","","Lc Melody","current");
                 }
               }
             }break;
@@ -175,7 +175,7 @@ if (empty($_POST))
                   else
                   {
                     $te = convert_error_2str($conn->error);
-                    show_result("error","special products are not loaded error: $te","","","Lc Melody","current");
+                    show_result("error","خطا در دریافت ضمیمه های پیام <br/>.$te","","","Lc Melody","current");
                   }
 
 
@@ -186,20 +186,20 @@ if (empty($_POST))
                   if ($conn->query($thequery) === FALSE)
                   {
                     $te = convert_error_2str($conn->error);
-                    show_result("error","$te","","","Lc Melody","current");
+                    show_result("error","خطا در ویرایش ضمیمه پیام <br/>.$te","","","Lc Melody","current");
                   }
                   show_result("success","ضمیمه با موفقیت بارگذاری شد","","","Lc Melody","current");
                 }
                 else
                 {
-                    show_result("error","There was an error uploading the file","","","Lc Melody","current");
+                    show_result("error","ضمیمه بارگذاری نشد","","","Lc Melody","current");
                 }
               }
             }break;
 
             default:
             {
-              //error
+              show_result("error","خطایی رخ داده است","","","Lc Melody","current");
             }
               break;
           }

@@ -55,7 +55,7 @@ if ($result_search->num_rows > 0)
 }
 else
 {
-  show_result("error","Not Found","","","Lc Melody","current");
+  show_result("error","محصولی پیدا نشد","","","Lc Melody","current");
 }
 
  ?>

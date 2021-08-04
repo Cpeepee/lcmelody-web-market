@@ -16,7 +16,7 @@
         $c_id = (int)$c_id;
         if(empty($_GET))
         {
-          show_result("error","please enter customer id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا شناسه مشتری را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
 
@@ -40,7 +40,7 @@
         else
         {
           $te = convert_error_2str($conn->error);
-          show_result("error","Customer (id=$c_id) isn\'t exists error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","مشتری پیدا نشد <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
 

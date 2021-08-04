@@ -2,6 +2,5 @@ login and a-login not work4
 edit order total cast not work
 
 do it for all
-- max length inputs
 - check comments and empty inputs
-- change language errors to Persian
+- check fake ids

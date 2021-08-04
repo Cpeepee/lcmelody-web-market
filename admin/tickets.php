@@ -71,7 +71,7 @@
               else
               {
                 $te = convert_error_2str($conn->error);
-                show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                show_result("error","خطا در دریافت اطلاعات تیکت <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
               ?>
 

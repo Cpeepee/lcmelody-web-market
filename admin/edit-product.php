@@ -17,7 +17,7 @@
         $pid = (int)$pid;
         if(empty($_GET))
         {
-          show_result("error","please enter product id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا شناسه محصول را درست وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
 
@@ -45,7 +45,7 @@
         else
         {
           $te = convert_error_2str($conn->error);
-          show_result("error","Product (id=$pid) isn\'t exists error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","محصول پیدا نشد <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
         ?>
 

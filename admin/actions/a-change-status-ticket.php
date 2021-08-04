@@ -14,7 +14,7 @@ $tstatus = (int)$tstatus;
  }
  else
  {
-   echo "error";
+   echo "خطا در تغییر وضعیت تیکت";
  }
 
 require "./includes/footer.php";?>

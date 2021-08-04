@@ -15,11 +15,11 @@ $pid = (int)$pid;
 
 
   if ($conn->query($thequery) === TRUE)
-       show_result("success","Comment (customer id=$cid , product id=$pid) deleted","","","Lc Melody","current");
+       show_result("success","نظر با موفقیت حذف شد","","","Lc Melody","current");
   else
   {
     $te = convert_error_2str($conn->error);
-    show_result("error","$te","","","Lc Melody","current");
+    show_result("error","نظر حذف نشد <br/>.$te","","","Lc Melody","current");
   }
 
 require "./includes/footer.php";?>

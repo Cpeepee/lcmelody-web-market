@@ -10,7 +10,7 @@ $email = strtolower($email);
 
 if (empty($_POST))
 {
-  show_result("error","please enter inputs!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
 else
 {
@@ -43,11 +43,11 @@ if ($result_search->num_rows > 0)
         $admininfo['attempts']++;
         $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_email`='$email';";
         if ($conn->query($thequery) === TRUE)
-              show_result("error","incorrect email or passwords","","","Lc Melody","current");
+              show_result("error","پست الکترونیکی یا کلمه عبور نامعتبر است","","","Lc Melody","current");
         else
         {
              $te = convert_error_2str($conn->error);
-             show_result("error","$te","","","Lc Melody","current");
+             show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
         }
       }
 
@@ -56,7 +56,7 @@ else
 {
   //search query failed
   $te = convert_error_2str($conn->error);
-  show_result("error","$te","","","Lc Melody","current");
+  show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
 }
 
 

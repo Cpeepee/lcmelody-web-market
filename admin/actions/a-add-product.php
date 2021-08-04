@@ -25,7 +25,7 @@ $pamount = (int)$pamount;
  if ($conn->query($thequery) === FALSE)
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","$te","","","Result add product Lc Melody","current");
+   show_result("error","خطا در ثبت محصول جدید <br/>.$te","","","Result add product Lc Melody","current");
  }
 
  //check product is exists and get that id
@@ -45,7 +45,7 @@ $pamount = (int)$pamount;
  else
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","error:$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+   show_result("error","خطا در پیدا کردن شناسه محصول جهت بارگذاری تصویر <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
 
 

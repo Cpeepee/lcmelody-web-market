@@ -10,7 +10,7 @@ $ticket_id = $_POST['tid'];
  if ($conn->query($thequery) === FALSE)
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","$te","","","response ticket Lc Melody","current");
+   show_result("error","خطا در افزودن پیام <br/>.$te","","","response ticket Lc Melody","current");
  }
 
 
@@ -27,7 +27,7 @@ $ticket_id = $_POST['tid'];
  else
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","Admin (id=$id) isn\'t exists error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+   show_result("error","شناسه تیکیت پیدا نشد <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
     //goto page appendixes upload
     ?>

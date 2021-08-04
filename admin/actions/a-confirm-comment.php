@@ -20,7 +20,7 @@ $pid = (int)$pid;
   else
   {
     $te = convert_error_2str($conn->error);
-    show_result("error","$te","","","Lc Melody","current");
+    show_result("error","خطا در دریافت متن و تاریخ نظر <br/>.$te","","","Lc Melody","current");
   }
 
 
@@ -30,17 +30,17 @@ $pid = (int)$pid;
   if ($conn->query($thequery1) === FALSE)
   {
     $te = convert_error_2str($conn->error);
-    show_result("error","$te","","","Lc Melody","current");
+    show_result("error","خطا در ثبت نظر  <br/>.$te","","","Lc Melody","current");
   }
 
   //remove comment from confirm
   $thequery2 = "DELETE FROM t_comment_confirm WHERE `cc_c_id`='$cid' AND `cc_p_id`='$pid';";
   if ($conn->query($thequery2) === TRUE)
-       show_result("success","Comment (customer id=$cid , product id=$pid) confirmed","","","Lc Melody","current");
+       show_result("success","نظر با موفقیت تایید شد","","","Lc Melody","current");
   else
   {
     $te = convert_error_2str($conn->error);
-    show_result("error","$te","","","Lc Melody","current");
+    show_result("error","خطا در حذف نظر  <br/>.$te","","","Lc Melody","current");
   }
 
 

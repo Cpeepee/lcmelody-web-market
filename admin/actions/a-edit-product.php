@@ -21,12 +21,12 @@ $id = (int)$id;
 
  if ($conn->query($thequery) === TRUE)
  {
-      show_result("success","Product (id=$id) updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+      show_result("success","محصول با موفقیت ویرایش شد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
  else
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","$te","","","Lc Melody","current");
+   show_result("error","محصول با ویرایش نشد <br/>.$te","","","Lc Melody","current");
  }
 
 require "./includes/footer.php";?>

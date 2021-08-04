@@ -10,13 +10,13 @@ $id = (int)$id;
     $delete_admin = "DELETE FROM t_admin WHERE `a_id`='$id';";
     if ($conn->query($delete_admin) === TRUE)
     {
-      show_result("success","admin (id=$id) deleted","","","Lc Melody","current");
+      show_result("success","مدیر با موفقیت حذف شد","","","Lc Melody","current");
 
     }
     else
     {
       $te = convert_error_2str($conn->error);
-      show_result("error","$te","","","Lc Melody","current");
+      show_result("error","مدیر حذف نشد <br/>.$te","","","Lc Melody","current");
     }
   }
 
@@ -26,13 +26,13 @@ $id = (int)$id;
     $delete_customer = "DELETE FROM t_customer WHERE `c_id`='$id';";
     if ($conn->query($delete_customer) === TRUE)
     {
-      show_result("success","customer (id=$id) deleted","","","Lc Melody","current");
+      show_result("success","مشتری با موفقیت حذف شد","","","Lc Melody","current");
 
     }
     else
     {
       $te = convert_error_2str($conn->error);
-      show_result("error","$te","","","Lc Melody","current");
+      show_result("error","مشتری حذف نشد <br/>.$te","","","Lc Melody","current");
     }
   }
 

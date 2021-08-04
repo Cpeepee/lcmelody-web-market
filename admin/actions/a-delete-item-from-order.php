@@ -14,7 +14,7 @@ $oid = (int)$oid;
   else
   {
     $te = convert_error_2str($conn->error);
-    show_result("error","$te","","","Lc Melody","current");
+    show_result("error","محصول از سفارش حذف نشد <br/>.$te","","","Lc Melody","current");
   }
 
 require "./includes/footer.php";?>

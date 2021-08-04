@@ -17,12 +17,12 @@ $mail = strtolower($mail);
 
  if ($conn->query($thequery) === TRUE)
  {
-      show_result("success","Customer (id=$id) updated","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+      show_result("success","مشتری با موفقیت ویرایش شد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
  }
  else
  {
    $te = convert_error_2str($conn->error);
-   show_result("error","$te","","","Lc Melody","current");
+   show_result("error","مشتری ویرایش نشد <br/>.$te","","","Lc Melody","current");
  }
 
 require "./includes/footer.php";?>

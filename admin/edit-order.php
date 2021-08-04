@@ -17,7 +17,7 @@
         $id = (int)$id;
         if (empty($_GET))
         {
-          show_result("error","please enter order id!","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا شناسه سفارش را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
         //fetch order info
@@ -39,7 +39,7 @@
         else
         {
           $te = convert_error_2str($conn->error);
-          show_result("error","Order (id=$id) isn\'t exists error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","سفارش پیدا نشد <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
         ?>
 
@@ -281,7 +281,7 @@
                 }
                 else
                 {
-                    alert("Error while removing item from order");
+                    alert("خطا : محصول از سفارش حذف نشد");
                 }
              }
           };
