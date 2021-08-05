@@ -140,7 +140,7 @@ CREATE TABLE t_ticket_customer_message
     `tm_t_id` INT (5) NOT NULL,
     `tm_c_id` INT (4) NOT NULL,
     `tm_message_text` TEXT (2500) NOT NULL,
-    `tm_appendixes` VARCHAR (650) DEFAULT('0'),
+    `tm_appendixes` VARCHAR (650),
     `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('0'),
     PRIMARY KEY (`tm_id`),

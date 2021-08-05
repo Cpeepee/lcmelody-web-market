@@ -128,6 +128,7 @@ $place = (int)$place;
               if(!empty($_FILES['uploaded_file']))
               {
                 $directory = "../../assets/img/banner/";
+                $adminDirectory = "../assets/img/";
                 if(file_exists($directory."header.jpg"))
                 {
                   unlink($directory."header.jpg");
@@ -144,6 +145,11 @@ $place = (int)$place;
                     show_result("error","فرمت تصویر بنر نامعتبر است باید .jpg باشد","","","Lc Melody","current");
                   }
                   rename($path,$directory."header.jpg");
+
+                  //add banner for admin panel
+                  unlink($adminDirectory."header.jpg");
+                  copy($directory."header.jpg", $adminDirectory);
+
                   show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
                 }
 

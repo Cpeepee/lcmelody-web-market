@@ -49,7 +49,7 @@
                 case 0:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-closed" onchange="changeStatusTicket(0)">
+                    <select id="ticket-status" class="bg-closed" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
@@ -61,7 +61,7 @@
                 case 1:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-answered" onchange="changeStatusTicket(1)">
+                    <select id="ticket-status" class="bg-answered" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1" selected>پاسخ داده شده</option>
@@ -73,7 +73,7 @@
                 case 2:
                 {
                     ?>
-                    <select id="ticket-status" class="bg-workingon" onchange="changeStatusTicket(2)">
+                    <select id="ticket-status" class="bg-workingon" onchange="changeStatusTicket(this.value)">
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2" selected>درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
@@ -85,7 +85,7 @@
                 default:
                 {
                   ?>
-                  <select id="ticket-status" class="bg-waiting" onchange="changeStatusTicket(3)">
+                  <select id="ticket-status" class="bg-waiting" onchange="changeStatusTicket(this.value)">
                     <option value="3" selected>در انتظار پاسخ</option>
                     <option value="2">درحال رسیدگی</option>
                     <option value="1">پاسخ داده شده</option>
