@@ -1,6 +1,5 @@
 <?php
 session_start();
-$adminUrlAddress ="http://localhost/lc/admin/"; //this code is also in the-secruty
 // $_SESSION["s_admin_id"] = $admininfo['id'];
 // $_SESSION["state_login"] = true;
 // $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
@@ -14,8 +13,7 @@ if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a
       $servername = "localhost";
       $username = "me";
       $password = "amx";
-      $dbname = "lc2";
-      //IF WANT CHANGE DATABASE INFO ALSO CHANGE THIS VALUES ON A-LOGIN.PHP
+      $dbname = "lc3"; //IF WANT CHANGE DATABASE INFO ALSO CHANGE THIS VALUES ON A-LOGIN.PHP
       $conn = new mysqli($servername, $username, $password, $dbname);
       if ($conn->connect_error)
       {
@@ -35,10 +33,10 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
 {
     if($window=="new")
     {
-      //IF WANT CHANGE SHOW_RESULT INFO ALSO CHANGE THIS VALUES ON A-LOGIN.PHP
+      //IF WANT CHANGE SHOW_RESULT INFO ALSO CHANGE THIS VALUES ON A-LOGIN.PHP and the-security
       ?>
         <script>
-            window.open('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.open('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
       <?php
     }
@@ -46,7 +44,7 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
     {
     ?>
         <script>
-            window.location=('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.location=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
      <?php
     }

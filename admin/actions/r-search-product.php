@@ -33,7 +33,7 @@
 $searched = $_POST['q'];
 $searched = strtolower($searched);
 
-$sql_search = "SELECT p_id,p_title,p_price,p_pictures FROM t_product WHERE p_id LIKE '%$searched%' OR p_title LIKE '%$searched%' OR p_description LIKE '%$searched%' OR p_model LIKE '%$searched%' OR p_brand LIKE '%$searched%' OR p_summary_desc LIKE '%$searched%' OR p_price LIKE '%$searched%' OR p_type LIKE '%$searched%';";
+$sql_search = "SELECT p_id,p_title,p_price FROM t_product WHERE p_id LIKE '%$searched%' OR p_title LIKE '%$searched%' OR p_description LIKE '%$searched%' OR p_model LIKE '%$searched%' OR p_brand LIKE '%$searched%' OR p_summary_desc LIKE '%$searched%' OR p_price LIKE '%$searched%' OR p_type LIKE '%$searched%';";
 $result_search = $conn->query($sql_search);
 if ($result_search->num_rows > 0)
 {
@@ -55,7 +55,8 @@ if ($result_search->num_rows > 0)
 }
 else
 {
-  show_result("error","محصولی پیدا نشد","","","Lc Melody","current");
+  $te = convert_error_2str($conn->error);
+  show_result("error","محصولی پیدا نشد .$te","","","Lc Melody","current");
 }
 
  ?>

@@ -11,6 +11,18 @@ $pmodel = $_POST['p-model'];
 $pprice = $_POST['p-price'];
 $ptechnical = $_POST['p-technical'];
 $pdescriptions = $_POST['p-description'];
+?>
+<script>alert("title:<?php echo $ptitle;?>");</script>
+<script>alert("type<?php echo $ptype;?>");</script>
+<script>alert("disc<?php echo $pdiscount;?>");</script>
+<script>alert("amo<?php echo $pamount;?>");</script>
+<script>alert("prio<?php echo $ppriority;?>");</script>
+<script>alert("sta<?php echo $pstatus;?>");</script>
+<script>alert("bra<?php echo $pbrand;?>");</script>
+<script>alert("mod<?php echo $pmodel;?>");</script>
+<script>alert("tec<?php echo $ptechnical;?>");</script>
+<script>alert("des<?php echo $pdescriptions;?>");</script>
+<?php
 if ($ptitle == "" || $ptype == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pstatus == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescriptions== "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
@@ -20,10 +32,10 @@ $pstatus = (int)$pstatus;
 $ppriority = (int)$ppriority;
 $pdiscount = (int)$pdiscount;
 $pamount = (int)$pamount;
-
+$adminSessionId = $_SESSION["s_admin_id"];
  // COMMENT DATA : p_status = pvisible , p_type = ptype (group (dastebandi)) ,p_summary_desc = p techincal
  $thequery = "INSERT INTO t_product (p_title,p_type,p_discount,p_amount,p_priority_TS,p_status,p_brand,p_model,p_price,p_summary_desc,p_description,p_creator_aid)
- VALUES ('$ptitle','$ptype','$pdiscount','$pamount','$ppriority','$pstatus','$pbrand','$pmodel','$pprice','$ptechnical','$pdescriptions','$_SESSION["s_admin_id"]');";//admin id is deautl to 1
+ VALUES ('$ptitle','$ptype','$pdiscount','$pamount','$ppriority','$pstatus','$pbrand','$pmodel','$pprice','$ptechnical','$pdescriptions','$adminSessionId');";//admin id is deautl to 1
 
  if ($conn->query($thequery) === FALSE)
  {

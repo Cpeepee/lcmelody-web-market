@@ -41,7 +41,7 @@
                     <br/>
                     <div class="divider-inputs">
                        <h2 class="labels-style floatright">نمایش داده شود</h2>
-                       <input class="inputs-style dirltr" type="text" name="" value="" name="p-visible" maxlength="5">
+                       <input class="inputs-style dirltr" type="text" name="p-visible" maxlength="5">
                     </div>
                   </section>
 

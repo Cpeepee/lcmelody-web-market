@@ -6,7 +6,7 @@ session_start();
 $servername = "localhost";
 $username = "me";
 $password = "amx";
-$dbname = "lc2";
+$dbname = "lc3";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error)
 {
@@ -102,7 +102,8 @@ else
 function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
 {
     if($window=="new")
-    {
+    {      //IF WANT CHANGE SHOW_RESULT INFO ALSO CHANGE THIS VALUES ON action/header and the-security
+
       ?>
         <script>
             window.open('../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
