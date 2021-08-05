@@ -1,5 +1,19 @@
 <?php
 session_start();
+echo "hi";
+//connection to database
+$servername = "localhost";
+$username = "me";
+$password = "amx";
+$dbname = "lc2";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error)
+{
+  $te = convert_error_2str($conn->connect_error);
+  show_result("error","خطا در ارتباط با پایگاه داده <br/>.$te","","","Database Error","current");
+}
+
+
 
 $email = $_POST['email'];
 $password1 = $_POST['password-a'];
@@ -7,6 +21,12 @@ $password2 = $_POST['password-b'];
 $password3 = $_POST['password-c'];
 
 $email = strtolower($email);
+
+
+$password1 = md5($password1);
+$password2 = md5($password2);
+$password3 = md5($password3);
+
 
 if ($email== "" ||$password1== "" ||$password2== "" ||$password3== "")
 {
@@ -21,161 +41,84 @@ if ($result_search->num_rows > 0)
 {
   while($row = $result_search->fetch_assoc())
   {
-      $admininfo = array("attempts"=>"$row['a_attempts_TL']", "pass1"=>"$row['a_first_pass']", "pass2"=>"$row['a_second_pass']", "pass3"=>"$row['a_third_pass']");
+      $admininfo = array("id"=>"$row['a_id']","attempts"=>"$row['a_attempts_TL']", "pass1"=>"$row['a_first_pass']", "pass2"=>"$row['a_second_pass']", "pass3"=>"$row['a_third_pass']");
   }
-
-
-      //check login information
-      if($password1 == $admininfo['pass1'] && $password2 == $admininfo['pass2'] && $password3 == $admininfo['pass3'])
-      {
-        //set session key to admin ! -----------------------------------------------------------------------
-        //redirect to /admin/index.php--------------------------------------------------------------------
-        //$_SESSION["state_login"] = true;
-      }
-      else
-      {
-        //login failed
-        $admininfo['attempts']++;
-        $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_email`='$email';";
-        if ($conn->query($thequery) === TRUE)
-              show_result("error","پست الکترونیکی یا کلمه عبور نامعتبر است","","","Lc Melody","current");
-        else
-        {
-             $te = convert_error_2str($conn->error);
-             show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
-        }
-      }
-
 }
 else
 {
-  //search query failed
   $te = convert_error_2str($conn->error);
   show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
 }
 
-
-
-
-
-
-
-//function validation protect sql injection and validate data
-function insql($p1,$p2,$p3,$p4)
+$admininfo['attempts'] = (int)$admininfo['attempts'];
+if($admininfo['attempts'] >= 5 || $admininfo['attempts'] == "5")
+  show_result("error","این حساب مسدود شده است","","","Lc Melody","current");
+else
 {
-
-  $Generic_SQL_Injection_Payloads = array
-        (
-          "'",
-          "\'",
-          "''",
-          '`',
-          "``",
-          ",",
-          '"',
-          '\"',
-          '""',
-          "/",
-          "//",
-          "\",
-          "\\",
-          ";",
-          "or",
-          "OR",
-          "Or",
-          "oR",
-          " OR",
-          " or",
-          " oR",
-          " Or",
-          "AND",
-          "And",
-          "aND",
-          "aNd",
-          "and",
-          "anD",
-          "AnD",
-          "WHERE",
-          "Where",
-          "wHERE",
-          "whERE",
-          "  ",
-          "||",
-          " ||",
-          " | |",
-          "' or "",
-          "-- or #",
-          "' OR '1",
-          "' OR 1 -- -",
-          "" OR "" = "",
-          "" OR 1 = 1 -- -",
-          "' OR '' = '",
-          "'='",
-          "'LIKE'",
-          "'=0--+",
-          "OR 1=1",
-          "' OR 'x'='x",
-          "' AND id IS NULL; --",
-          "'''''''''''''UNION SELECT '2",
-          "%00",
-          "/*…*/",
-          "# Numeric",
-          "AND 1",
-          "AND 0",
-          "AND true",
-          "AND false",
-          "1-false",
-          "1-true",
-          "1*56",
-          "-2",
-          "1' ORDER BY 1--+",
-          "1' ORDER BY 2--+",
-          "1' ORDER BY 3--+",
-          "1' ORDER BY 1,2--+",
-          "1' ORDER BY 1,2,3--+",
-          "1' GROUP BY 1,2,--+",
-          "1' GROUP BY 1,2,3--+",
-          "' GROUP BY columnnames having 1=1 --",
-          "-1' UNION SELECT 1,2,3--+",
-          "' UNION SELECT sum(columnname ) from tablename --",
-          "-1 UNION SELECT 1 INTO @,@",
-          "-1 UNION SELECT 1 INTO @,@,@",
-          "1 AND (SELECT * FROM Users) = 1",
-          "' AND MID(VERSION(),1,1) = '5';"
-        );
-  foreach ($Generic_SQL_Injection_Payloads as $value)
+  //check login information
+  if($password1 == $admininfo['pass1'] && $password2 == $admininfo['pass2'] && $password3 == $admininfo['pass3'])
   {
-    $p1 = str_replace($value,"",$p1);
-    $p2 = str_replace($value,"",$p2);
-    $p3 = str_replace($value,"",$p3);
-    $p4 = str_replace($value,"",$p4);
+    $_SESSION["s_admin_id"] = $admininfo['id'];
+    $_SESSION["state_login"] = true;
+    $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
+    ?><script> window.location= "../index.php";</script><?php
   }
-  $output = array($p1,$p2,$p3,$p4);
-  return $output;
+  else
+  {
+    //login failed
+    $admininfo['attempts']++;
+    $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_email`='$email';";
+    if ($conn->query($thequery) === TRUE)
+          show_result("error","پست الکترونیکی یا کلمه عبور نامعتبر است","","","Lc Melody","current");
+    else
+    {
+         $te = convert_error_2str($conn->error);
+         show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 //functions message from actions/includes/header.php
 function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
 {
+    if($window=="new")
+    {
+      ?>
+        <script>
+            window.open('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+        </script>
+      <?php
+    }
+    else
+    {
     ?>
         <script>
             window.location=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
      <?php
+    }
 
 }
+
 function convert_error_2str($text="") //sql errors've some special charecters can make problem in js.window.location strings and parameters
 {
   $text2 = str_replace( array( '\'', '"', '\"' , '\`' , ',' , ';', '<', '>' ), '', $text);
   return $text2;
 }
-
-
-
-
-
 
 
 require "./includes/footer.php";?>
