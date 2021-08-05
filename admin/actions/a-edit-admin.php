@@ -6,6 +6,10 @@ $attempts = $_POST['attempts'];
 $pass1 = $_POST['password-1'];
 $pass2 = $_POST['password-2'];
 $pass3 = $_POST['password-3'];
+if ($id== "" ||$mail== "" ||$attempts== "" ||$pass1== "" ||$pass2== "" ||$pass3== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
 
 $id = (int)$id;
 $mail = strtolower($mail);

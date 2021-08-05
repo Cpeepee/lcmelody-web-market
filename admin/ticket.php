@@ -17,11 +17,13 @@
           <?php
           //get id and check that
           $id = $_GET['id'];
-          $id = (int)$id;
-          if(empty($_GET))
+          if ($id== "")
           {
-            show_result("error","لطفا شناسه تیکت را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           }
+
+          $id = (int)$id;
+          
           ?>
           <div id="base-ticket">
           <?php

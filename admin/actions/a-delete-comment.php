@@ -4,6 +4,11 @@ $cid = $_GET['cid'];
 $pid = $_GET['pid'];
 $type = $_GET['t'];
 
+if ($cid== "" ||$pid== "" ||$type== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
 $cid = (int)$cid;
 $pid = (int)$pid;
 

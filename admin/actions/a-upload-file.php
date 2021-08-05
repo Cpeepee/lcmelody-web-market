@@ -4,17 +4,17 @@ $target = $_POST['t'];
 $id = $_POST['i'];
 $place = $_POST['p'];
 
+if ($target== "" ||$id== ""||$place== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
 $id = (int)$id;
 $place = (int)$place;
 
 
 // $uploaded_file = $_POST['uploaded_file'];
 
-//if empty all check or file is empty show error
-if (empty($_POST))
-{
-  show_result("error","لطفا مقادیر درست را وارد کنید","","","Lc Melody","current");
-}
 
           switch ($target)
           {

@@ -8,6 +8,11 @@ $attempts = $_POST['attempts'];
 $phone = $_POST['phone'];
 $mail = $_POST['email'];
 $address = $_POST['address'];
+if ($id== "" ||$name== "" ||$family== "" ||$pass== "" ||$attempts== "" ||$phone== ""||$mail== "" ||$address== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
 
 $id = (int)$id;
 $mail = strtolower($mail);

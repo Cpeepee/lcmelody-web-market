@@ -1,12 +1,18 @@
 <?php require "./includes/header.php";
 
 $id = $_POST['oid'];
-
 $status = $_POST['order-status'];
 $paymentstatus = $_POST['payment-status'];
 $postprice = $_POST['post-price'];
 $paymenttracking = $_POST['payment-tracking-code'];
 $ordersubmit = $_POST['order-submited-date'];
+
+if ($id== "" ||$status== "" ||$paymentstatus== "" ||$postprice== ""||$paymenttracking== ""||$ordersubmit== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
+
 
 $id = (int)$id;
 $paymentstatus = (int)$paymentstatus;

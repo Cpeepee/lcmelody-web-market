@@ -2,6 +2,13 @@
 
 $message_response = $_POST['response'];
 $ticket_id = $_POST['tid'];
+
+if ($message_response== "" ||$ticket_id== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
+
 //$adminid = admin key frop session get
 
 

@@ -12,6 +12,16 @@ $pmodel = $_POST['pmodel'];
 $pprice = $_POST['pprice'];
 $ptechincal = $_POST['ptechincal'];
 $pdescription = $_POST['pdescription'];
+
+if ($id=="" || $ptitle == "" || $pgroup == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pvisible == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescriptions== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
+
+
+
+
 $id = (int)$id;
 
  $thequery = "UPDATE t_product SET `p_title` = '$ptitle',`p_type`= '$pgroup',

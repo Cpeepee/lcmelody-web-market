@@ -13,12 +13,13 @@
         <?php
         //get id and check that
         $c_id = $_GET['id'];
-        $c_id = (int)$c_id;
-        if(empty($_GET))
+        if ($c_id== "")
         {
-          show_result("error","لطفا شناسه مشتری را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
+        $c_id = (int)$c_id;
+        
 
 
         //fetch customer information

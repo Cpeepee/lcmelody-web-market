@@ -14,13 +14,14 @@
         <?php
         //get id and check that
         $pid = $_GET['id'];
-        $pid = (int)$pid;
-        if(empty($_GET))
+        if ($pid== "")
         {
-          show_result("error","لطفا شناسه محصول را درست وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
 
 
+        $pid = (int)$pid;
+        
 
         //fetch customer information
         $sql_search = "SELECT p_brand,p_model,p_title,p_description,p_status,p_priority_TS,p_discount,p_summary_desc,p_type,p_price,p_amount FROM t_product WHERE p_id='$pid';";

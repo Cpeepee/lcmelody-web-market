@@ -12,6 +12,12 @@
 
           <?php
           $pid = $_GET['id'];
+          if ($pid== "")
+          {
+            show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          }
+
+
           ?>
               <section id="section-pictures">
                 <div class="divider-base-pictures">

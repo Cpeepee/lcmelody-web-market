@@ -5,6 +5,10 @@ $button = $_GET['button'];
 $target = $_GET['target'];
 $title = $_GET['title'];
 
+if ($mode== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
 
 $color_mode = "message-success";
 $icon_name = "error-45.png";

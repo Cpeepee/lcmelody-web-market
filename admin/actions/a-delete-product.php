@@ -1,6 +1,11 @@
 <?php require "./includes/header.php";
 
 $id = $_GET['id'];
+if ($id== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
 $id = (int)$id;
 
 

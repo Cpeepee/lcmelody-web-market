@@ -11,7 +11,10 @@ $pmodel = $_POST['p-model'];
 $pprice = $_POST['p-price'];
 $ptechnical = $_POST['p-technical'];
 $pdescriptions = $_POST['p-description'];
-
+if ($ptitle == "" || $ptype == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pstatus == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescriptions== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
 
 $pstatus = (int)$pstatus;
 $ppriority = (int)$ppriority;

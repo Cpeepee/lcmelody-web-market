@@ -8,14 +8,9 @@ $password3 = $_POST['password-c'];
 
 $email = strtolower($email);
 
-if (empty($_POST))
+if ($email== "" ||$password1== "" ||$password2== "" ||$password3== "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-}
-else
-{
-  $allinputs insql($email,$password1,$password2,$password3);
-  //may use array_merge
 }
 
 

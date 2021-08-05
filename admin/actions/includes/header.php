@@ -6,7 +6,7 @@
 //   {
         $servername = "localhost";
         $username = "me";
-        $password = "asmx";
+        $password = "amx";
         $dbname = "lc2";
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error)

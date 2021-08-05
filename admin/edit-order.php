@@ -14,11 +14,12 @@
         <?php
         //get id and check that
         $id = $_GET['id'];
-        $id = (int)$id;
-        if (empty($_GET))
+        if ($id== "")
         {
-          show_result("error","لطفا شناسه سفارش را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
+
+        $id = (int)$id;
 
         //fetch order info
         $sql_search = "SELECT o_status,o_PP,o_PTC,o_PSC,o_owner_cid,o_date FROM t_orders WHERE o_id=$id;";

@@ -2,6 +2,10 @@
 
 $id = $_GET['id'];
 $mode = $_GET['mode'];
+if ($id== "" ||$mode== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
 
 $id = (int)$id;
 

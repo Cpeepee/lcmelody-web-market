@@ -1,9 +1,14 @@
 <?php require "./includes/header.php";
 
 $pid = $_GET['pid']; //product id
-$pid = (int)$pid;
-
 $oid = $_GET['oid']; //order id
+
+if ($pid== "" ||$oid== "")
+{
+  show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+}
+
+$pid = (int)$pid;
 $oid = (int)$oid;
 
   $del_orderitem = "DELETE FROM t_orders_items WHERE `oi_p_id`='$pid' AND `oi_o_id`='$oid';";

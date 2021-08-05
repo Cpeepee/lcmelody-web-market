@@ -13,11 +13,12 @@ include ('./includes/the-banner.php'); ?>
         <?php
         //get id and check that
         $id = $_GET['id'];
-        $id = (int)$id;
-        if (empty($_GET))
+        if ($id== "")
         {
-          show_result("error","لطفا شناسه مدیر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+          show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
         }
+
+        $id = (int)$id;
 
         //fetch admin info
         $sql_search = "SELECT a_email,a_attempts_TL,a_first_pass,a_second_pass,a_third_pass FROM t_admin WHERE a_id=$id;";

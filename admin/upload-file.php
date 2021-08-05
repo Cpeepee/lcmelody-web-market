@@ -9,6 +9,11 @@
        $target = $_GET['target'];
        $place = $_GET['place'];
        $id = $_GET['id'];
+
+       if ($id== ""||$target== ""||$place== "")
+       {
+         show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+       }
 ?>
     <div id='main-layer'>
       <br/>
