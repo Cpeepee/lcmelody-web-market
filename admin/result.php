@@ -1,6 +1,4 @@
 <?php
-require ('./includes/the-security.php');
-
 $mode = $_GET['mode'];
 $text = $_GET['text'];
 $button = $_GET['button'];
@@ -65,9 +63,9 @@ switch ($mode)
         </div>
 
 
-        <h3 id="<?php echo $color_mode;?>">
+        <h1 id="<?php echo $color_mode;?>" class="set-the-font">
           <?php echo $text;?>
-        </h3>
+        </h1>
 
         </script>
         <?php

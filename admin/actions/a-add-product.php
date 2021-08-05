@@ -23,7 +23,7 @@ $pamount = (int)$pamount;
 
  // COMMENT DATA : p_status = pvisible , p_type = ptype (group (dastebandi)) ,p_summary_desc = p techincal
  $thequery = "INSERT INTO t_product (p_title,p_type,p_discount,p_amount,p_priority_TS,p_status,p_brand,p_model,p_price,p_summary_desc,p_description,p_creator_aid)
- VALUES ('$ptitle','$ptype','$pdiscount','$pamount','$ppriority','$pstatus','$pbrand','$pmodel','$pprice','$ptechnical','$pdescriptions','1');";//admin id is deautl to 1
+ VALUES ('$ptitle','$ptype','$pdiscount','$pamount','$ppriority','$pstatus','$pbrand','$pmodel','$pprice','$ptechnical','$pdescriptions','$_SESSION["s_admin_id"]');";//admin id is deautl to 1
 
  if ($conn->query($thequery) === FALSE)
  {

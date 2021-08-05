@@ -23,7 +23,7 @@
           }
 
           $id = (int)$id;
-          
+
           ?>
           <div id="base-ticket">
           <?php

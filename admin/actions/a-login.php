@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-$adminUrlAddress ="http://localhost/lc/admin/"; //=== this code is also in header and the-security
-
 
 //connection to database === this code is also in actions/header
 $servername = "localhost";
@@ -68,7 +66,7 @@ else
   {
     $_SESSION["s_admin_id"] = $ad_id;
     $_SESSION["state_login"] = true;
-    $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
+    $_SESSION["user_type"] = "3e64Bli1LebFB13a7e240de6b54IR44c4413161400";
     ?><script> window.location= "../index.php";</script><?php
   }
   else
@@ -107,7 +105,7 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
     {
       ?>
         <script>
-            window.open('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.open('../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
       <?php
     }
@@ -115,7 +113,7 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
     {
     ?>
         <script>
-            window.location=('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.location=('../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
      <?php
     }

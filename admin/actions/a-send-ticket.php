@@ -13,7 +13,7 @@ if ($message_response== "" ||$ticket_id== "")
 
 
  $thequery = "INSERT INTO t_ticket_admin_message (tm_t_id,tm_a_id,tm_message_text)
- VALUES ('$ticket_id','1','$message_response');"; // admin id must use here but i wrote that to deafult 0
+ VALUES ('$ticket_id','$_SESSION["s_admin_id"]','$message_response');"; // admin id must use here but i wrote that to deafult 0
  if ($conn->query($thequery) === FALSE)
  {
    $te = convert_error_2str($conn->error);

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$adminUrlAddress ="http://localhost/lc/admin/"; //this code is also in the-secruty and a-login
+$adminUrlAddress ="http://localhost/lc/admin/"; //this code is also in the-secruty
 // $_SESSION["s_admin_id"] = $admininfo['id'];
 // $_SESSION["state_login"] = true;
 // $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
