@@ -53,6 +53,10 @@ $place = (int)$place;
                   }
                   $fileNameLen = strlen($path);
                   $fileUploadedType = substr($path,$fileNameLen - 4);
+                  if($fileUploadedType != ".jpg")
+                  {
+                    show_result("error","فرمت تصویر باید .جی پی جی باشد","","","Lc Melody","current");
+                  }
                   rename($path,$directory.$id."-".$placeChar.$fileUploadedType);
                   show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
 
@@ -104,6 +108,10 @@ $place = (int)$place;
                 {
                   $fileNameLen = strlen($path);
                   $fileUploadedType = substr($path,$fileNameLen - 4);
+                  if($fileUploadedType != ".jpg")
+                  {
+                    show_result("error","فرمت تصویر باید .جی پی جی باشد","","","Lc Melody","current");
+                  }
                   rename($path,$directory.$id."-".$placeChar.$fileUploadedType);
                   show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
                 }
