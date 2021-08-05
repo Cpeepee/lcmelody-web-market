@@ -14,7 +14,7 @@
 
             <div class="upload-image-input-styles">
               <h2 class="upload-banner-label-style">انتخاب تصویر بنر بالا</h2>
-              <button type="button"  id="top-banner-upload" onclick="window.open('upload-file.php?target=b');">browse</button>
+              <button type="button"  id="top-banner-upload" onclick="window.open('upload-file.php?target=b&id=0&place=0');">browse</button>
             </div>
         </section>
 

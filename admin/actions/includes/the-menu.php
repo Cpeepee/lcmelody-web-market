@@ -27,7 +27,7 @@
 
   <!------------------------------------------------------->
 
-  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('../search-customer.php');">
+  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location=('../search-comment.php');">
     <h2>نظر ها</h2>
   </div>
 

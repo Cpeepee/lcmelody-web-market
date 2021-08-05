@@ -53,7 +53,7 @@ CREATE TABLE t_product
     `p_type` VARCHAR (15) NOT NULL DEFAULT('0'),
     `p_price` VARCHAR (10) NOT NULL DEFAULT('1,000'),
     -- `p_pictures` TEXT (500) NOT NULL DEFAULT('0'),
-    `p_creator_aid` INT (1) NOT NULL DEFAULT('1'),
+    `p_creator_aid` INT (1) NOT NULL,
     `p_amount` INT (3) NOT NULL DEFAULT('0'),
     `p_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`p_id`),

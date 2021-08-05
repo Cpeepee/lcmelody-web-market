@@ -104,7 +104,7 @@ $place = (int)$place;
                 {
                   $fileNameLen = strlen($path);
                   $fileUploadedType = substr($path,$fileNameLen - 4);
-                  rename($path,$directory.$id."-".$placeChar);
+                  rename($path,$directory.$id."-".$placeChar.$fileUploadedType);
                   show_result("success","تصویر با موفقیت بارگذاری شد","","","Lc Melody","current");
                 }
 

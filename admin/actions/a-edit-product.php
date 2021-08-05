@@ -5,15 +5,16 @@ $ptitle = $_POST['ptitle'];
 $pgroup = $_POST['pgroup'];
 $pdiscount = $_POST['pdiscount'];
 $pamount = $_POST['pamount'];
-$pprioirty = $_POST['ppriority'];
+$ppriority = $_POST['ppriority'];
 $pvisible = $_POST['pvisible'];
 $pbrand = $_POST['pbrandd'];
 $pmodel = $_POST['pmodel'];
 $pprice = $_POST['pprice'];
-$ptechincal = $_POST['ptechincal'];
+$ptechnical = $_POST['ptechincal'];
 $pdescription = $_POST['pdescription'];
 
-if ($id=="" || $ptitle == "" || $pgroup == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pvisible == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescriptions== "")
+
+if ($id=="" || $ptitle == "" || $pgroup == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pvisible == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescription == "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
@@ -23,9 +24,11 @@ if ($id=="" || $ptitle == "" || $pgroup == "" || $pdiscount == "" || $pamount ==
 
 
 $id = (int)$id;
+$ppriority = (int)$ppriority;
+$pvisible = (int)$pvisible;
 
  $thequery = "UPDATE t_product SET `p_title` = '$ptitle',`p_type`= '$pgroup',
- `p_discount`= '$pdiscount',`p_amount`= '$pamount',`p_priority_TS`= '$pprioirty',`p_status`= '$pvisible' ,
+ `p_discount`= '$pdiscount',`p_amount`= '$pamount',`p_priority_TS`= '$ppriority',`p_status`= '$pvisible' ,
  `p_brand` = '$pbrand',`p_model` = '$pmodel',`p_price` = '$pprice', `p_summary_desc` = '$ptechincal',
  `p_description` = '$pdescription'  WHERE `p_id`='$id';";
 

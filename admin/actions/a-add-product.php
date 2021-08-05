@@ -11,18 +11,7 @@ $pmodel = $_POST['p-model'];
 $pprice = $_POST['p-price'];
 $ptechnical = $_POST['p-technical'];
 $pdescriptions = $_POST['p-description'];
-?>
-<script>alert("title:<?php echo $ptitle;?>");</script>
-<script>alert("type<?php echo $ptype;?>");</script>
-<script>alert("disc<?php echo $pdiscount;?>");</script>
-<script>alert("amo<?php echo $pamount;?>");</script>
-<script>alert("prio<?php echo $ppriority;?>");</script>
-<script>alert("sta<?php echo $pstatus;?>");</script>
-<script>alert("bra<?php echo $pbrand;?>");</script>
-<script>alert("mod<?php echo $pmodel;?>");</script>
-<script>alert("tec<?php echo $ptechnical;?>");</script>
-<script>alert("des<?php echo $pdescriptions;?>");</script>
-<?php
+
 if ($ptitle == "" || $ptype == "" || $pdiscount == "" || $pamount == "" || $ppriority == "" || $pstatus == "" || $pbrand == "" || $pmodel == "" || $pprice == "" || $ptechnical == "" || $pdescriptions== "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
