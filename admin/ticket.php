@@ -53,7 +53,7 @@
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
-                      <option value="0" selected>بسته شده</option>
+                      <option value="4" selected>بسته شده</option>
                     </select>
                     <?php
                 }break;
@@ -65,7 +65,7 @@
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2">درحال رسیدگی</option>
                       <option value="1" selected>پاسخ داده شده</option>
-                      <option value="0">بسته شده</option>
+                      <option value="4">بسته شده</option>
                     </select>
                     <?php
                 }break;
@@ -77,7 +77,7 @@
                       <option value="3">در انتظار پاسخ</option>
                       <option value="2" selected>درحال رسیدگی</option>
                       <option value="1">پاسخ داده شده</option>
-                      <option value="0">بسته شده</option>
+                      <option value="4">بسته شده</option>
                     </select>
                     <?php
                 }break;
@@ -89,7 +89,7 @@
                     <option value="3" selected>در انتظار پاسخ</option>
                     <option value="2">درحال رسیدگی</option>
                     <option value="1">پاسخ داده شده</option>
-                    <option value="0">بسته شده</option>
+                    <option value="4">بسته شده</option>
                   </select>
                   <?php
 
@@ -140,16 +140,31 @@
                 }
                 ?>
                   <h2 class="message-text-style"><?php echo $row['tm_message_text']?></h2>
-                  <h2 class="message-appendix-title">ضمیمه ها</h2>
+
                   <?php
 
 
                     //appendixes divider is '~' or tilda
                     $appendixes_main = strtolower($row['tm_appendixes']);
-                    for ($i=1; $i <= substr_count($appendixes_main,"~") ; $i++)
+                    if($appendixes_main == "" || $appendixes_main == "0" || $appendixes_main == " " || $appendixes_main == 0)
+                    {
+                      ?>
+                      <!-- <h2 class="message-appendix-title"></h2> -->
+                      <?php
+                    }
+                    else
+                    {
+                      ?>
+                      <h2 class="message-appendix-title">ضمیمه ها</h2>
+                      <?php
+                    }
+
+                    $appendixes_round = substr_count($appendixes_main,"~");
+                    for ($i=1; $i <= $appendixes_round ; $i++)
                     {
                       $pos_backslash = strpos($appendixes_main,"~");
                       $cuted_appendix = substr($appendixes_main,0,$pos_backslash+1);
+                      $cuted_appendix = str_replace('~','',$cuted_appendix);
                       ?>
                           <h4 class="message-appendixes-style cursor-pointer" onclick="window.open('../assets/appendixes/<?php echo $cuted_appendix;?>');">ضمیمه <?php echo $i;?></h4>
                       <?php
@@ -212,9 +227,11 @@
              {
                 if(this.responseText == "success")
                 {
+                  if(status_value==0)
+                    status_value=4;
                     switch (parseInt(status_value))
                     {
-                      case 0:
+                      case 4:
                           document.getElementById("ticket-status").className = 'bg-closed';
                         break;
                       case 1:
@@ -230,12 +247,14 @@
                         break;
                     }
                 }
-                else
-                {
-                    alert("وضعیت تیکت ویرایش نشد");
-                }
+                // else
+                // {
+                    // alert("وضعیت تیکت ویرایش نشد");
+                // }
              }
           };
+          if(status_value==4)
+            status_value=0;
           xhttp.open("GET", "./actions/a-change-status-ticket.php?id=<?php echo $id;?>&status="+status_value, true);
           xhttp.send();
     }

@@ -1,4 +1,0 @@
-add product image exist file check namishe
-delete tm message from customer if customer deleted
-update status ticket not work but i fixde mayber work
-appendix not show!

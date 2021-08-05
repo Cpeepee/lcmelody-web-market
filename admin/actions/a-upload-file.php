@@ -196,7 +196,14 @@ $place = (int)$place;
 
 
                   //append to appendix
-                  $thequery = "UPDATE t_ticket_admin_message SET `tm_appendixes` = '$appendixes_old~$newUniName$fileUploadedType~' WHERE `tm_id`='$id';";
+                  if($appendixes_old=="0" || $appendixes_old==""|| $appendixes_old ==" ")
+                  {
+                    $thequery = "UPDATE t_ticket_admin_message SET `tm_appendixes` = '$newUniName$fileUploadedType~' WHERE `tm_id`='$id';";
+                  }
+                  else
+                  {
+                    $thequery = "UPDATE t_ticket_admin_message SET `tm_appendixes` = '$appendixes_old$newUniName$fileUploadedType~' WHERE `tm_id`='$id';";
+                  }
                   if ($conn->query($thequery) === FALSE)
                   {
                     $te = convert_error_2str($conn->error);

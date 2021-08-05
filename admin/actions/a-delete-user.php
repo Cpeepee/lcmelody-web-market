@@ -28,16 +28,24 @@ $id = (int)$id;
   else
   {
     $delete_customer = "DELETE FROM t_customer WHERE `c_id`='$id';";
-    if ($conn->query($delete_customer) === TRUE)
+    if ($conn->query($delete_customer) === FALSE)
+    {
+      $te = convert_error_2str($conn->error);
+      show_result("error","مشتری حذف نشد <br/>.$te","","","Lc Melody","current");
+    }
+
+
+    $delete_ticket_customer_with_passive_id_dependency = "DELETE FROM t_ticket WHERE `t_email`='$id';";
+    if ($conn->query($delete_ticket_customer_with_passive_id_dependency) === TRUE)
     {
       show_result("success","مشتری با موفقیت حذف شد","","","Lc Melody","current");
-
     }
     else
     {
       $te = convert_error_2str($conn->error);
       show_result("error","مشتری حذف نشد <br/>.$te","","","Lc Melody","current");
     }
+
   }
 
 require "./includes/footer.php";?>

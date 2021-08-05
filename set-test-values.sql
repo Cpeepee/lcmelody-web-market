@@ -18,11 +18,11 @@ DROP TABLE t_ticket;
 
 
 INSERT INTO t_admin (`a_id`,`a_email`,`a_attempts_TL`,`a_first_pass`,`a_second_pass`,`a_third_pass`)
-  VALUES ('1','ad','0','7215ee9c7d9dc229d2921a40e899ec5f','7215ee9c7d9dc229d2921a40e899ec5f','7215ee9c7d9dc229d2921a40e899ec5f');
+  VALUES ('1','ad','0','1','1','1');
 
 
   INSERT INTO t_admin (`a_id`,`a_email`,`a_attempts_TL`,`a_first_pass`,`a_second_pass`,`a_third_pass`)
-    VALUES ('2','ad','0','7215ee9c7d9dc229d2921a40e899ec5f','7215ee9c7d9dc229d2921a40e899ec5f','7215ee9c7d9dc229d2921a40e899ec5f');
+    VALUES ('2','ad','0','1','1','1');
 
 
 INSERT INTO t_customer (`c_id`,`c_FL_name`,`c_password`,`c_email`,`c_attempts_TL`,`c_address`,`c_phonenumer`)

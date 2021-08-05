@@ -24,9 +24,9 @@ $password3 = $_POST['password-c'];
 $email = strtolower($email);
 
 
-$password1 = md5($password1);
-$password2 = md5($password2);
-$password3 = md5($password3);
+// $password1 = md5($password1);
+// $password2 = md5($password2);
+// $password3 = md5($password3);
 
 
 if ($email== "" ||$password1== "" ||$password2== "" ||$password3== "")

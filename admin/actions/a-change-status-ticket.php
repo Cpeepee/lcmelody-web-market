@@ -15,9 +15,9 @@ if ($id== "" ||$tstatus== "")
  {
     echo "success";
  }
- else
- {
-   echo "خطا در تغییر وضعیت تیکت";
- }
+ // else
+ // {
+   // echo "خطا در تغییر وضعیت تیکت";
+ // }
 
 require "./includes/footer.php";?>
