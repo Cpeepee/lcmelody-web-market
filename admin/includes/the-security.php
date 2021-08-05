@@ -13,7 +13,7 @@ if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a
 }
 else
 {
-  ?><script> window.location = "<?php echo $adminUrlAddress;?>login.php"; </script><?php
+  ?><script> window.location = "http://localhost/lc/admin/login.php"; </script><?php
 }
 
 function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")

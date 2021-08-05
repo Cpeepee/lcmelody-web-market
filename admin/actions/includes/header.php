@@ -4,6 +4,15 @@ session_start();
 // $_SESSION["state_login"] = true;
 // $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
 
+//database host info
+/*
+$username = "seniorad_lc3";
+$password = "Mx6pUGixG9Ytw6Z";
+$dbname = "seniorad_lc3";
+
+*/
+
+
 if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a7e240de6b54IR44c4413161400")
 {
   if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
@@ -25,7 +34,7 @@ if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a
 }
 else
 {
-  ?><script> window.location = "<?php echo $adminUrlAddress;?>login.php"; </script><?php
+  ?><script> window.location = "http://localhost/lc/admin/login.php"; </script><?php
 }
 
 
