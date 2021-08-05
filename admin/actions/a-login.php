@@ -1,7 +1,10 @@
 <?php
 session_start();
-echo "hi";
-//connection to database
+
+$adminUrlAddress ="http://localhost/lc/admin/"; //=== this code is also in header and the-security
+
+
+//connection to database === this code is also in actions/header
 $servername = "localhost";
 $username = "me";
 $password = "amx";
@@ -41,7 +44,12 @@ if ($result_search->num_rows > 0)
 {
   while($row = $result_search->fetch_assoc())
   {
-      $admininfo = array("id"=>"$row['a_id']","attempts"=>"$row['a_attempts_TL']", "pass1"=>"$row['a_first_pass']", "pass2"=>"$row['a_second_pass']", "pass3"=>"$row['a_third_pass']");
+    $ad_id = $row['a_id'];
+    $ad_email = $row['a_email'];
+    $ad_attempts = $row['a_attempts_TL'];
+    $ad_pass1 = $row['a_first_pass'];
+    $ad_pass2 = $row['a_second_pass'];
+    $ad_pass3 = $row['a_third_pass'];
   }
 }
 else
@@ -50,15 +58,15 @@ else
   show_result("error","خطا در ورود <br/>.$te","","","Lc Melody","current");
 }
 
-$admininfo['attempts'] = (int)$admininfo['attempts'];
-if($admininfo['attempts'] >= 5 || $admininfo['attempts'] == "5")
+$ad_attempts = (int)$ad_attempts;
+if($ad_attempts >= 5)
   show_result("error","این حساب مسدود شده است","","","Lc Melody","current");
 else
 {
   //check login information
-  if($password1 == $admininfo['pass1'] && $password2 == $admininfo['pass2'] && $password3 == $admininfo['pass3'])
+  if($password1 == $ad_pass1 && $password2 == $ad_pass2 && $password3 == $ad_pass3)
   {
-    $_SESSION["s_admin_id"] = $admininfo['id'];
+    $_SESSION["s_admin_id"] = $ad_id;
     $_SESSION["state_login"] = true;
     $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
     ?><script> window.location= "../index.php";</script><?php
@@ -66,8 +74,8 @@ else
   else
   {
     //login failed
-    $admininfo['attempts']++;
-    $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$admininfo['attempts']' WHERE `a_email`='$email';";
+    $ad_attempts++;
+    $thequery = "UPDATE t_admin SET `a_attempts_TL`= '$ad_attempts' WHERE `a_email`='$email';";
     if ($conn->query($thequery) === TRUE)
           show_result("error","پست الکترونیکی یا کلمه عبور نامعتبر است","","","Lc Melody","current");
     else
@@ -99,7 +107,7 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
     {
       ?>
         <script>
-            window.open('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.open('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
       <?php
     }
@@ -107,7 +115,7 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
     {
     ?>
         <script>
-            window.location=('http://localhost/lc/admin/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            window.location=('<?php echo $adminUrlAddress;?>result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
         </script>
      <?php
     }

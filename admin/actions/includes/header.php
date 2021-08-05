@@ -1,12 +1,11 @@
 <?php
 session_start();
-$adminUrlAddress ="http://localhost/lc/admin/";
+$adminUrlAddress ="http://localhost/lc/admin/"; //this code is also in the-secruty and a-login
 // $_SESSION["s_admin_id"] = $admininfo['id'];
 // $_SESSION["state_login"] = true;
 // $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
 
-
-if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bi1LebFB13a7e240de6b54IR44c4413161400")
+if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a7e240de6b54IR44c4413161400")
 {
   if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
   {
@@ -60,43 +59,5 @@ function convert_error_2str($text="") //sql errors've some special charecters ca
   $text2 = str_replace( array( '\'', '"', '\"' , '\`' , ',' , ';', '<', '>' ), '', $text);
   return $text2;
 }
-
-
-// function divide_money($value)
-// {
-//   $result;
-//   $len = strlen($value);
-//   if($len == 3 || $len == 6 || $len ==9)
-//     $len--;
-//   for($a=0;$a<=;$a++)
-//   {
-//     $result = substr($value,6);
-//
-//
-//
-//
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

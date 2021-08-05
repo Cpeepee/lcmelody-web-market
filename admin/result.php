@@ -1,4 +1,6 @@
 <?php
+require ('./includes/the-security.php');
+
 $mode = $_GET['mode'];
 $text = $_GET['text'];
 $button = $_GET['button'];
