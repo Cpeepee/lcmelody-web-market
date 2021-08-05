@@ -179,42 +179,23 @@
                                       else
                                       {
                                         $te = convert_error_2str($conn->error);
-                                        show_result("error","Order (id=$id) have not items error: $te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                                        show_result("error","خطا محصولی در این سفارش یافت نشد <br/>.$te","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
                                       }
-
 
                                       //count total cost
                                       $total_order_cost=0;
-                                      array_map(function ($o_price,$o_discount,$o_amounts)
+                                      $total_order_cost=array_map(function ($o_price,$o_discount,$o_amounts)
                                       {
-
                                           $total = $o_price - $o_discount;
-                                          $total_order_cost = $total*$o_amounts;
-                                          ?>
-                                            <!-- <script>
-                                            console.log("o_price="+<?php echo $o_price;?>);
-                                            console.log("$o_discount="+<?php echo $o_discount;?>);
-                                            console.log("$o_amounts="+<?php echo $o_amounts;?>);
-                                            console.log("$total_order_cost="+<?php echo $total_order_cost;?>);
-                                            console.log("--------------");
-                                            </script> -->
-                                          <?php
+                                          $GLOBALS['$total_order_cost'] += $total*$o_amounts;
                                       }, $o_price,$o_discount,$o_amounts);
-
-                                      // $total_order_cost += $o_post_price;
-                                      ?>
-                                        <script>
-                                        // console.log("------============--------");
-                                        // console.log("$total_order_cost="+<?php echo $total_order_cost;?>);
-                                        // console.log("------============--------");
-                                        </script>
-                                      <?php
+                                      $cost_tol = $GLOBALS['$total_order_cost'] + str_replace(",","",$o_post_price);
                                       ?>
 
 
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">مبلغ کل سفارش</h2>
-                        <input id="order-total-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $total_order_cost;?>" readonly>
+                        <input id="order-total-price" class="inputs-style inputs-small-style dirltr" type="text" value="<?php echo $cost_tol;?>" readonly>
                       </div>
 
                     </section>
