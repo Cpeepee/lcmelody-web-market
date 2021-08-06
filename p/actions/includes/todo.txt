@@ -9,7 +9,7 @@ my-orders
 icon slider product.php
 banner top image
 add default.jpg to p-images
-
+add product to cart list
 
 
 
