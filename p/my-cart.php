@@ -54,8 +54,7 @@
             {
               while($row = $result_fetch_cartlist->fetch_assoc())
               {
-                     $cProductId = $row['cl_p_id'];
-                     $cAmount = $row['cl_p_amount'];
+                     fetch_product_information($row['cl_p_id'],$row['cl_p_amount']);
               }
             }
             else

@@ -74,7 +74,7 @@ session_start();
         <h4 id="contact-us" class="bottom-menu-style unselectable cursor-pointer" onclick="window.location.href='send-ticket.php'">تماس با ما</h4>
     </div>
 
-    <script>
+    <!-- <script>
       // Scroll to Sticky Menu
       window.onscroll = function() {scroll_to_sticky_menu()};
       var mainmanu = document.getElementById("main-menu");
@@ -86,5 +86,5 @@ session_start();
         else
             mainmanu.classList.remove("sticky");
       }
-    </script>
+    </script> -->
 </div>

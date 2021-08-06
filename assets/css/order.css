@@ -8,3 +8,90 @@
   width:75%;height:auto;display:block;
   overflow:hidden;margin-left:40px;margin-top:15px;
 }
+
+#order-details
+{
+  width:100%;height:150px;border-bottom:1px solid gray;
+}
+
+#right-order-detail-sub
+{
+  float:right;margin-right:3%;width:47%;height:auto;
+}
+
+#left-order-detail-sub
+{
+    width:47%;height:auto;float:left;text-align:left;margin-left:3%;
+}
+
+#base-products
+{
+  width:100%;height:auto;
+}
+
+.base-product-list
+{
+  width:90%;height:150px;margin:5px auto;display:block;border-bottom:1px solid gray;
+}
+
+.right-side-product-list
+{
+  width:73%;height:100%;float:right;
+}
+
+
+.product-picture-style
+{
+  width:120px;height:120px;border-radius:10px;float:right;margin:15px 1.50% 2% 0%;
+}
+
+
+.img-style-pro
+{
+  width:100%;height:100%;z-index:0;
+}
+
+
+.product-amount-style
+{
+  color:red;z-index:20px;position:absolute;margin-top:-30px;margin-right:95px;
+}
+
+
+.title-product
+{
+  width:69%;float:right;margin-right:10px;word-wrap: break-word;text-align:right;
+}
+
+
+.left-side-product-list
+{
+  width:27%;height:100%;float:left;
+}
+
+.product-amount-price-discount-style
+{
+  width:100%;height:auto;float:left;text-align:left;margin-left:10px;
+}
+
+
+#buttons-base
+{
+  width:90%;height:50px;margin:30px auto;
+}
+
+#button-cancel-on-awaiting-payment
+{
+  float:left;width:25%;height:100%;text-align:center;border:1px solid red;color:red;border-radius:5px;
+}
+
+
+#button-pay-on-awaiting-payment
+{
+  float:right;width:25%;height:100%;text-align:center;border:1px solid green;color:green;border-radius:5px;
+}
+
+.text-button-cancel-pay-style
+{
+  margin-top:10px;
+}
