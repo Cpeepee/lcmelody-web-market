@@ -36,6 +36,9 @@
 
           }
         }
+        else
+            show_result("error","failed to load product information","","","Lc Melody","current");
+
 
         //fetch comments
 
@@ -127,7 +130,7 @@
             </div>
             <div id="section-b-product-details">
                 <center>
-                  <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="--------------------------------------------">
+                  <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-add-product-to-cartlist.php?id=<?php echo $proId;?>')">
                     <h2 id="button-add-to-my-cartlist" class="set-the-font">افزودن به سبد خرید</h2>
                   </div>
                 </center>
@@ -185,32 +188,47 @@
         <div id="product-comments-box" class="product-introduction-box">
               <h1 class="set-the-font">نظر خریداران این محصول</h1>
 
-              <div class="set-two-fon comment-text-style comment-status-good">
-                  <h2>
-                      این محصول خیلی خوبه
-                      این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه
-                   </h2>
-                   <div class="set-the-font date-comment"><span>۱۵</span> <span>فروردین</span> <span>۱۴۰۰</span></div>
-              </div>
-              <br/>
+              <?php
+              //fetch verfied comments sorted by date;
+              $fetch_verfied_comments = "SELECT cv_text,cv_date FROM t_comment_verified WHERE `cv_p_id`='$proId' ORDER BY cv_date DESC;";
+              $result_v_comments = $conn->query($fetch_verfied_comments);
+              if ($result_v_comments->num_rows > 0)
+              {
+                while($row = $result_v_comments->fetch_assoc())
+                {
+                  ?>
+                      <div class="set-two-font comment-text-style comment-status-bad">
+                          <h2><?php echo $row['cv_text'];?></h2>
+                           <div class="set-the-font date-comment"><span><?php echo $row['cv_date'];?></span></div>
+                      </div>
+                      <br/>
+                  <?php
+                }
+              }
 
-              <div class="set-two-font comment-text-style comment-status-bad">
-                  <h2>
-                      این محصول خیلی خوبه
-                      این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه  این محصول خیلی خوبه
-                   </h2>
-                   <div class="set-the-font date-comment"><span>۱۵</span> <span>فروردین</span> <span>۱۴۰۰</span></div>
-              </div>
-              <br/>
+
+              ?>
+
+
+
+
+
+
 
               <div id="write-your-comment" class="set-two-font def-border">
                    <h2>تجربه خرید این محصول را به اشتراک بزار</h2>
-                   <center><textarea id="customer-comment-text" name="name" rows="8" cols="80" dir="rtl"></textarea></center>
-                   <div id="limited-chars-hint" class="set-the-font"><span>کارکتر های مجاز</span> <span>۱۲۰</span>/<span>۱</span></div>
-                   <center>
-                     <div id="base-button-add-my-comment" class="cursor-pointer unselectable">
-                       <h3 id="button-add-my-comment" class="set-the-font">ثبت نظر</h3>
-                     </div>
+                   <form action="./actions/a-send-comment-for-product.php" method="post">
+                     <input type="hidden" name="pid" value="<?php echo $proId;?>">
+                     <center><textarea id="customer-comment-text" name="commentText" rows="8" cols="80" dir="rtl"></textarea></center>
+                     <div id="limited-chars-hint" class="set-the-font">
+                        <!-- <span>کارکتر های مجاز</span> <span>۱۲۰</span>/<span>۱</span> -->
+                      </div>
+                      <center>
+                     <!-- <div >
+                       <h3 id="button-add-my-comment">
+                     </div> -->
+                     <input id="base-button-add-my-comment" class="cursor-pointer unselectable set-the-font" type="submit" value="ثبت نظر">
+                   </form>
                    </center>
               </div>
               <br/>
