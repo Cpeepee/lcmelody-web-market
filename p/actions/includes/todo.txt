@@ -6,10 +6,9 @@ validation inputs
 index-
 login
 my-orders
-
-check all codes
-fix all documents and admin algorightms
-
+icon slider product.php
+banner top image
+add default.jpg to p-images
 
 
 
