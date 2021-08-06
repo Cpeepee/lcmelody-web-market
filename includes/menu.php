@@ -1,33 +1,7 @@
 <?php
 
 session_start();
-  if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
-  {
-    if(isset($_SESSION["s_customer_id"]))
-    {
-      $servername = "localhost";
-      $username = "me";
-      $password = "amx";
-      $dbname = "lc3";
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      if ($conn->connect_error)
-      {
-        show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
-      }
-      $customerSessionId =  $_SESSION['s_customer_id'];
-      $customerCartList = "SELECT COUNT(cl_c_id) AS cartlistNumber FROM t_cart_list WHERE `cl_c_id`='$customerSessionId';";
-      $result_searchCartList = $conn->query($customerCartList);
-      if ($result_searchCartList->num_rows > 0)
-      {
-        while($row = $result_searchCartList->fetch_assoc())
-        {
-            $count_cartlist = $row['cartlistNumber'];
-        }
-      }
-      else
-        show_result("error","error while loading cartlist items","","","Lc Melody","current");
-    }
-  }
+
 ?>
 
 
@@ -52,9 +26,39 @@ session_start();
 
         <div id="order-box" class="unselectable cursor-pointer" onclick="window.location.href='my-cart.php'">
             <center><img id="order-icon" src="../assets/img/icons/shoppingcart-50.png" alt="shopping-cart"/></center>
-            <div id="order-counter-box">
-                <center><p id="order-count-text" class="set-the-font"><?php echo $count_cartlist;?></p></center>
-            </div>
+              <?php
+              if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+              {
+                if(isset($_SESSION["s_customer_id"]))
+                {
+                  $servername = "localhost";
+                  $username = "me";
+                  $password = "amx";
+                  $dbname = "lc3";
+                  $conn = new mysqli($servername, $username, $password, $dbname);
+                  if ($conn->connect_error)
+                  {
+                    show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
+                  }
+                  $customerSessionId =  $_SESSION['s_customer_id'];
+                  $customerCartList = "SELECT COUNT(cl_c_id) AS cartlistNumber FROM t_cart_list WHERE `cl_c_id`='$customerSessionId';";
+                  $result_searchCartList = $conn->query($customerCartList);
+                  if ($result_searchCartList->num_rows > 0)
+                  {
+                    while($row = $result_searchCartList->fetch_assoc())
+                    {
+                        ?>
+                        <div id="order-counter-box">
+                          <center><p id="order-count-text" class="set-the-font"><?php echo $row['cartlistNumber'];?></p></center>
+                        </div>
+                        <?php
+                    }
+                  }
+                  else
+                    show_result("error","error while loading cartlist items","","","Lc Melody","current");
+                }
+              }
+              ?>
         </div>
 
         <div id="account-box" class="unselectable cursor-pointer"  onclick="window.location.href='client-area.php'">

@@ -3,6 +3,8 @@ check inputs post and get for stop sql injection
 titles forms
 messages to persian
 validation inputs
+index-
+login
 
 check all codes
 fix all documents and admin algorightms
