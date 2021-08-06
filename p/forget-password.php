@@ -7,14 +7,15 @@
       <center>
           <img src='../assets/img/banner/logo.png' alt='logo'/>
           <h1 class='set-the-font'>فراموشی کلمه عبور</h1>
-
+          <form action="./actions/a-forget-password.php" method="post">
             <h3 class='set-the-font'>آدرس پست الکترونیکی خود را وارد کنید</h3>
-            <input id='email' class='text-inputs' type="text" name="nameAndFamily" placeholder="abc@gmail.com" autofocus dir='ltr'>
+            <input id='email' class='text-inputs' type="text" name="email" placeholder="me@example.com" autofocus dir='ltr'>
 
 
             <br/><br/>
 
-            <input class='buttons set-the-font' type="button" name="login" value="بازیابی کلمه عبور" onclick=''>
+            <input class='buttons set-the-font' type="submit" name="login" value="بازیابی کلمه عبور">
+          </form>
         </center>
     </div>
   </body>

@@ -1,4 +1,5 @@
 <?php
+require './validation.php';
 // session_start();
 //
 // if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a7e240de6b54IR44c4413161400")
@@ -14,8 +15,7 @@
       $conn = new mysqli($servername, $username, $password, $dbname);
       if ($conn->connect_error)
       {
-        $te = convert_error_2str($conn->connect_error);
-        show_result("error","خطا در ارتباط با پایگاه داده <br/>.$te","","","Database Error","current");
+        show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
       }
 //     }
 //   }
@@ -25,6 +25,7 @@
 //   ><script> window.location = "http://localhost/lc/admin/login.php"; </script><php
 // }
 
+$customerSessionId =  $_SESSION['s_customer_id'];
 
 function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
 {
@@ -44,7 +45,6 @@ function show_result($mode="error",$text="result text",$button="",$target="",$ti
         </script>
      <?php
     }
-
 }
 
 

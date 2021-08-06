@@ -14,9 +14,6 @@
             <h3 class='set-the-font'>شماره موبایل خود را وارد کنید</h3>
             <input id='password' class='text-inputs' type="text" name="phoneNumber" placeholder="09170000000">
 
-            <h3 class='set-the-font'>enter ur email</h3>
-            <input id='password' class='text-inputs' type="text" name="email" placeholder="me@example.com">
-
             <br/><br/>
 
             <input class='buttons set-the-font' type="submit" name="login" value="بازیابی پست الکترونیک">
