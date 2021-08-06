@@ -8,6 +8,7 @@
           <img src='../../assets/img/banner/logo.png' alt='logo'  onclick="window.location.href='../'"/>
           <h1 class='set-the-font'>ورود به حساب</h1>
 
+          <form action="../actions/a-login.php" method="post">
             <h3 class='set-the-font'>پست الکترونیک خود را وارد کنید</h3>
             <input id='email' class='text-inputs' type="text" name="email" placeholder="the@example.com" autofocus dir="ltr">
 
@@ -16,7 +17,8 @@
 
             <br/><br/>
 
-            <input class='buttons set-the-font' type="button" name="login" value="ورود"   onclick="window.location.href=''">
+            <input class='buttons set-the-font' type="submit" name="login" value="ورود">
+          </form>
               <br/>
             <input class='buttons set-the-font' type="button" name="forgetpass" value="پست الکترونیک را فراموش کردم" onclick="window.location.href='../forget-email/'">
               <br/>

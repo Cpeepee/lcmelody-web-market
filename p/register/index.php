@@ -7,7 +7,7 @@
       <center>
           <img src='../../assets/img/banner/logo.png' alt='logo'/>
           <h1 class='set-the-font'>ورود به حساب</h1>
-
+          <form action="../actions/a-register.php" method="post">
             <h3 class='set-the-font lessSpaceWithBotton' style='margin-right: -285px;'>نام و نام خانوادگی</h3>
             <input id='nameAndFamily' class='text-inputs' type="text" name="nameAndFamily" placeholder="محمد محمدی" autofocus autocomplete="off" dir="rtl">
 
@@ -39,7 +39,8 @@
 
             <br/>
             <br/>
-            <input class='buttons set-the-font' type="button" name="createAccount" value="ایجاد حساب" onclick="">
+            <input class='buttons set-the-font' type="submit" name="createAccount" value="ایجاد حساب">
+          </form>
         </center>
     </div>
   </body>
