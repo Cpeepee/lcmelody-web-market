@@ -7,16 +7,16 @@
       <center>
           <img src='../assets/img/banner/logo.png' alt='logo'/>
           <h1 class='set-the-font'>تغییر کلمه عبور</h1>
-
+          <form action="./actions/a-change-password.php" method="post">
             <h3 class='set-the-font'>کلمه عبور جدید را وارد کنید</h3>
             <input id='password' class='text-inputs' type="password" name="password" placeholder="abc@gmail.com" autofocus dir='ltr'>
 
             <h3 class='set-the-font'>تکرار کلمه عبور جدید را وارد کنید</h3>
             <input id='repassword' class='text-inputs' type="password" name="repassword" placeholder="abc@gmail.com" autofocus dir='ltr'>
-
             <br/><br/>
 
-            <input class='buttons set-the-font' type="button" name="login" value="تغییر کلمه عبور" onclick=''>
+            <input class='buttons set-the-font' type="submit" name="login" value="تغییر کلمه عبور">
+          </form>
         </center>
     </div>
   </body>
