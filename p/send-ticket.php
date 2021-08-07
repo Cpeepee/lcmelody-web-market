@@ -18,6 +18,7 @@
       <div id="base-title-email">
         <div id="title-right" class="style-title-email-sides">
           <h2 class="set-the-font style-label">موضوع</h2>
+    <form action="./actions/a-open-new-ticket.php" method="post">
           <input id="title-ticket" class="input-style def-border set-two-font" type="text" name="title" value="">
         </div>
 
@@ -49,15 +50,17 @@
 
       <div id="base-message">
         <h2 class="set-the-font style-label">متن</h2>
-        <textarea id="text-ticket" class="def-border" name="textticket" rows="5"></textarea>
+        <textarea id="text-ticket" class="def-border" name="textTicket" rows="5"></textarea>
         <p>
       </div>
 
       <div id="base-buttons" class="set-the-font cursor-pointer">
-          <div id="send-button" class="unselectable buttons-style">
-            <h2 class="button-text-style">ارسال</h2>
-          </div>
-          <div id="cancel-button" class="unselectable buttons-style">
+        <input id="send-button" class="unselectable buttons-style button-text-style" type="submit" value="ارسال">
+      </form>
+          <!-- <div > -->
+            <!-- <h2 class="">ارسال</h2> -->
+          <!-- </div> -->
+          <div id="cancel-button" class="unselectable buttons-style" onclick="window.location=('index.php')">
             <h2 class="button-text-style">لغو</h2>
           </div>
       </div>

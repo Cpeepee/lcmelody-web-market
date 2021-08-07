@@ -14,6 +14,7 @@ banner top image
 add default.jpg to p-images
 fav icon
 
+help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
 
 
 ---admin
