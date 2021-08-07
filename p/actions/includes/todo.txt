@@ -8,6 +8,7 @@ login
 my-orders
 center products search.php
 product bug pecent and price without pDiscount
+max length for inputs text
 
 add footers to database connections
 
