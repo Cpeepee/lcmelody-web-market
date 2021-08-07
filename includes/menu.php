@@ -60,8 +60,23 @@ session_start();
               }
               ?>
         </div>
-
-        <div id="account-box" class="unselectable cursor-pointer"  onclick="window.location.href='client-area.php'">
+        <?php
+        if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+        {
+          if(isset($_SESSION["s_customer_id"]))
+          {
+            ?>
+            <div id="account-box" class="unselectable cursor-pointer"  onclick="window.location.href='client-area.php'">
+            <?php
+          }
+        }
+        else
+        {
+          ?>
+          <div id="account-box" class="unselectable cursor-pointer"  onclick="window.location.href='login-register.php'">
+          <?php
+        }
+        ?>
             <h3 id="account-text" class="set-the-font">حساب کاربری</h3>
             <img id="account-icon" src="../assets/img/icons/customer-50.png" alt="customer-icon"/>
         </div>

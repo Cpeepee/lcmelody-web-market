@@ -1,4 +1,3 @@
-<?php require ('../../includes/security.php'); ?>
 <title>فراموشی پست الکترونیک - ال سی ملودی</title>
 <link rel="stylesheet" href="../../assets/css/forget-email.css">
 <?php include ('../../includes/close-head.php');?>

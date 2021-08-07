@@ -1,60 +1,45 @@
-------customer
+CUSTOMER--------------------
 check inputs post and get for stop sql injection
 titles forms
 error/success messages to persian
 validation inputs
-index-
-
+index- and other menu items
 center products search.php
 product bug pecent and price without pDiscount
 max length for inputs text
-
-add footers to database connections
-
+check all forms with bad values
+modify term and rules
+ICONS------------------------
 icon slider product.php
 banner top image
 add default.jpg to p-images
 fav icons
 help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
+log out page and icon
+secqueriies removed chack
 
 
 
 
-
----admin
+ADMIN---------------------------------
 check useless ids and harass id or names from forms
 update status ticket not work when is select 0
 check all codes
 fix all documents and admin algorightms
+update documents
+delete order by admin
+log out page and icon
+price and discounts replace . to , and space to ,
 
 
-
-
-
-
-
-
-
-
-
+place holders for  inputs
 
 
 GOOD AND TRUE VALUES
 ----------------------
-register ok
-login ok
-forget email ok
-change password ok
-forget password ok (but idk email sent or not)
-login-register ok
-my-account ok
-send-ticket (by logged in) ok
-ticket ok
-my-tickets ok
-send comment to product ok
-
 my-cart (post price , total price not load , button submit as order not work) items not show
 my-orders and order (error not load order by function because query is in query)
 upload appendix (ok i guess but need test on server)
 search not work (menu and page)
-product load is realy sick style
+product load is realy sick style pro details (discount and percent) image swipe image not work
+add prodcut price o amount o discount ro vared namikone to order item

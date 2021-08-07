@@ -30,7 +30,7 @@ if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
 
             <input class='buttons set-the-font' type="submit" name="login" value="ورود">
           </form>
-            <input class='buttons set-the-font' type="button" name="forgetpass" value="پست الکترونیک را فراموش کردم" onclick="window.location.href='../forget-email/'">
+            <input class='buttons set-the-font' type="button" name="forgetpass" value="پست الکترونیک را فراموش کردم" onclick="window.location.href='../forget-email/index.php'">
               <br/>
             <input class='buttons set-the-font' type="button" name="forgetmail" value="کلمه عبور را فراموش کردم" onclick="window.location.href='../forget-password.php'">
         </center>

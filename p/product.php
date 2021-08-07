@@ -62,7 +62,7 @@
             <img src="../assets/img/icons/swiper-left;" alt="swiper-left"/>
           </div>
           <center>
-              <img id="main-picture-product" src="../assets/img/p-images/p100.jpg" alt="some"/>
+              <img id="main-picture-product" src="../assets/img/p-images/<?php echo $proId;?>-a.jpg" alt="some"/>
             <div id="small-preview-pictures-of-product-box">
               <br/> <br/> <br/>
               <?php
@@ -186,7 +186,7 @@
                       $value = str_replace([':',';'],"",$value);
                       ?>
                       <div class="tech-info-box def-border">
-                        <p class="set-two-font tech-title"><?php echo $title;?></p>
+                        <p class="set-two-font tech-title"><?php echo $title;?>:</p>
                         <p class="set-two-font tech-sub"><?php echo $value;?></p>
                       </div>
                       <?php

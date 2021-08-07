@@ -1,6 +1,6 @@
 <?php require "./includes/header.php";
 
-$pid = $_POST['id'];
+$pid = $_GET['id'];
 
 if ($pid == "")
 {

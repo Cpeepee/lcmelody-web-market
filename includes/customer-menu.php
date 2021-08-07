@@ -26,6 +26,9 @@ margin-right:10px;width:15%;float:right;color:gray;text-align:center;"
     <h2>اطلاعات حساب</h2>
   </div>
 
+  <div id="CM-button-account" class="CMB-style def-border cursor-pointer" onclick="window.location.href='logout.php'">
+    <h2>خروج از حساب</h2>
+  </div>
   <!------------------------------------------------------->
   <style>
     .CMB-style
