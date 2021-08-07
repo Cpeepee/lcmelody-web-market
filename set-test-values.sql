@@ -37,7 +37,7 @@ INSERT INTO t_customer (`c_id`,`c_FL_name`,`c_password`,`c_email`,`c_attempts_TL
 
 INSERT INTO t_ticket(`t_subject`,`t_email`,`t_main_text`)
   VALUES ('i have problem'
-    ,'email','some thing like text');
+    ,'2','some thing like text');
 
 
     INSERT INTO t_ticket (`t_subject`,`t_email`,`t_main_text`)

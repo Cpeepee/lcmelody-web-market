@@ -60,7 +60,7 @@
           <!-- <div > -->
             <!-- <h2 class="">ارسال</h2> -->
           <!-- </div> -->
-          <div id="cancel-button" class="unselectable buttons-style" onclick="window.location=('index.php')">
+          <div id="cancel-button" class="unselectable buttons-style" onclick="window.location=('client-area.php')">
             <h2 class="button-text-style">لغو</h2>
           </div>
       </div>

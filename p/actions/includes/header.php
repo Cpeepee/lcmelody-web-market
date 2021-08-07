@@ -1,13 +1,13 @@
 <?php
-require './validation.php';
-// session_start();
-//
-// if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "3e64Bli1LebFB13a7e240de6b54IR44c4413161400")
-// {
-//   if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
-//   {
-//     if(isset($_SESSION["s_admin_id"]))
-//     {
+// require './validations.php';
+session_start();
+
+if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "23df93b500cebFB13a7e240dAL1bee805152f918b5")
+{
+  if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+  {
+    if(isset($_SESSION["s_customer_id"]))
+    {
       $servername = "localhost";
       $username = "me";
       $password = "amx";
@@ -17,13 +17,13 @@ require './validation.php';
       {
         show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
       }
-//     }
-//   }
-// }
-// else
-// {
-//   ><script> window.location = "http://localhost/lc/admin/login.php"; </script><php
-// }
+    }
+  }
+}
+else
+{
+  ?><script> window.location = "http://localhost/lc/p/login/index.php"; </script><?php
+}
 
 $customerSessionId =  $_SESSION['s_customer_id'];
 

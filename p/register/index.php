@@ -1,4 +1,15 @@
-<?php require ('../../includes/security.php'); ?>
+<?php
+
+session_start();
+if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+{
+  if(isset($_SESSION["s_customer_id"]))
+  {
+    ?><script> window.location = "../client-area.php"; </script><?php
+  }
+}
+?>
+
 <title>ایجاد حساب - ال سی ملودی</title>
 <link rel="stylesheet" href="../../assets/css/register.css">
 <?php include ('../../includes/close-head.php');?>
@@ -24,10 +35,10 @@
             <input id='address' class='text-inputs' type="text" name="address" placeholder="تهران - خیابان ولیعصر - کوچه ۶ - پلاک ۱۴۵ - کدپستی ۷۴۸۳۲۹۷۴۲" dir='rtl'>
 
             <h3 class='set-the-font lessSpaceWithBotton' style='margin-right: -335px;'>کلمه عبور</h3>
-            <input id='password' class='text-inputs' type="text" name="password" placeholder="*****************" autocomplete="off" dir="ltr">
+            <input id='password' class='text-inputs' type="password" name="password" placeholder="*****************" autocomplete="off" dir="ltr">
 
             <h3 class='set-the-font lessSpaceWithBotton' style='margin-right: -300px;'>تکرار کلمه عبور</h3>
-            <input id='rePassword' class='text-inputs' type="text" name="rePassword" placeholder="*****************" autocomplete="off" dir="ltr">
+            <input id='rePassword' class='text-inputs' type="password" name="rePassword" placeholder="*****************" autocomplete="off" dir="ltr">
 
             <br/>
             <br/>

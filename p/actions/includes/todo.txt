@@ -4,7 +4,7 @@ titles forms
 error/success messages to persian
 validation inputs
 index-
-login
+
 center products search.php
 product bug pecent and price without pDiscount
 max length for inputs text
@@ -26,3 +26,30 @@ check useless ids and harass id or names from forms
 update status ticket not work when is select 0
 check all codes
 fix all documents and admin algorightms
+
+
+
+
+
+
+
+
+
+
+
+
+
+GOOD AND TRUE VALUES
+----------------------
+register ok
+login ok
+forget email ok
+change password ok
+forget password ok (but idk email sent or not)
+login-register ok
+my-account ok
+my-cart (post price , total price not load , button submit as order not work) items not show
+my-orders (error not load order)
+send-ticket (by logged in) ok
+my-tickets ok
+ticket

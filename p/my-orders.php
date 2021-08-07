@@ -92,7 +92,9 @@
               }
             }
             else
+            {
               show_result("error","error while loading order data / order is not exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+            }
 
 
 
@@ -182,3 +184,4 @@
 
   </body>
 </html>
+<?php require "./includes/footer.php";?>

@@ -1,8 +1,11 @@
-<?php require "./includes/header.php";
+<?php
+require "./includes/header.php";
 
 $name_family = $_POST['nameAndFamily'];
 $phone_number = $_POST['phoneNumber'];
 
+echo $name_family;
+echo $phone_number;
 if ($name_family == "" ||$phone_number == "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
@@ -20,4 +23,5 @@ if ($name_family == "" ||$phone_number == "")
   else
     show_result("error","name family and phone is not ok","","","Lc Melody","current");
 
-require "./includes/footer.php";?>
+require "./includes/footer.php";
+?>

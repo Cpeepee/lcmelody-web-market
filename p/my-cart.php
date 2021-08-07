@@ -30,7 +30,7 @@
                                 <h2 ><span>هزینه پست</span> : <span>۱۲۳,۱۲۳,۱۲۳</span></h2>
                             </div>
 
-                            <div id="submit-cartlist" class="cursor-pointer" onclick woring help me lkwopkfopwkgpoerpoiheghioprkeghkopdirjhioprejiohperj>
+                            <div id="submit-cartlist" class="cursor-pointer">
                                 <h2>ثبت سفارش</h2>
                             </div>
                         </div>
@@ -46,7 +46,6 @@
 
 
             <?php
-
             //fetch customer cart list information
             $fetch_cartlist = "SELECT cl_p_id,cl_p_amount FROM t_cart_list WHERE `cl_c_id`='$customerSessionId';";
             $result_fetch_cartlist = $conn->query($fetch_cartlist);
@@ -187,3 +186,4 @@
 
   </body>
 </html>
+<?php require "./includes/footer.php";?>

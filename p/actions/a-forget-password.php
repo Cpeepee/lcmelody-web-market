@@ -1,6 +1,6 @@
 <?php require "./includes/header.php";
 
-$email = $_POST['nameAndFamily'];
+$email = $_POST['email'];
 
 if ($email == "")
 {

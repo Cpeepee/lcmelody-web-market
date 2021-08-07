@@ -1,4 +1,15 @@
-<?php require ('../../includes/security.php'); ?>
+<?php
+
+session_start();
+if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+{
+  if(isset($_SESSION["s_customer_id"]))
+  {
+    ?><script> window.location = "../client-area.php"; </script><?php
+  }
+}
+?>
+
 <title>ورود به حساب - ال سی ملودی</title>
 <link rel="stylesheet" href="../../assets/css/login.css">
 <?php include ('../../includes/close-head.php');?>
@@ -19,7 +30,6 @@
 
             <input class='buttons set-the-font' type="submit" name="login" value="ورود">
           </form>
-              <br/>
             <input class='buttons set-the-font' type="button" name="forgetpass" value="پست الکترونیک را فراموش کردم" onclick="window.location.href='../forget-email/'">
               <br/>
             <input class='buttons set-the-font' type="button" name="forgetmail" value="کلمه عبور را فراموش کردم" onclick="window.location.href='../forget-password.php'">
