@@ -41,6 +41,7 @@
                     {
                         $oo_post_price = $row['o_PP'];
                         $oo_date = $row['o_date'];
+                        $oo_status = $row['o_status'];
                       ?>
                             <h3>شماره سفارش : <span id="order-id"><?php echo $orderid;?></span></h3>
                             <?php
@@ -171,15 +172,30 @@
             ?>
 
 
-
             <div id="buttons-base">
-                <div id="button-cancel-on-awaiting-payment" class="button-style unselectable cursor-pointer">
-                  <h2 class="text-button-cancel-pay-style">لغو سفارش</h2>
-                </div>
+            <?php
+            $oo_status = (int)$oo_status;
+            if($oo_status == 2 || $oo_status == 3)
+            {
+              ?>
+                  <div id="button-cancel-on-awaiting-payment" class="button-style unselectable cursor-pointer" onclick="window.location=('./actions/a-cancel-order.php?id=<?php echo $orderid;?>')">
+                      <h2 class="text-button-cancel-pay-style">لغو سفارش</h2>
+                  </div>
+              <?php
+            }
 
-                <div id="button-pay-on-awaiting-payment" class="button-style unselectable cursor-pointer">
-                  <h2 class="text-button-cancel-pay-style">پرداخت</h2>
-                </div>
+
+            if($oo_status == 2)
+            {
+              ?>
+              <div id="button-pay-on-awaiting-payment" class="button-style unselectable cursor-pointer">
+                <h2 class="text-button-cancel-pay-style">پرداخت</h2>
+              </div>
+              <?php
+            }
+            ?>
+
+
 
 
             </div>

@@ -92,10 +92,6 @@
 
 
               ?>
-              <!-- <img class="small-picture-preview def-border" src="" alt="some"/> -->
-              <!-- <img class="small-picture-preview def-border" src="../assets/img/p-images/p100.jpg" alt="some"/> -->
-              <!-- <img class="small-picture-preview def-border" src="../assets/img/p-images/p100.jpg" alt="some"/> -->
-              <!-- <img class="small-picture-preview def-border" src="../assets/img/p-images/p100.jpg" alt="some"/> -->
             </div>
           </center>
         </div>
@@ -112,38 +108,49 @@
                     <h2 class="set-the-font"><span><?php echo $pAmount;?></span> عدد باقی مانده</h2>
                     <?php
                   }
-                  ?>
-                  <center>
-                    <div id="discount-parent">
-                      <?php
-                          //count pecent discount
-                          $pPrice = str_replace(",","",$pPrice);
-                          $pPrice = (int)$pPrice;
+                  else if($pAmount==0)
+                  {
 
-                          $pDiscount = str_replace(",","",$pDiscount);
-                          $pDiscount = (int)$pDiscount;
+                  }
+                  else
+                  {
+                    ?>
+                    <center>
+                      <div id="discount-parent">
+                        <?php
+                            //count pecent discount
+                            $pPrice = str_replace(",","",$pPrice);
+                            $pPrice = (int)$pPrice;
 
-                          $count_percent = $pDiscount/$pPrice;
-                          $percent_friendly = number_format( $count_percent * 100, 2 );
-                      ?>
-                      <div id="discount-box-sub" class="def-border">
-                        <h3 id="discount-number" class="set-the-font unselectable"><center><?php echo $percent_friendly;?><span id="percentage-symbol">٪</span></center></h3>
+                            $pDiscount = str_replace(",","",$pDiscount);
+                            $pDiscount = (int)$pDiscount;
+
+                            $count_percent = $pDiscount/$pPrice;
+                            $percent_friendly = number_format( $count_percent * 100, 2 );
+                        ?>
+                        <div id="discount-box-sub" class="def-border">
+                          <h3 id="discount-number" class="set-the-font unselectable"><center><?php echo $percent_friendly;?><span id="percentage-symbol">٪</span></center></h3>
+                        </div>
+                        <h2 id="discounted-price" class="set-the-font"><del><?php echo $pPrice;?></del> <span class="fontsize18">تومان</span></h2>
                       </div>
-                      <h2 id="discounted-price" class="set-the-font"><del><?php echo $pPrice;?></del> <span class="fontsize18">تومان</span></h2>
-                    </div>
 
 
-                  </center>
-                  <h1 class="set-the-font"><span><?php echo $pDiscount;?></span> <span class="fontsize18">تومان</span></h1>
-                </div>
-            </div>
-            <div id="section-b-product-details">
-                <center>
-                  <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-add-product-to-cartlist.php?id=<?php echo $proId;?>')">
-                    <h2 id="button-add-to-my-cartlist" class="set-the-font">افزودن به سبد خرید</h2>
+                    </center>
+                    <h1 class="set-the-font"><span><?php echo $pDiscount;?></span> <span class="fontsize18">تومان</span></h1>
                   </div>
-                </center>
-            </div>
+              </div>
+
+              <div id="section-b-product-details">
+                  <center>
+                    <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-add-product-to-cartlist.php?id=<?php echo $proId;?>')">
+                      <h2 id="button-add-to-my-cartlist" class="set-the-font">افزودن به سبد خرید</h2>
+                    </div>
+                  </center>
+              </div>
+              <?php
+            }
+          ?>
+
         </div>
     </div>
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
