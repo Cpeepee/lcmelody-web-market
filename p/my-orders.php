@@ -1,5 +1,5 @@
 <?php
-    require ('../includes/security.php');
+    // require ('../includes/security.php');
     include ('../includes/header.php');
 ?>
     <title>سبد خرید</title>

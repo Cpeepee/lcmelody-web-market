@@ -34,6 +34,7 @@
                 $pDescrip = $row['p_description'];
                 $pDiscount = $row['p_discount'];
 
+                $pAmount = (int)$pAmount;
           }
         }
         else
@@ -116,6 +117,12 @@
                     <div id="discount-parent">
                       <?php
                           //count pecent discount
+                          $pPrice = str_replace(",","",$pPrice);
+                          $pPrice = (int)$pPrice;
+
+                          $pDiscount = str_replace(",","",$pDiscount);
+                          $pDiscount = (int)$pDiscount;
+
                           $count_percent = $pDiscount/$pPrice;
                           $percent_friendly = number_format( $count_percent * 100, 2 );
                       ?>
@@ -124,6 +131,8 @@
                       </div>
                       <h2 id="discounted-price" class="set-the-font"><del><?php echo $pPrice;?></del> <span class="fontsize18">تومان</span></h2>
                     </div>
+
+
                   </center>
                   <h1 class="set-the-font"><span><?php echo $pDiscount;?></span> <span class="fontsize18">تومان</span></h1>
                 </div>

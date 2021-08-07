@@ -47,50 +47,90 @@ if ($result_pro_info->num_rows > 0)
 {
   while($row = $result_pro_info->fetch_assoc())
   {
-        $pid = $row['p_id'];
-        $pTitle = $row['p_title'];
-        $pAmount = $row['p_amount'];
+        // $pid = $row['p_id'];
+        // $pTitle = $row['p_title'];
+        // $pAmount = $row['p_amount'];
         $pPrice = $row['p_price'];
         $pDiscount = $row['p_discount'];
+
+
+        $row['p_amount'] = (int)$row['p_amount'];
+        ?>
+        <div class="product-style  unselectable" onclick="window.open('product.php?id=<?php echo $row['p_id'];?>')">
+            <div class="product-one-titles-box">
+                <img class="product-picture" src="../assets/img/p-images/<?php echo $row['p_id'];?>-a.jpg" alt="product-image"/>
+                <h2 class="product-title"><?php echo $row['p_title'];?></h2>
+            </div>
+
+            <?php
+            //check amount
+            if($row['p_amount'] == 0 || $row['p_amount'] == "0")
+            {
+              ?>
+              <div class="product-detials-box">
+                <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
+              </div>
+              <?php
+            }
+            else
+            {
+              if($row['p_discount'] == 0 || $row['p_discount'] == "0")
+              {
+                  ?>
+                      <div class="product-detials-box">
+                          <h3 class="unit-no-offer-and-counter set-the-font">تومان</h3>
+                          <h2 class="product-price-no-offer-and-counter set-the-font"><?php echo $row['p_price'];?></h2>
+                      </div>
+                  <?php
+              }
+              else
+              {
+                ?>
+                <div class="product-detials-box">
+                    <div class="product-discount-box">
+                      <?php
+                          //count pecent discount
+                          $pPrice = str_replace(",","",$pPrice);
+                          $pPrice = (int)$pPrice;
+
+                          $pDiscount = str_replace(",","",$pDiscount);
+                          $pDiscount = (int)$pDiscount;
+
+                          $count_percent = $pDiscount/$pPrice;
+                          $percent_friendly = number_format( $count_percent * 100, 2 );
+                      ?>
+                      <h3 class="product-discount-number set-the-font"><center><?php echo $percent_friendly;?><span class="percentage-symbol">٪</span></center></h3>
+                    </div>
+                    <h3 class="product-discount-priced set-the-font"><del><?php echo $row['p_price'];?></del></h3>
+                    <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
+                    <?php
+
+                          //count price with discount
+                          $final_price = $pPrice - $pDiscount;
+                          $final_price = number_format($final_price);
+
+                    ?>
+                    <h2 class="product-price-with-offer-and-counter set-the-font"><?php echo $final_price;?></h2>
+                    <?php
+                    //check last amounts
+                    if($row['p_amount'] <= 9)
+                    {
+                      ?>
+                      <h3 class="product-counter-with-offer set-the-font"><span><?php echo $row['p_amount'];?></span> عدد باقی مانده</h3>
+                      <?php
+                    }
+                    ?>
+                </div>
+                <?php
+              }
+            }
+            ?>
+
+        </div>
+
+        <?php
         ?>
 
-                    <div class="product-style  unselectable">
-                        <div class="product-one-titles-box">
-                            <img class="product-picture" src="../assets/img/p-images/p1-a.jpg" alt="product-image"/>
-                            <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-                        </div>
-                        <div class="product-detials-box">
-                            <h3 class="unit-no-offer-and-counter set-the-font">تومان</h3>
-                            <h2 class="product-price-no-offer-and-counter set-the-font">۹۹,۹۹۹,۹۹۹</h2>
-                        </div>
-                    </div>
-
-                    <div class="product-style  unselectable">
-                        <div class="product-one-titles-box">
-                            <img class="product-picture" src="../assets/img/p-images/p2000.jpg" alt="product-image"/>
-                            <h2 class="product-title"> Shure SM-fifty Shure SM- fifty sixShure SSM-fifty sixM-fifty  SSM-fifty sixM-fifty SSM-fifty sixM-fifty</h2>
-                        </div>
-                        <div class="product-detials-box">
-                          <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="product-style  unselectable">
-                        <div class="product-one-titles-box">
-                          <img class="product-picture" src="../assets/img/p-images/p1000.jpg" alt="product-image"/>
-                            <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-                        </div>
-                        <div class="product-detials-box">
-                            <div class="product-discount-box">
-                              <h3 class="product-discount-number set-the-font"><center>۱۲<span class="percentage-symbol">٪</span></center></h3>
-                            </div>
-                            <h3 class="product-discount-priced set-the-font"><del>۹۹,۹۹۹,۹۹۹</del></h3>
-                            <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
-                            <h2 class="product-price-with-offer-and-counter set-the-font">۹۹,۹۹۹,۹۹۹</h2>
-                            <h3 class="product-counter-with-offer set-the-font"><span>۵</span> عدد باقی مانده</h3>
-                        </div>
-                    </div>
 
 
         <?php
