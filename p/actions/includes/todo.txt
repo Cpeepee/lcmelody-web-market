@@ -6,6 +6,7 @@ validation inputs
 index-
 login
 my-orders
+center products search.php
 
 add footers to database connections
 
@@ -13,8 +14,10 @@ icon slider product.php
 banner top image
 add default.jpg to p-images
 fav icon
-
 help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
+
+
+
 
 
 ---admin

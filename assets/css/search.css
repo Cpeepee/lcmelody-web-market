@@ -8,11 +8,12 @@
 }
 .base-sepcial-product-a-b
 {
-  display:flex; flex-direction:row;background-color:transparent;height:75%;width:92.50%;margin-left:auto;margin-right:auto;margin-top:50px;
+  flex-direction:row;background-color:transparent;height:75%;width:100%;margin-left:auto;margin-right:auto;margin-top:50px;
+  display:flex;flex-flow:wrap;align-items: center;
 }
 .product-style
 {
-  width:33.33%;height:100%;background-color:transparent;border-radius:15px;margin: 0px 10px;border:1px solid gray;display:block;
+  width:250px;height:355px;background-color:transparent;border-radius:15px;margin:10px 5px;border:1px solid gray;display:block;
 }
 .product-style:hover
 {
