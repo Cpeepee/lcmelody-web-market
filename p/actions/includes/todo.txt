@@ -17,7 +17,7 @@ fav icons
 help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
 log out page and icon
 secqueriies removed chack
-
+product added mius the product amount if product ended and if exists in cart list remove that
 
 
 
@@ -39,7 +39,6 @@ GOOD AND TRUE VALUES
 ----------------------
 my-cart (post price , total price not load , button submit as order not work) items not show
 my-orders and order (error not load order by function because query is in query)
-upload appendix (ok i guess but need test on server)
 search not work (menu and page)
 product load is realy sick style pro details (discount and percent) image swipe image not work
 add prodcut price o amount o discount ro vared namikone to order item

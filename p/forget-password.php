@@ -1,4 +1,8 @@
-<?php require ('../includes/security.php'); ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
 <title>فراموشی کلمه عبور - ال سی ملودی</title>
 <link rel="stylesheet" href="../assets/css/forget-email.css">
 <?php include ('../includes/close-head.php');?>

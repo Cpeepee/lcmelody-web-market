@@ -22,19 +22,9 @@
 
 
                       <div id="base-cartlist-items" class="def-border set-two-font"> <!-- exipred note :the height #base-cartlist-items must calclate before show , height = x*y  ;note(x=count of items in cartlist)&(y=235px per one item)-->
+
                       <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                        <div id="base-average-price-buttons" class="set-two-font">
-                            <div id="base-total-prices">
-                                <h2 ><span>مبلغ کل</span> : <span>۱۲۳,۱۲۳,۱۲۳</span></h2>
-                                <h2 ><span>هزینه پست</span> : <span>۱۲۳,۱۲۳,۱۲۳</span></h2>
-                            </div>
-
-                            <div id="submit-cartlist" class="cursor-pointer">
-                                <h2>ثبت سفارش</h2>
-                            </div>
-                        </div>
-                      <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
 
@@ -46,6 +36,14 @@
 
 
             <?php
+            //for total-cost
+            $product_amount_collector = array();
+            $product_price_collector = array();
+            $product_discount_collector = array();
+
+            //for product title and price
+            $pro_id_list_for_by_replace_js = array();
+
             //fetch customer cart list information
             $fetch_cartlist = "SELECT cl_p_id,cl_p_amount FROM t_cart_list WHERE `cl_c_id`='$customerSessionId';";
             $result_fetch_cartlist = $conn->query($fetch_cartlist);
@@ -53,51 +51,85 @@
             {
               while($row = $result_fetch_cartlist->fetch_assoc())
               {
-                     fetch_product_information($row['cl_p_id'],$row['cl_p_amount']);
+                  $pid = $row['cl_p_id'];
+                  array_push($pro_id_list_for_by_replace_js,$row['cl_p_id']);
+                  array_push($product_amount_collector,str_replace(",","",$row['cl_p_amount']));
+                  $pamount = $row['cl_p_amount'];
+                  ?>
+                  <div id="item-<?php echo $pid;?>" class="item-style def-border set-two-font unselectable">
+                    <img class="item-picture-style cursor-pointer" src="../assets/img/p-images/<?php echo $pid?>-a.jpg" alt="product-image" onclick="window.open('product.php?id=<?php echo $pid;?>')"/>
+                    <h2 id="title-item-<?php echo $pid;?>" class="item-title">?</h2>
+                    <h2 id="price-item-<?php echo $pid;?>" class="item-price set-the-font">?</h2>
+                    <h3 class="item-price-unit">تومان</h3>
+                      <div id="button-plus-minus-x" class="button-plus-minus-style">
+                        <div class="centered-button-plus-minus-style">
+                          <h2 class="btn-minus-plus-style cursor-pointer FloatLeft" onclick="changeAmount('minus',<?php echo $pid;?>)">-</h2>
+                          <h2 class="btn-minus-plus-style cursor-pointer FloatRight" onclick="changeAmount('plus',<?php echo $pid;?>)">+</h2>
+                          <h2 id="amount-show-<?php echo $pid;?>" class="amount-style set-two-font"><?php echo $pamount;?></h2>
+                        </div>
+                      </div>
+                      <div class="cursor-pointer button-remove-style" id="button-remove-x" onclick="changeAmount('delete',<?php echo $pid;?>)">
+                        <h2 class="text-button-remove-style">حذف</h2>
+                      </div>
+                  </div>
+
+
+                  <?php
               }
             }
             else
-              show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+              show_result("error","error while loading customer data cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
 
-              function fetch_product_information($pid,$pamount)
+              foreach ($pro_id_list_for_by_replace_js as $value)
               {
-                  //fetch product information requirement
-                  $fetch_cartlist = "SELECT p_title,p_price FROM t_product WHERE `cl_c_id`='$customerSessionId';";
-                  $result_fetch_cartlist = $conn->query($fetch_cartlist);
-                  if ($result_fetch_cartlist->num_rows > 0)
+                $fetch_pro_title_price = "SELECT p_title,p_price,p_discount FROM t_product WHERE `p_id`='$value';";
+                $result_pro_title_price = $conn->query($fetch_pro_title_price);
+                if ($result_pro_title_price->num_rows > 0)
+                {
+                  while($row = $result_pro_title_price->fetch_assoc())
                   {
-                    while($row = $result_fetch_cartlist->fetch_assoc())
-                    {
-                           ?>
-                                     <div id="item-<?php echo $pid;?>" class="item-style def-border set-two-font unselectable">
-                                       <img class="item-picture-style" src="../assets/img/p-images/<?php echo $pid?>-a.jpg" alt="product-image"/>
-                                       <h2 class="item-title"><?php echo $row['p_title'];?></h2>
-                                       <h2 class="item-price"><?php echo $row['p_price'];?></h2>
-                                       <h3 class="item-price-unit">تومان</h3>
-                                         <div id="button-plus-minus-x" class="button-plus-minus-style">
-                                           <div class="centered-button-plus-minus-style">
-                                             <h2 class="btn-minus-plus-style cursor-pointer FloatLeft" onclick="changeAmount('minus',<?php echo $pid;?>)">-</h2>
-                                             <h2 class="btn-minus-plus-style cursor-pointer FloatRight" onclick="changeAmount('plus',<?php echo $pid;?>)">+</h2>
-                                             <h2 id="amount-show-<?php echo $pid;?>" class="amount-style set-two-font"><?php echo $pamount;?></h2>
-                                           </div>
-                                         </div>
-                                         <div class="cursor-pointer button-remove-style" id="button-remove-x" onclick="changeAmount('delete',<?php echo $pid;?>)">
-                                           <h2 class="text-button-remove-style">حذف</h2>
-                                         </div>
-                                     </div>
-
-                           <?php
-                    }
+                        array_push($product_price_collector,str_replace(",","",$row['p_price']));
+                        array_push($product_discount_collector,str_replace(",","",$row['p_discount']));
+                         ?>
+                         <script>
+                              document.getElementById("title-item-<?php echo $value;?>").textContent = "<?php echo $row['p_title'];?>";
+                              document.getElementById("price-item-<?php echo $value;?>").textContent = "<?php echo $row['p_price'];?>";
+                         </script>
+                         <?php
                   }
-                  else
-                    show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
-
-
+                }
+                else
+                  show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
-          ?>
 
+
+
+              //count total cost
+              $total_order_costs=0;
+              array_map(function ($product_price_collector,$product_amount_collector,$product_discount_collector)
+              {
+                  $total = $product_price_collector - $product_discount_collector;
+                  $GLOBALS['$total_order_costs'] += $total*$product_amount_collector;
+              }, $product_price_collector,$product_amount_collector,$product_discount_collector);
+              $cost_tol = $GLOBALS['$total_order_costs']+15000;
+          ?>
+          <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+            <div id="base-average-price-buttons" class="set-two-font">
+                <div id="base-total-prices">
+                  <h2 ><span>هزینه پست</span> : <span class="set-the-font">15,000</span></h2>
+                    <h2 ><span>مبلغ کل</span> : <span id="total-cost" class="set-the-font">?</span></h2>
+                </div>
+
+                <div id="submit-cartlist" class="cursor-pointer" onclick="window.location=('./actions/a-submit-cartlist.php')">
+                    <h2>ثبت سفارش</h2>
+                </div>
+            </div>
+          <script>
+               document.getElementById("total-cost").textContent = "<?php echo number_format($cost_tol);?>";
+          </script>
 
 
           <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -127,18 +159,21 @@
                             if(old_amount<=0)
                                 changeAmount('delete',pro_id);
                             else
-                              document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+                                location.reload();
 
+                            // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
                         }break;
 
                         case 'plus':
                         {
                           var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
                           old_amount++;
-                          if(old_amount>=99)
+                          if(old_amount>99)
                               alert("max value for amount a product can not be more than 99");
                           else
-                            document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+                            location.reload();
+                            // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+
 
                         }break;
 
@@ -178,8 +213,25 @@
                   //error
               }break;
             }
-            xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
-            xhttp.send();
+
+            //check before send
+            if(mode=="plus")
+            {
+              var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
+              old_amount++;
+              if(old_amount>99)
+              alert("max value for amount a product can not be more than 99");
+              else
+              {
+                xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
+                xhttp.send();
+              }
+            }
+            else
+            {
+              xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
+              xhttp.send();
+            }
       }
       </script>
 
