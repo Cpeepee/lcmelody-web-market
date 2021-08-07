@@ -54,24 +54,25 @@
 
 #button-send
 {
-  margin:0px 30px 20px auto;float:right;;width:40%;height:65px;border:1px solid green;border-radius:10px;
+  width:95%;height:65px;border:1px solid green;border-radius:10px;margin:auto;
+  background-color: transparent;color:green;
 }
 
 #your-response-text
 {
   width:85%;height:200px;border-radius:15px;font-size:18px;padding:20px;margin:10px auto;display:block;
+  /* width:85%;height:200px;border-radius:15px;font-size:18px;padding:20px;margin:10px auto;display:block; */
 }
 
 #base-buttons
 {
-  margin:30px auto;width:80%;height:70px;
+  margin:30px auto;width:85%;height:70px;
 }
 
 .message-appendixes-style
 {
   margin-right:25px;color:blue;
 }
-
 
 .message-date-style
 {
@@ -94,6 +95,10 @@
   margin:25px 25px 0px 0px;
 }
 
+#label-your-response
+{
+  margin:25px 6% 0px 0px;
+}
 
 .message-style
 {
@@ -120,6 +125,7 @@
 #ticket-status
 {
   margin-right:15px;float:right;width:135px;height:35px;text-align:center;border-radius:10px;
+  /* margin-right:15px;float:right;width:135px;height:35px;text-align:center;border-radius:10px; */
 }
 #ticket-stats
 {
@@ -158,3 +164,52 @@
 {
   width:100%;
 }
+
+#box-ticket-info
+{
+  width:95%;height:40px;margin:0px auto;
+}
+
+#label-ticket-status
+{
+  margin-right:10px;float:right;margin-top:0px;
+}
+
+#text-ticket-status
+{
+  margin-top:5px;
+}
+
+#ticket-date
+{
+  margin-left:10px;margin-right:auto;width:170px;margin-top:0px;float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/
