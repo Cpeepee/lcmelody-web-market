@@ -48,8 +48,13 @@ change password ok
 forget password ok (but idk email sent or not)
 login-register ok
 my-account ok
-my-cart (post price , total price not load , button submit as order not work) items not show
-my-orders (error not load order)
 send-ticket (by logged in) ok
+ticket ok
 my-tickets ok
-ticket
+send comment to product ok
+
+my-cart (post price , total price not load , button submit as order not work) items not show
+my-orders and order (error not load order by function because query is in query)
+upload appendix (ok i guess but need test on server)
+search not work (menu and page)
+product load is realy sick style

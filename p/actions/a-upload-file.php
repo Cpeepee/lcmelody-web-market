@@ -8,7 +8,7 @@ if ($id== "")
 }
 
 $id = (int)$id;
-$place = (int)$place;
+// $place = (int)$place;
 
               if(!empty($_FILES['uploaded_file']))
               {

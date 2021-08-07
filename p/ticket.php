@@ -82,10 +82,10 @@
                 }break;
               }
               ?>
-              <div id="ticket-status" class="bg-<?php ecoh $status_color_mode;?>">
+              <div id="ticket-status" class="bg-<?php echo $status_color_mode;?>">
                 <h3 id="text-ticket-status"><?php echo $status_text;?></h3>
               </div>
-              <h2 id="ticket-date"><span>تاریخ</span> : <span><?php echo $t_date;?></span></h2>
+              <h2 id="ticket-date"><span>تاریخ</span> : <span class="set-the-font"><?php echo $t_date;?></span></h2>
             </div>
 
             <div class="message-style def-border">
