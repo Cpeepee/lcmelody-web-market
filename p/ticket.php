@@ -102,7 +102,7 @@
             <?php
             //fetch ticket messages
             //fetch messages from customer and admin table
-            $sql_search_customer_messages = "SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_customer_message WHERE tm_t_id='$id' AND tm_c_id='$ticket_owner' UNION SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_admin_message WHERE tm_t_id='$id' ORDER BY tm_date;";
+            $sql_search_customer_messages = "SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_customer_message WHERE tm_t_id='$tId' AND tm_c_id='$customerSessionId' UNION SELECT tm_message_text,tm_appendixes,tm_date,tm_admin_mode FROM t_ticket_admin_message WHERE tm_t_id='$tId' ORDER BY tm_date;";
             $result_search2 = $conn->query($sql_search_customer_messages);
             if ($result_search2->num_rows > 0)
             {
@@ -114,7 +114,7 @@
                   if($row['tm_admin_mode']==0)
                   {
                     ?>
-                    <h2 class="message-sender">مشتری</h2>
+                    <h2 class="message-sender">شما</h2>
                     <?php
                   }
                   else
@@ -164,101 +164,9 @@
                 <?php
               }
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             ?>
 
-            <select id="ticket-status" class="bg-closed" onchange="changeStatusTicket(this.value)">
-              <option value="3">در انتظار پاسخ</option>
-              <option value="2">درحال رسیدگی</option>
-              <option value="1">پاسخ داده شده</option>
-              <option value="4" selected>بسته شده</option>
-              <select id="ticket-status" class="bg-answered" onchange="changeStatusTicket(this.value)">
-                <select id="ticket-status" class="bg-workingon" onchange="changeStatusTicket(this.value)">
-                  <select id="ticket-status" class="bg-waiting" onchange="changeStatusTicket(this.value)">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
 
             <div class="message-style def-border">
               <h2 class="message-sender">شما</h2>
@@ -267,10 +175,7 @@
                 <h4><a class="message-appendixes-style cursor-pointer" href="www.sss.com">تصویر یک مورد نظر</a></h4>
                 <h2 class="message-date-style"><span>۱۲:۳۴:۳۰</span> - <span>۱۲/۱۲/۱۲۱۲</span></h2>
             </div>
-
-
-
-
+ -->
 
 
 
@@ -280,12 +185,12 @@
         <div id="base-your-response" class="def-border">
           <h2 id="label-your-response">شما</h2>
           <form action="./actions/a-send-response-to-ticket.php" method="post">
+          <input type="hidden" name="tid" value="<?php echo $tId;?>">
           <textarea id="your-response-text" name="textResponse" class="def-border" placeholder="پاسخ شما"></textarea>
             <div id="base-buttons">
                 <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
             </div>
-
-          </div>
+        </div>
       </div>
 
 

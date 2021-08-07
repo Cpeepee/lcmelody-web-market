@@ -154,7 +154,6 @@
         <div class="product-introduction-box">
           <h1 class="set-the-font">مشخصات فنی محصول</h1>
           <div id="base-technical-boxes">
-              <div class="tech-info-box def-border">
 
                 <?php
                   //regex techincal description.
@@ -170,13 +169,14 @@
                       $value = str_replace($title,"",$bee);
                       $value = str_replace([':',';'],"",$value);
                       ?>
+                      <div class="tech-info-box def-border">
                         <p class="set-two-font tech-title"><?php echo $title;?></p>
                         <p class="set-two-font tech-sub"><?php echo $value;?></p>
+                      </div>
                       <?php
                   }
 
                 ?>
-              </div>
           </div>
           <br/>
         </div>

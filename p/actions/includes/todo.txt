@@ -7,11 +7,12 @@ index-
 login
 my-orders
 
+add footers to database connections
+
 icon slider product.php
 banner top image
 add default.jpg to p-images
 fav icon
-
 
 
 

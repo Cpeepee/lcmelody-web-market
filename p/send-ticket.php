@@ -1,5 +1,7 @@
 <?php
-    require ('../includes/security.php');
+    // require ('../includes/security.php');
+    session_start();
+
     include ('../includes/header.php');
 ?>
     <title>فروشگاه ال سی ملودی</title>
@@ -18,9 +20,30 @@
           <h2 class="set-the-font style-label">موضوع</h2>
           <input id="title-ticket" class="input-style def-border set-two-font" type="text" name="title" value="">
         </div>
+
+
+
         <div id="email-left" class="style-title-email-sides">
           <h2 class="set-the-font style-label">پست الکترونیک</h2>
-          <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" value="">
+        <?php
+        //check if customer is logged in set readonly and cid to email
+        if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+        {
+          if(isset($_SESSION["s_customer_id"]))
+          {
+            $customerSessionId =  $_SESSION['s_customer_id'];
+            ?>
+                <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" value="<?php echo $customerSessionId;?>" readonly>
+            <?php
+          }
+        }
+        else
+        {
+          ?>
+              <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" value="">
+          <?php
+        }
+        ?>
         </div>
       </div>
 
