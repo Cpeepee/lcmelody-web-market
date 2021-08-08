@@ -17,22 +17,10 @@
             include ("../includes/customer-menu.php");
             ?>
 
-
-
-
                       <div id="base-cartlist-items" class="def-border set-two-font"> <!-- exipred note :the height #base-cartlist-items must calclate before show , height = x*y  ;note(x=count of items in cartlist)&(y=235px per one item)-->
+                        <h1>سبد خرید</h1>
 
                       <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
 
             <?php
             //for total-cost
@@ -63,7 +51,6 @@
                       <div id="button-plus-minus-x" class="button-plus-minus-style">
                         <div class="centered-button-plus-minus-style">
 
-
                           <h2 class="btn-minus-plus-style cursor-pointer FloatLeft" onclick="changeAmount('minus',<?php echo $pid;?>)">-</h2>
                           <h2 class="btn-minus-plus-style cursor-pointer FloatRight" onclick="changeAmount('plus',<?php echo $pid;?>)">+</h2>
                           <h2 id="amount-show-<?php echo $pid;?>" class="amount-style set-two-font"><?php echo $pamount;?></h2>
@@ -82,9 +69,9 @@
               show_result("error","ur cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
-
               foreach ($pro_id_list_for_by_replace_js as $value)
               {
+
                 $fetch_pro_title_price = "SELECT p_title,p_price,p_discount FROM t_product WHERE `p_id`='$value';";
                 $result_pro_title_price = $conn->query($fetch_pro_title_price);
                 if ($result_pro_title_price->num_rows > 0)
@@ -96,15 +83,15 @@
                          ?>
                          <script>
                               document.getElementById("title-item-<?php echo $value;?>").textContent = "<?php echo $row['p_title'];?>";
-                              document.getElementById("price-item-<?php echo $value;?>").textContent = "<?php echo number_format($row['p_price']);?>";
+                              document.getElementById("price-item-<?php echo $value;?>").textContent = "<?php echo $row['p_price'];?>";
                          </script>
                          <?php
+
                   }
                 }
                 else
                   show_result("error","error while loading product data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
-
 
 
               //count total cost
@@ -124,7 +111,7 @@
                     <h2 ><span>مبلغ کل</span> : <span id="total-cost" class="set-the-font">?</span></h2>
                 </div>
 
-                <div id="submit-cartlist" class="cursor-pointer" onclick="window.location=('./actions/a-submit-cartlist.php')">
+                <div id="submit-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-submit-cartlist.php')">
                     <h2>ثبت سفارش</h2>
                 </div>
             </div>
@@ -140,96 +127,101 @@
       </div>
 
 
-      <!-- ajax funtion modify amounts and delete product from cartlist -->
-      <script>
-      function changeAmount(mode,pro_id)
-      {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function()
-            {
-               if (this.readyState == 4 && this.status == 200)
-               {
-                  if(this.responseText == "success")
-                  {
-                      switch(mode)
-                      {
-                        case 'minus':
-                        {
-                            var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
-                            old_amount--;
-                            if(old_amount<=0)
-                                changeAmount('delete',pro_id);
-                            else
-                                location.reload();
-                                // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
-                        }break;
-
-                        case 'plus':
-                        {
-                          var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
-                          old_amount++;
-                          if(old_amount>99)
-                              alert("max value for amount a product can not be more than 99");
-                          else
-                            location.reload();
-                            // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
 
 
-                        }break;
 
-                        case 'delete':
-                        {
-                            location.reload();
-                        }break;
-                      }
-                  }
-                  else
-                  {
-                      alert("action failed");
-                  }
-               }
-            };
-            var action_page;
-            switch (mode)
-            {
-              case 'minus':
-              {
-                action_page = "a-minus-amount-cartlist.php";
-              }break;
 
-              case 'plus':
-              {
-                action_page = "a-plus-amount-cartlist.php";
+                                      <!-- ajax funtion modify amounts and delete product from cartlist -->
+                                      <script>
+                                      function changeAmount(mode,pro_id)
+                                      {
+                                            var xhttp = new XMLHttpRequest();
+                                            xhttp.onreadystatechange = function()
+                                            {
+                                               if (this.readyState == 4 && this.status == 200)
+                                               {
+                                                  if(this.responseText == "success")
+                                                  {
+                                                      switch(mode)
+                                                      {
+                                                        case 'minus':
+                                                        {
+                                                            var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
+                                                            old_amount--;
+                                                            if(old_amount<=0)
+                                                                changeAmount('delete',pro_id);
+                                                            else
+                                                                document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+                                                                // location.reload();
+                                                        }break;
 
-              }break;
+                                                        case 'plus':
+                                                        {
+                                                          var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
+                                                          old_amount++;
+                                                          if(old_amount>99)
+                                                              alert("max value for amount a product can not be more than 99");
+                                                          else
+                                                              document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+                                                            // location.reload();
 
-              case 'delete':
-              {
-                action_page = "a-delete-product-from-cartlist.php";
-              }break;
 
-            }
+                                                        }break;
 
-            //check before send
-            if(mode=="plus")
-            {
-              var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
-              old_amount++;
-              if(old_amount>99)
-              alert("max value for amount a product can not be more than 99");
-              else
-              {
-                xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
-                xhttp.send();
-              }
-            }
-            else
-            {
-              xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
-              xhttp.send();
-            }
-      }
-      </script>
+                                                        case 'delete':
+                                                        {
+                                                            location.reload();
+                                                        }break;
+                                                      }
+                                                  }
+                                                  else
+                                                  {
+                                                      alert("action failed");
+                                                  }
+                                               }
+                                            };
+                                            var action_page;
+                                            switch (mode)
+                                            {
+                                              case 'minus':
+                                              {
+                                                action_page = "a-minus-amount-cartlist.php";
+                                              }break;
+
+                                              case 'plus':
+                                              {
+                                                action_page = "a-plus-amount-cartlist.php";
+
+                                              }break;
+
+                                              case 'delete':
+                                              {
+                                                action_page = "a-delete-product-from-cartlist.php";
+                                              }break;
+
+                                            }
+
+                                            //check before send
+                                            if(mode=="plus")
+                                            {
+                                              var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
+                                              old_amount++;
+                                              if(old_amount>99)
+                                              alert("max value for amount a product can not be more than 99");
+                                              else
+                                              {
+                                                xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
+                                                xhttp.send();
+                                              }
+                                            }
+                                            else
+                                            {
+                                              xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);
+                                              xhttp.send();
+                                            }
+                                      }
+                                      </script>
+
 
   </body>
 </html>

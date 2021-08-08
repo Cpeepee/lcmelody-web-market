@@ -53,10 +53,10 @@
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div id="base-product-section-one">
         <div id="product-picture-box" class="unselectable def-border">
-          <div id="swipe-picture-to-right" class="cursor-pointer swipe-picture-style def-border">
+          <div id="swipe-picture-to-right" class="cursor-pointer swipe-picture-style def-border" onclick="swipePicture('left')">
             <img src="../assets/img/icons/swiper-right;" alt="swiper-right"/>
           </div>
-          <div id="swipe-picture-to-left" class="cursor-pointer swipe-picture-style def-border">
+          <div id="swipe-picture-to-left" class="cursor-pointer swipe-picture-style def-border" onclick="swipePicture('right')">
             <img src="../assets/img/icons/swiper-left;" alt="swiper-left"/>
           </div>
           <center>
@@ -75,7 +75,7 @@
                   if(file_exists("../assets/img/p-images/".$id."-a.jpg"))
                   {
                     ?>
-                      <img class="small-picture-preview def-border" src="../assets/img/p-images/<?php echo $id."-".$cha;?>.jpg" alt="product-<?php echo $id;?>-image"/>
+                      <img class="small-picture-preview def-border cursor-pointer" src="../assets/img/p-images/<?php echo $id."-".$cha;?>.jpg" alt="product-<?php echo $id;?>-image" onclick="changePicture('<?php echo $id."-".$cha;?>.jpg')"/>
                     <?php
                   }
                   else
@@ -102,7 +102,7 @@
                   if($pAmount==0)
                   {
                       ?>
-                        <h2 id="unaviable-style">unaviable style</h2>
+                        <h1 id="unaviable-style" class="set-the-font">ناموجود</h1>
                       </div>
                   </div>
 
@@ -280,9 +280,7 @@
     </div>
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <?php include ('../includes/footer.php');
-
-
+    <?php
 
     function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
     {
@@ -309,9 +307,65 @@
 
 
 
+    ?>
 
 
 
+
+    <script>
+          const product_id_js = <?php echo $proId;?>;
+          function swipePicture(input)
+          {
+              var current_src = document.getElementById("main-picture-product").src;
+              var last_char = current_src.slice(current_src.length-5,current_src.length-4);
+              switch (last_char)
+              {
+                case 'a':
+                {
+                    if(input ===  "right")
+                        document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-b.jpg";
+                    else
+                        document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-d.jpg";
+                }break;
+
+                case 'b':
+                {
+                  if(input ===  "right")
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-c.jpg";
+                  else
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-a.jpg";
+                }break;
+
+                case 'c':
+                {
+                  if(input ===  "right")
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-d.jpg";
+                  else
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-b.jpg";
+                }break;
+
+                default:
+                {
+                  if(input ===  "right")
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-a.jpg";
+                  else
+                      document.getElementById("main-picture-product").src = "../assets/img/p-images/"+product_id_js+"-c.jpg";
+                }break;
+              }
+          }
+
+
+          function changePicture(input)
+          {
+              const def_path = "../assets/img/p-images/";
+              document.getElementById("main-picture-product").src = def_path+input;
+
+          }
+    </script>
+
+
+    <?php
+    include "../includes/footer.php";
+    require "./actions/includes/footer.php";
 
     ?>
-    <?php require "./includes/footer.php";?>

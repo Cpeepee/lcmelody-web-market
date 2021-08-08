@@ -71,7 +71,6 @@
 #button-delete-account
 {
    float:left;
-   /* height:100%;*/
    border-color:red;
    color:red;
 }
@@ -86,8 +85,9 @@
   border-color:green;
   color:green;
   width:100%;
+  background-color:transparent;
 }
 #base-button-save
 {
-  width:60%;height:auto;background-color:red;margin:20px auto;
+  width:60%;height:auto;background-color:transparent;margin:20px auto;
 }

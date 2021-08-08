@@ -3,11 +3,8 @@ C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket
 
 
 CUSTOMER--------------------
-cart list button plus remove minus not work
-cart list not load all products
-cart list(button submit as order not work) button submit unselectable
 
-product image swipe image not work
+cart list(button submit as order not work) button submit unselectable
 
 titles forms
 check error html from source code page by browser
@@ -22,13 +19,12 @@ add default.jpg to p-images
 fav icons
 check all forms with bad values
 
-
+check footer for close connections
 
 
 
 
 ADMIN---------------------------------
-log out page and icon
 when price and discouunt a product eidted or added style number_format do that before save
 
 price and discounts replace . to , and space to ,
