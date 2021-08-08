@@ -49,12 +49,12 @@
               <div class="inputs-side-by-side-style">
                 <h2 class="title-field unselectable">نام</h2>
                 <br/><br/><br/>
-                <input type="text" name="firstname" value="<?php echo $c_name;?>" class="inputs-style">
+                <input type="text" name="firstname" value="<?php echo $c_name;?>" class="inputs-style"  maxlength="20">
               </div>
 
               <div class="inputs-side-by-side-style">
                 <h2 class="title-field unselectable">نام خانوادگی</h2>
-                <input type="text" name="lastname" value="<?php echo $c_family;?>" class="inputs-style">
+                <input type="text" name="lastname" value="<?php echo $c_family;?>" class="inputs-style"  maxlength="40">
               </div>
           </div>
 
@@ -63,19 +63,19 @@
               <div class="inputs-side-by-side-style">
                 <h2 class="title-field unselectable">شماره موبایل</h2>
                 <br/><br/><br/>
-                <input type="text" name="phonenumber" value="<?php echo $c_phonenumber;?>" class="inputs-style">
+                <input type="text" name="phonenumber" value="<?php echo $c_phonenumber;?>" class="inputs-style"  maxlength="15">
               </div>
 
               <div class="inputs-side-by-side-style">
                 <h2 class="title-field unselectable">پست الکترونیکی</h2>
-                <input type="text" name="email" value="<?php echo $c_email;?>" class="inputs-style">
+                <input type="text" name="email" value="<?php echo $c_email;?>" class="inputs-style" maxlength="60">
               </div>
           </div>
 
           <div id="address-base">
               <div id="address-centered">
                 <h2 id="address-title" class="unselectable">آدرس</h2>
-                <textarea id="address-text" name="address"><?php echo $c_address;?></textarea>
+                <textarea id="address-text" name="address" maxlength="250"><?php echo $c_address;?></textarea>
               </div>
           </div>
 

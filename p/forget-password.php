@@ -13,7 +13,7 @@
           <h1 class='set-the-font'>فراموشی کلمه عبور</h1>
           <form action="./actions/a-forget-password.php" method="post">
             <h3 class='set-the-font'>آدرس پست الکترونیکی خود را وارد کنید</h3>
-            <input id='email' class='text-inputs' type="text" name="email" placeholder="me@example.com" autofocus dir='ltr'>
+            <input id='email' class='text-inputs' type="text" name="email" placeholder="me@example.com" autofocus dir='ltr'  maxlength="60">
 
 
             <br/><br/>

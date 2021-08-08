@@ -235,7 +235,7 @@
                    <h2>تجربه خرید این محصول را به اشتراک بزار</h2>
                    <form action="./actions/a-send-comment-for-product.php" method="post">
                      <input type="hidden" name="pid" value="<?php echo $proId;?>">
-                     <center><textarea id="customer-comment-text" name="commentText" rows="8" cols="80" dir="rtl"></textarea></center>
+                     <center><textarea id="customer-comment-text" name="commentText" rows="8" cols="80" dir="rtl" maxlength="301"></textarea></center>
                      <div id="limited-chars-hint" class="set-the-font">
                         <!-- <span>کارکتر های مجاز</span> <span>۱۲۰</span>/<span>۱</span> -->
                       </div>

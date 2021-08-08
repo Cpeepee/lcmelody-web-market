@@ -21,10 +21,10 @@ if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
 
           <form action="../actions/a-login.php" method="post">
             <h3 class='set-the-font'>پست الکترونیک خود را وارد کنید</h3>
-            <input id='email' class='text-inputs' type="text" name="email" placeholder="the@example.com" autofocus dir="ltr">
+            <input id='email' class='text-inputs' type="text" name="email" placeholder="the@example.com" autofocus dir="ltr"  maxlength="60">
 
             <h3 class='set-the-font'>کلمه عبور خود را وارد کنید</h3>
-            <input id='password' class='text-inputs' type="password" name="password" placeholder="************" dir="ltr">
+            <input id='password' class='text-inputs' type="password" name="password" placeholder="************" dir="ltr"  maxlength="250">
 
             <br/><br/>
 

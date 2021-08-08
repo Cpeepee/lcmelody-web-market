@@ -1,23 +1,21 @@
 CUSTOMER--------------------
-check inputs post and get for stop sql injection
 titles forms
+check error html from source code page by browser
 error/success messages to persian
-validation inputs
 index- and other menu items
 center products search.php
 product bug pecent and price without pDiscount
-max length for inputs text
 check all forms with bad values
 modify term and rules
-ICONS------------------------
 icon slider product.php
-banner top image
 add default.jpg to p-images
 fav icons
 help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
 log out page and icon
 secqueriies removed chack
 product added mius the product amount if product ended and if exists in cart list remove that
+validation inputs
+check inputs post and get for stop sql injection
 
 
 

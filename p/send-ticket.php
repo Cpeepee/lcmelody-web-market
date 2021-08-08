@@ -41,7 +41,7 @@
         else
         {
           ?>
-              <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" value="">
+              <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" maxlength="60">
           <?php
         }
         ?>
@@ -50,7 +50,7 @@
 
       <div id="base-message">
         <h2 class="set-the-font style-label">متن</h2>
-        <textarea id="text-ticket" class="def-border" name="textTicket" rows="5"></textarea>
+        <textarea id="text-ticket" class="def-border" name="textTicket" rows="5"  maxlength="2500"></textarea>
         <p>
       </div>
 

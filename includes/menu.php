@@ -8,10 +8,10 @@ session_start();
 <div id="main-menu">
     <div id="menu-top">
 
-        <div id="dark-light-box">
+        <!-- <div id="dark-light-box">
             <img id="light-switch" class="unselectable cursor-pointer padding-for-switches" src="../assets/img/icons/lightsun-50.png" alt="lightsun"/>
             <img id="dark-switch" class="unselectable cursor-pointer padding-for-switches" src="../assets/img/icons/bluemoon-50.png" alt="darkmoon-with-color-31469f"/>
-        </div>
+        </div> -->
 
         <div id="search-box">
             <img id="search-button" class="unselectable cursor-pointer" src="../assets/img/icons/graysearch-50.png" alt="search-icon" onclick="window.location.href='search.php'"/>

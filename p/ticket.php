@@ -186,7 +186,7 @@
           <h2 id="label-your-response">شما</h2>
           <form action="./actions/a-send-response-to-ticket.php" method="post">
           <input type="hidden" name="tid" value="<?php echo $tId;?>">
-          <textarea id="your-response-text" name="textResponse" class="def-border" placeholder="پاسخ شما"></textarea>
+          <textarea id="your-response-text" name="textResponse" class="def-border" placeholder="پاسخ شما" maxlength="2500"></textarea>
             <div id="base-buttons">
                 <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
             </div>
