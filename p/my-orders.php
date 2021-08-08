@@ -92,7 +92,7 @@
             <?php
             //fetch order details
             $all_order_ids = array();
-            $all_order_PPs = array();
+            // $all_order_PPs = array();
             $the_order_by_value = (int)$the_order_by_value;
             $fetch_orders = "SELECT o_id,o_PP FROM t_orders WHERE `o_owner_cid`='$customerSessionId' AND `o_status`='$the_order_by_value';";
             $result_fetch_orders = $conn->query($fetch_orders);
@@ -101,7 +101,6 @@
               while($row = $result_fetch_orders->fetch_assoc())
               {
                      array_push($all_order_ids,$row['o_id']);
-                     array_push($all_order_PPs,$row['o_id']);
                      ?>
                      <div class="order-style unselectable">
                        <div class="order-titles-style">
@@ -144,6 +143,8 @@
             $oc_amounts = array();
             $oc_price = array();
             $oc_discount = array();
+
+
             ?>
 
               <script>
@@ -183,15 +184,16 @@
 
                             //count total cost
                             $total_order_cost=0;
-                            $total_order_cost=array_map(function ($o_price,$o_discount,$o_amounts)
+                            $total_order_cost=array_map(function ($oc_price,$oc_discount,$oc_amounts)
                             {
-                                $total = $o_price - $o_discount;
-                                $GLOBALS['$total_order_cost'] += $total*$o_amounts;
-                            }, $o_price,$o_discount,$o_amounts);
-                            $cost_tol = $GLOBALS['$total_order_cost'];// + str_replace(",","",$o_post_price)
+                                $total = $oc_price - $oc_discount;
+                                $GLOBALS['$total_order_cost'] += $total*$oc_amounts;
+                            }, $oc_price,$oc_discount,$oc_amounts);
+
+                            $cost_tol = $GLOBALS['$total_order_cost'];
                             ?>
                             <script>
-                                  document.getElementById('final-price-<?php echo $value;?>').textContent = "<?php echo $cost_tol;?>";
+                                  document.getElementById('final-price-<?php echo $value;?>').textContent = "<?php echo number_format($cost_tol);?>";
                             </script>
                             <?php
 

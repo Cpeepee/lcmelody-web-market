@@ -23,12 +23,12 @@
 
 .order-style
 {
-  width:98%;height:150px;;background-color:transparent;margin:15px auto;border:1px solid gray; border-radius:5px;
+  width:98%;height:150px;background-color:transparent;margin:15px auto;border:1px solid gray; border-radius:5px;
 }
 
 .order-titles-style
 {
-  width:100%;height:15px;margin-top:10px;
+  width:100%;height:35%;margin-top:10px;
 }
 
 .order-quick-info-style
@@ -57,7 +57,7 @@
 
 .pictures-box-style
 {
-  float:right;background-color:transparent;width:73%;height:75px;
+  float:right;background-color:transparent;width:73%;height:auto;
 }
 
 .btn-show-me-detials-style

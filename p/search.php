@@ -51,7 +51,7 @@ if ($result_pro_info->num_rows > 0)
 
         $row['p_amount'] = (int)$row['p_amount'];
         ?>
-        <div class="product-style  unselectable" onclick="window.open('product.php?id=<?php echo $row['p_id'];?>')">
+        <div class="product-style unselectable" onclick="window.open('product.php?id=<?php echo $row['p_id'];?>')">
             <div class="product-one-titles-box">
                 <img class="product-picture" src="../assets/img/p-images/<?php echo $row['p_id'];?>-a.jpg" alt="product-image"/>
                 <h2 class="product-title"><?php echo $row['p_title'];?></h2>
@@ -92,7 +92,7 @@ if ($result_pro_info->num_rows > 0)
                           $pDiscount = (int)$pDiscount;
 
                           $count_percent = $pDiscount/$pPrice;
-                          $percent_friendly = number_format( $count_percent * 100, 2 );
+                          $percent_friendly = number_format( $count_percent * 100);
                       ?>
                       <h3 class="product-discount-number set-the-font"><center><?php echo $percent_friendly;?><span class="percentage-symbol">٪</span></center></h3>
                     </div>
@@ -138,5 +138,7 @@ else
 ?>
 
   </div>
+  <br/>
 </div>
+<br/><br/>
 <?php require "./includes/footer.php";?>

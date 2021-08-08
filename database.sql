@@ -89,8 +89,8 @@ CREATE TABLE t_orders_items
 (
     `oi_o_id` INT (4) NOT NULL,
     `oi_p_id` INT (3) NOT NULL,
-    `oi_amount` INT (2),
-    `oi_price` VARCHAR (10) DEFAULT('1,000'),
+    `oi_amount` INT (2) DEFAULT('1'),
+    `oi_price` VARCHAR (10) DEFAULT('0'),
     `oi_discount` VARCHAR (10) DEFAULT('0'),
     PRIMARY KEY (`oi_o_id`,`oi_p_id`),
     FOREIGN KEY (`oi_o_id`) REFERENCES t_orders(`o_id`) ON DELETE CASCADE,
