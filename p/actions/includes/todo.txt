@@ -24,7 +24,7 @@ if customer is not logged in dont show box sibmut comment on product
 product not avaible is sick style in product
 percentage search is not good style
 help? my-orders total cost , oPP add namishe be total cost
-
+open new ticket if customer logged in remove email label and change it to Identification
 
 ADMIN---------------------------------
 check useless ids and harass id or names from forms
@@ -40,10 +40,10 @@ when admin sent repsonse to ticket change ticket status to answered
 refresh page per 1minut ticket
 place holders for  inputs
 when price and discouunt a product eidted or added style number_format do that
+remove ccLIKE and ccDISLIKE from product database ER
 
 GOOD AND TRUE VALUES
 ----------------------
 my-cart (button submit as order not work) button submit unselectable
-my-order (image is not buty)
 product load is realy sick style pro details (discount and percent) image swipe image not work
 add prodcut price o amount o discount ro vared namikone to order item

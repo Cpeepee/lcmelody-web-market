@@ -1,6 +1,7 @@
     <?php
         // require ('../includes/security.php');
         include ('../includes/header.php');
+        session_start();
 
 
 
@@ -121,22 +122,20 @@
                             //count pecent discount
                             $pPrice = str_replace(",","",$pPrice);
                             $pPrice = (int)$pPrice;
-
                             $pDiscount = str_replace(",","",$pDiscount);
                             $pDiscount = (int)$pDiscount;
-
                             $count_percent = $pDiscount/$pPrice;
-                            $percent_friendly = number_format( $count_percent * 100, 2 );
+                            $percent_friendly = number_format( $count_percent * 100);
                         ?>
                         <div id="discount-box-sub" class="def-border">
                           <h3 id="discount-number" class="set-the-font unselectable"><center><?php echo $percent_friendly;?><span id="percentage-symbol">٪</span></center></h3>
                         </div>
-                        <h2 id="discounted-price" class="set-the-font"><del><?php echo $pPrice;?></del> <span class="fontsize18">تومان</span></h2>
+                        <h2 id="discounted-price" class="set-the-font"><del><?php echo number_format($pPrice);?></del> <span class="fontsize18">تومان</span></h2>
                       </div>
 
 
                     </center>
-                    <h1 class="set-the-font"><span><?php echo $pDiscount;?></span> <span class="fontsize18">تومان</span></h1>
+                    <h1 class="set-the-font"><span><?php echo number_format($pDiscount);?></span> <span class="fontsize18">تومان</span></h1>
                   </div>
               </div>
 
@@ -200,9 +199,9 @@
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <br/> <br/>
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
     <div class="base-product-sections def-border">
-        <div id="product-comments-box" class="product-introduction-box">
-              <h1 class="set-the-font">نظر خریداران این محصول</h1>
 
               <?php
               //fetch verfied comments sorted by date;
@@ -210,46 +209,61 @@
               $result_v_comments = $conn->query($fetch_verfied_comments);
               if ($result_v_comments->num_rows > 0)
               {
+                ?>
+                <div id="product-comments-box" class="product-introduction-box">
+                    <h1 class="set-the-font">نظر خریداران این محصول</h1>
+                <?php
                 while($row = $result_v_comments->fetch_assoc())
                 {
                   ?>
-                      <div class="set-two-font comment-text-style comment-status-bad">
+                      <div class="set-two-font comment-text-style">
                           <h2><?php echo $row['cv_text'];?></h2>
                            <div class="set-the-font date-comment"><span><?php echo $row['cv_date'];?></span></div>
                       </div>
                       <br/>
                   <?php
                 }
+                ?>
+                </div>
+
+                <?php
               }
-
-
               ?>
 
 
 
 
 
+              <?php
+              //check customer login status
+              if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
+              {
+                if(isset($_SESSION["s_customer_id"]))
+                {
+                  ?>
+                  <div id="write-your-comment" class="set-two-font def-border">
+                       <h2>تجربه خرید این محصول را به اشتراک بزار</h2>
+                       <form action="./actions/a-send-comment-for-product.php" method="post">
+                         <input type="hidden" name="pid" value="<?php echo $proId;?>">
+                         <center><textarea id="customer-comment-text" name="commentText" rows="8" cols="80" dir="rtl" maxlength="301"></textarea></center>
+                         <div id="limited-chars-hint" class="set-the-font">
+                            <!-- <span>کارکتر های مجاز</span> <span>۱۲۰</span>/<span>۱</span> -->
+                          </div>
+                          <center>
+                         <!-- <div >
+                           <h3 id="button-add-my-comment">
+                         </div> -->
+                         <input id="base-button-add-my-comment" class="cursor-pointer unselectable set-the-font" type="submit" value="ثبت نظر">
+                       </form>
+                       </center>
+                   </div>
+                  <?php
+                }
+              }
 
-
-              <div id="write-your-comment" class="set-two-font def-border">
-                   <h2>تجربه خرید این محصول را به اشتراک بزار</h2>
-                   <form action="./actions/a-send-comment-for-product.php" method="post">
-                     <input type="hidden" name="pid" value="<?php echo $proId;?>">
-                     <center><textarea id="customer-comment-text" name="commentText" rows="8" cols="80" dir="rtl" maxlength="301"></textarea></center>
-                     <div id="limited-chars-hint" class="set-the-font">
-                        <!-- <span>کارکتر های مجاز</span> <span>۱۲۰</span>/<span>۱</span> -->
-                      </div>
-                      <center>
-                     <!-- <div >
-                       <h3 id="button-add-my-comment">
-                     </div> -->
-                     <input id="base-button-add-my-comment" class="cursor-pointer unselectable set-the-font" type="submit" value="ثبت نظر">
-                   </form>
-                   </center>
-              </div>
+              ?>
               <br/>
 
-        </div>
     </div>
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
