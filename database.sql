@@ -63,8 +63,8 @@ CREATE TABLE t_product
 CREATE TABLE t_orders
 (
     `o_id` INT (4) NOT NULL AUTO_INCREMENT,
-    `o_status` INT (1) NOT NULL DEFAULT('0'),
-    `o_PP` VARCHAR(11) DEFAULT('0'),
+    `o_status` INT (1) NOT NULL DEFAULT('2'),
+    `o_PP` VARCHAR(11) DEFAULT('15000'),
     `o_PTC` VARCHAR (20) DEFAULT('0'),
     `o_PSC` INT (1) DEFAULT('0'),
     `o_owner_cid` INT (4) NOT NULL,
