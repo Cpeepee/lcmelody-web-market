@@ -4,6 +4,16 @@
 
 
     //fetch cart list
+
+
+    //fetch price and discount that product
+
+
+    //if much amount is == cart list amount requeist make minus else say this not enough amount
+
+
+    //if amount minused make an order with those products for this customer id
+
     $fetch_cartlist = "SELECT cl_p_id,cl_p_amount FROM t_cart_list WHERE `cl_c_id`='$customerSessionId';";
     $result_fetch_cartlist = $conn->query($fetch_cartlist);
     if ($result_fetch_cartlist->num_rows > 0)

@@ -5,24 +5,8 @@
 
     //get sort mode (order status)
     $sortedX = $_GET['sort'];
-    if($sortedX==0||$sortedX=="0"||$sortedX=="")
-    {
-      $sortedX = "payment";
-    }
-    switch ($sortedX)
-    {
-      case 'processing':
-          {$the_order_by_value = "3";}break;
 
-      case 'delivered':
-          {$the_order_by_value = "1";}break;
 
-      case 'cancel':
-          {$the_order_by_value = "0";}break;
-
-      default: //==payment
-          {$the_order_by_value = "2";}break;
-    }
 ?>
     <title>سبد خرید</title>
     <link rel="stylesheet" href="../assets/css/orders.css">
@@ -43,11 +27,61 @@
         <div id="base-orders" class="def-border set-two-font">
 
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <div id="menu-order" class="set-two-font unselectable">
-                <h2 id="awating-payment" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">در انتظار پرداخت</h2>
-                <h2 id="processing" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=processing')">در حال پردازش</h2>
-                <h2 id="delivered" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=delivered')">تحویل شده</h2>
-                <h2 id="canceled" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=cancel')">لغو شده</h2>
+
+          <div id="menu-order" class="set-two-font unselectable">
+
+        <?php
+
+            if($sortedX==0||$sortedX=="0"||$sortedX=="")
+            {
+              $sortedX = "processing";
+            }
+            switch ($sortedX)
+            {
+              case 'processing':
+                  {
+                    $the_order_by_value = "3";
+                    ?>
+                        <h2 id="processing" class="menu-order-titles-style menu-order-title-selected cursor-pointer" onclick="window.location=('my-orders.php?sort=processing')">در حال پردازش</h2>
+                        <h2 id="awating-payment" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">در انتظار پرداخت</h2>
+                        <h2 id="delivered" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=delivered')">تحویل شده</h2>
+                        <h2 id="canceled" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=cancel')">لغو شده</h2>
+                    <?php
+                  }break;
+
+              case 'delivered':
+                  {$the_order_by_value = "1";
+                    ?>
+                        <h2 id="processing" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=processing')">در حال پردازش</h2>
+                        <h2 id="awating-payment" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">در انتظار پرداخت</h2>
+                        <h2 id="delivered" class="menu-order-titles-style menu-order-title-selected cursor-pointer" onclick="window.location=('my-orders.php?sort=delivered')">تحویل شده</h2>
+                        <h2 id="canceled" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=cancel')">لغو شده</h2>
+                    <?php
+                  }break;
+
+              case 'cancel':
+                  {$the_order_by_value = "0";
+                    ?>
+                        <h2 id="processing" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=processing')">در حال پردازش</h2>
+                        <h2 id="awating-payment" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">در انتظار پرداخت</h2>
+                        <h2 id="delivered" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=delivered')">تحویل شده</h2>
+                        <h2 id="canceled" class="menu-order-titles-style menu-order-title-selected cursor-pointer" onclick="window.location=('my-orders.php?sort=cancel')">لغو شده</h2>
+                    <?php
+                  }break;
+
+              default: //==payment
+                  {$the_order_by_value = "2";
+                    ?>
+                        <h2 id="processing" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=processing')">در حال پردازش</h2>
+                        <h2 id="awating-payment" class="menu-order-titles-style menu-order-title-selected cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">در انتظار پرداخت</h2>
+                        <h2 id="delivered" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=delivered')">تحویل شده</h2>
+                        <h2 id="canceled" class="menu-order-titles-style cursor-pointer" onclick="window.location=('my-orders.php?sort=cancel')">لغو شده</h2>
+                    <?php
+                  }break;
+            }
+
+        ?>
+
             </div>
             <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -59,6 +93,7 @@
             //fetch order details
             $all_order_ids = array();
             $all_order_PPs = array();
+            $the_order_by_value = (int)$the_order_by_value;
             $fetch_orders = "SELECT o_id,o_PP FROM t_orders WHERE `o_owner_cid`='$customerSessionId' AND `o_status`='$the_order_by_value';";
             $result_fetch_orders = $conn->query($fetch_orders);
             if ($result_fetch_orders->num_rows > 0)
@@ -70,8 +105,8 @@
                      ?>
                      <div class="order-style unselectable">
                        <div class="order-titles-style">
-                         <h2 class="order-id-style"><span>شماره سفارش</span> <span><?php echo $row['o_id'];?></span></h2>
-                         <h2 class="order-price-style"><span>مبلغ کل</span> <span id="final-price-<?php echo $row['o_id'];?>">0</span></h2>
+                         <h2 class="order-id-style set-the-font"><span>شماره سفارش</span> : <span><?php echo $row['o_id'];?></span></h2>
+                         <h2 class="order-price-style set-the-font"><span>مبلغ کل</span> : <span id="final-price-<?php echo $row['o_id'];?>">0</span></h2>
                        </div>
                        <div class="base-pictures-and-button-details">
                          <div id="pictures-box-<?php echo $row['o_id'];?>" class="pictures-box-style">
@@ -82,7 +117,7 @@
                            <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
                            <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
                          </div>
-                         <div id="btn-show-me-this-order-detials" class="btn-show-me-detials-style def-border cursor-pointer"  onclick="window.location=('order.php?id=<?php echo $row['o_id'];?>')">
+                         <div id="btn-show-me-this-order-detials-<?php echo $row['o_id'];?>" class="btn-show-me-detials-style def-border cursor-pointer"  onclick="window.location=('order.php?id=<?php echo $row['o_id'];?>')">
                              <h2 class="set-the-font txt-btn-show-order-style">مشاهده سفارش</h2>
                          </div>
                        </div>
@@ -93,7 +128,10 @@
             }
             else
             {
-              show_result("error","error while loading order data / order is not exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+              ?>
+                <h2>order by this status not found</h2>
+              <?php
+              // show_result("error","error while loading order data / order is not exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
             }
 
 
@@ -129,7 +167,7 @@
                   {
                     var node = document.createElement("IMG");
                     node.className = "picture-style";
-                    node.src = "../assets/img/p-images/<?php echo $value;?>-a.jpg";
+                    node.src = "../assets/img/p-images/<?php echo $row['oi_p_id'];?>-a.jpg";
                     document.getElementById("pictures-box-<?php echo $value;?>").appendChild(node);
                   }
                   </script>

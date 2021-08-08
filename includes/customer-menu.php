@@ -4,7 +4,7 @@ margin-right:10px;width:15%;float:right;color:gray;text-align:center;"
 
 
   <!-- CM = Customer Menu -->
-  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('my-orders.php?sort=payment')">
+  <div id="CM-button-orders" class="CMB-style def-border cursor-pointer" onclick="window.location=('my-orders.php')">
     <h2>سفارش ها</h2>
   </div>
 

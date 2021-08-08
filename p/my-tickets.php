@@ -93,7 +93,10 @@
               }
               else
               {
-                show_result("error","خطا در دریافت اطلاعات تیکت","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                ?>
+                <center><h2>ticket not found</h2></center>
+                <?php
+                // show_result("error","خطا در دریافت اطلاعات تیکت","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
               ?>
 

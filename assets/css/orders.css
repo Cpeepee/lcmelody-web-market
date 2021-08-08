@@ -13,9 +13,13 @@
 
 .menu-order-titles-style
 {
-  padding:10px;margin-top:0px;margin-right:40px;
+  padding:10px;margin-top:0px;margin-right:40px;color:gray;
 }
 
+.menu-order-title-selected
+{
+  color:black;
+}
 
 .order-style
 {

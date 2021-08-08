@@ -35,8 +35,9 @@ place holders for  inputs
 
 GOOD AND TRUE VALUES
 ----------------------
-my-cart (post price , total price not load , button submit as order not work) items not show
-my-orders and order (error not load order by function because query is in query)
+my-cart (button submit as order not work)
+my-order (image is not buty)
+order (error not load order by function because query is in query)
 search not work (menu and page)
 product load is realy sick style pro details (discount and percent) image swipe image not work
 add prodcut price o amount o discount ro vared namikone to order item

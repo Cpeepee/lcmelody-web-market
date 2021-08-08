@@ -78,7 +78,7 @@
               }
             }
             else
-              show_result("error","error while loading customer data cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+              show_result("error","ur cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
 
@@ -101,7 +101,7 @@
                   }
                 }
                 else
-                  show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                  show_result("error","error while loading product data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
 
 
