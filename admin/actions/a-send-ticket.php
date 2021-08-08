@@ -22,6 +22,15 @@ if ($message_response== "" ||$ticket_id== "")
  }
 
 
+
+     //update status when admin answered that ticket
+     $update_status_ticket = "UPDATE t_ticket SET `t_status` = '1' WHERE `t_id`='$ticket_id';";
+     if ($conn->query($update_status_ticket) === FALSE)
+           show_result("error","status ticket is not update","","","Lc Melody","current");
+
+
+
+
  //fetch ticket message id
  $sql_search = "SELECT tm_id FROM t_ticket_admin_message WHERE tm_message_text = '$message_response' AND tm_t_id= '$ticket_id'";
  $result_search = $conn->query($sql_search);

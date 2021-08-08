@@ -1,5 +1,4 @@
 <?php
-    // require ('../includes/security.php');
     include ('../includes/header.php');
 
             $servername = "localhost";

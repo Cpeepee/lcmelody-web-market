@@ -85,5 +85,9 @@
 {
   border-color:green;
   color:green;
-  margin:20px auto 10px auto;
+  width:100%;
+}
+#base-button-save
+{
+  width:60%;height:auto;background-color:red;margin:20px auto;
 }

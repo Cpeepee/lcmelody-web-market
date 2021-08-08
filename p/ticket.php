@@ -4,6 +4,7 @@
 ?>
     <title>تیکت</title>
     <link rel="stylesheet" href="../assets/css/ticket.css">
+     <meta http-equiv="refresh" content="180">
 
 <?php
     include ('../includes/close-head.php');
@@ -182,15 +183,22 @@
 
 
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div id="base-your-response" class="def-border">
-          <h2 id="label-your-response">شما</h2>
-          <form action="./actions/a-send-response-to-ticket.php" method="post">
-          <input type="hidden" name="tid" value="<?php echo $tId;?>">
-          <textarea id="your-response-text" name="textResponse" class="def-border" placeholder="پاسخ شما" maxlength="2500"></textarea>
-            <div id="base-buttons">
-                <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
-            </div>
-        </div>
+        <?php
+        if($t_status!=0 || $t_status != "0")
+        {
+          ?>
+          <div id="base-your-response" class="def-border">
+            <h2 id="label-your-response">شما</h2>
+            <form action="./actions/a-send-response-to-ticket.php" method="post">
+            <input type="hidden" name="tid" value="<?php echo $tId;?>">
+            <textarea id="your-response-text" name="textResponse" class="def-border" placeholder="پاسخ شما" maxlength="2500"></textarea>
+              <div id="base-buttons">
+                  <input id="button-send" class="cursor-pointer unselectable" type="submit" value="ارسال">
+              </div>
+          </div>
+          <?php
+        }
+        ?>
       </div>
 
 

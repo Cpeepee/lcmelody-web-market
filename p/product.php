@@ -1,9 +1,6 @@
     <?php
-        // require ('../includes/security.php');
         include ('../includes/header.php');
         session_start();
-
-
 
         $servername = "localhost";
         $username = "me";
@@ -100,52 +97,69 @@
             <div id="section-a-product-details">
                 <div id="inner-section-a-product-details">
                   <h1 id="product-title" class="set-two-font"><?php echo $pTitle;?></h1>
-                  <h3 class="set-the-font">گارانتی اصالت و سلامت فیزیکی</h3>
                   <!-- <h3 class="set-the-font">پیشنهاد شده توسط<span> ۹۹۹ </span>خریدار </h3> -->
                   <?php
-                  if($pAmount<=9)
+                  if($pAmount==0)
                   {
-                    ?>
-                    <h2 class="set-the-font"><span><?php echo $pAmount;?></span> عدد باقی مانده</h2>
-                    <?php
-                  }
-                  else if($pAmount==0)
-                  {
+                      ?>
+                        <h2 id="unaviable-style">unaviable style</h2>
+                      </div>
+                  </div>
 
+                      <?php
                   }
                   else
                   {
                     ?>
-                    <center>
-                      <div id="discount-parent">
-                        <?php
-                            //count pecent discount
-                            $pPrice = str_replace(",","",$pPrice);
-                            $pPrice = (int)$pPrice;
-                            $pDiscount = str_replace(",","",$pDiscount);
-                            $pDiscount = (int)$pDiscount;
-                            $count_percent = $pDiscount/$pPrice;
-                            $percent_friendly = number_format( $count_percent * 100);
-                        ?>
-                        <div id="discount-box-sub" class="def-border">
-                          <h3 id="discount-number" class="set-the-font unselectable"><center><?php echo $percent_friendly;?><span id="percentage-symbol">٪</span></center></h3>
+                      <h3 class="set-the-font">گارانتی اصالت و سلامت فیزیکی</h3>
+                    <?php
+                    if($pAmount<=9)
+                    {
+                      ?>
+                      <h2 class="set-the-font"><span><?php echo $pAmount;?></span> عدد باقی مانده</h2>
+                      <?php
+                    }
+                    if($pDiscount != 0 || $pDiscount != "0")
+                    {
+                      ?>
+                      <center>
+                        <div id="discount-parent">
+                          <?php
+                              //count pecent discount
+                              $pPrice = str_replace(",","",$pPrice);
+                              $pPrice = (int)$pPrice;
+                              $pDiscount = str_replace(",","",$pDiscount);
+                              $pDiscount = (int)$pDiscount;
+                              $count_percent = $pDiscount/$pPrice;
+                              $percent_friendly = number_format( $count_percent * 100);
+                          ?>
+                          <div id="discount-box-sub" class="def-border">
+                            <h3 id="discount-number" class="set-the-font unselectable"><center><?php echo $percent_friendly;?><span id="percentage-symbol">٪</span></center></h3>
+                          </div>
+                          <h2 id="discounted-price" class="set-the-font"><del><?php echo number_format($pPrice);?></del> <span class="fontsize18">تومان</span></h2>
                         </div>
-                        <h2 id="discounted-price" class="set-the-font"><del><?php echo number_format($pPrice);?></del> <span class="fontsize18">تومان</span></h2>
-                      </div>
+                      </center>
+                      <h1 id="price-with-discount-pro" class="set-the-font" style="margin-top:80px;"><span><?php echo number_format($pPrice-$pDiscount);?></span> <span class="fontsize18">تومان</span></h1>
+                      <?php
+                    }
+                    else
+                    {
+                        ?>
+                            <h1 class="set-the-font"><span><?php echo number_format($pPrice);?></span> <span class="fontsize18">تومان</span></h1>
+                        <?php
+                    }
+                    ?>
 
-
-                    </center>
-                    <h1 class="set-the-font"><span><?php echo number_format($pDiscount);?></span> <span class="fontsize18">تومان</span></h1>
                   </div>
               </div>
 
-              <div id="section-b-product-details">
-                  <center>
-                    <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-add-product-to-cartlist.php?id=<?php echo $proId;?>')">
-                      <h2 id="button-add-to-my-cartlist" class="set-the-font">افزودن به سبد خرید</h2>
-                    </div>
-                  </center>
-              </div>
+                <div id="section-b-product-details">
+                    <center>
+                      <div id="base-button-add-to-my-cartlist" class="cursor-pointer unselectable" onclick="window.location=('./actions/a-add-product-to-cartlist.php?id=<?php echo $proId;?>')">
+                        <h2 id="button-add-to-my-cartlist" class="set-the-font">افزودن به سبد خرید</h2>
+                      </div>
+                    </center>
+                </div>
               <?php
             }
           ?>
@@ -201,7 +215,6 @@
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-    <div class="base-product-sections def-border">
 
               <?php
               //fetch verfied comments sorted by date;
@@ -210,6 +223,7 @@
               if ($result_v_comments->num_rows > 0)
               {
                 ?>
+                <div class="base-product-sections def-border">
                 <div id="product-comments-box" class="product-introduction-box">
                     <h1 class="set-the-font">نظر خریداران این محصول</h1>
                 <?php
@@ -263,9 +277,41 @@
 
               ?>
               <br/>
-
     </div>
     <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <?php include ('../includes/footer.php'); ?>
+    <?php include ('../includes/footer.php');
+
+
+
+    function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
+    {
+        if($window=="new")
+        {
+          ?>
+            <script>
+                window.open('http://localhost/lc/p/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            </script>
+          <?php
+        }
+        else
+        {
+        ?>
+            <script>
+                window.location=('http://localhost/lc/p/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
+            </script>
+         <?php
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    ?>
     <?php require "./includes/footer.php";?>

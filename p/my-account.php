@@ -90,7 +90,9 @@
               </div>
             </div>
 
-          <input id="button-save" class="button-style cursor-pointer unselectable def-border" type="submit" value="ثبت تغییرات">
+            <div id="base-button-save">
+              <input id="button-save" class="button-style cursor-pointer unselectable def-border" type="submit" value="ثبت تغییرات">
+            </div>
         </form>
           <br/>
 

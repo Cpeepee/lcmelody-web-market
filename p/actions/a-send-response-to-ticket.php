@@ -15,6 +15,13 @@ if ($tid == "" || $text_response =="")
 
 
 
+    //update status ticket to customer is waiting for answer
+    $update_status_ticket = "UPDATE t_ticket SET `t_status` = '3' WHERE `t_id`='$tid';";
+    if ($conn->query($update_status_ticket) === FALSE)
+          show_result("error","status ticket is not update","","","Lc Melody","current");
+
+
+
           $sql_search = "SELECT tm_id FROM t_ticket_customer_message WHERE `tm_t_id`='$tid' AND `tm_c_id`='$customerSessionId' AND `tm_message_text`='$text_response';";
           $result_search = $conn->query($sql_search);
           if ($result_search->num_rows > 0)

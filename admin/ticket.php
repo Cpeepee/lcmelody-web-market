@@ -2,6 +2,7 @@
 <?php include ('./includes/the-header.php');?>
 <title>تیکت - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/ticket.css">
+<meta http-equiv="refresh" content="120">
 <?php include ('./includes/the-close-head.php');?>
 <?php include ('./includes/the-banner.php'); ?>
 

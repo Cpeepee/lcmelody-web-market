@@ -1,49 +1,71 @@
+C-DETECTED BUG?? my-orders total cost , oPP add namishe be total cost
+C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket but cant join and response or add appendix to that ticket
+
+
 CUSTOMER--------------------
+cart list button plus remove minus not work
+cart list not load all products
+cart list(button submit as order not work) button submit unselectable
+
+product image swipe image not work
+
 titles forms
 check error html from source code page by browser
+check inputs post and get for stop sql injection
+validation inputs
 error/success messages to persian
 index- and other menu items
-center products search.php
-product bug pecent and price without pDiscount
-check all forms with bad values
 modify term and rules
+
 icon slider product.php
 add default.jpg to p-images
 fav icons
-help? anonymous customer can create ticket but cant join ticket.php?id because he is not logged in and cant send response
-log out page and icon
-secqueriies removed chack
-product added mius the product amount if product ended and if exists in cart list remove that
-validation inputs
-check inputs post and get for stop sql injection
-button my-acount style is bad
-when customer sent response change ticket status to waiting for answer
-refresh page per 1minut ticket
-if ticket status = closed customer cant send response and resposne box will be disable
-if customer is not logged in dont show box sibmut comment on product
-product not avaible is sick style in product
-percentage search is not good style
-help? my-orders total cost , oPP add namishe be total cost
-open new ticket if customer logged in remove email label and change it to Identification
+check all forms with bad values
+
+
+
+
+
 
 ADMIN---------------------------------
-check useless ids and harass id or names from forms
-update status ticket not work when is select 0
-check all codes
-fix all documents and admin algorightms
-update documents
-delete order by admin
 log out page and icon
+when price and discouunt a product eidted or added style number_format do that before save
+
 price and discounts replace . to , and space to ,
 button send ticket replsonse admin
-when admin sent repsonse to ticket change ticket status to answered
-refresh page per 1minut ticket
-place holders for  inputs
-when price and discouunt a product eidted or added style number_format do that
-remove ccLIKE and ccDISLIKE from product database ER
+place holders for inputs
 
-GOOD AND TRUE VALUES
-----------------------
-my-cart (button submit as order not work) button submit unselectable
-product load is realy sick style pro details (discount and percent) image swipe image not work
-add prodcut price o amount o discount ro vared namikone to order item
+
+check useless ids and harass id or names from forms
+admin can modify logo icon and fav icon and upload those
+delete order by admin
+
+remove ccLIKE and ccDISLIKE from product database ER
+fix all documents and admin algorightms
+check all codes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

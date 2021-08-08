@@ -1,5 +1,4 @@
 <?php
-    // require ('../includes/security.php');
     session_start();
 
     include ('../includes/header.php');
@@ -24,8 +23,7 @@
 
 
 
-        <div id="email-left" class="style-title-email-sides">
-          <h2 class="set-the-font style-label">پست الکترونیک</h2>
+
         <?php
         //check if customer is logged in set readonly and cid to email
         if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
@@ -34,18 +32,21 @@
           {
             $customerSessionId =  $_SESSION['s_customer_id'];
             ?>
-                <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" value="<?php echo $customerSessionId;?>" readonly>
+                <input id="email-ticket" class="input-style def-border set-two-font" type="hidden" name="email" value="<?php echo $customerSessionId;?>">
             <?php
           }
         }
         else
         {
           ?>
+          <div id="email-left" class="style-title-email-sides">
+            <h2 class="set-the-font style-label">پست الکترونیک</h2>
               <input id="email-ticket" class="input-style def-border set-two-font" type="text" name="email" maxlength="60">
+          </div>
+
           <?php
         }
         ?>
-        </div>
       </div>
 
       <div id="base-message">

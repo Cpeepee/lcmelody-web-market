@@ -1,5 +1,4 @@
   <?php
-      // require ('../includes/security.php');
       require "./actions/includes/header.php";
       include ('../includes/header.php');
   ?>
@@ -63,6 +62,8 @@
                     <h3 class="item-price-unit">تومان</h3>
                       <div id="button-plus-minus-x" class="button-plus-minus-style">
                         <div class="centered-button-plus-minus-style">
+
+
                           <h2 class="btn-minus-plus-style cursor-pointer FloatLeft" onclick="changeAmount('minus',<?php echo $pid;?>)">-</h2>
                           <h2 class="btn-minus-plus-style cursor-pointer FloatRight" onclick="changeAmount('plus',<?php echo $pid;?>)">+</h2>
                           <h2 id="amount-show-<?php echo $pid;?>" class="amount-style set-two-font"><?php echo $pamount;?></h2>
@@ -95,7 +96,7 @@
                          ?>
                          <script>
                               document.getElementById("title-item-<?php echo $value;?>").textContent = "<?php echo $row['p_title'];?>";
-                              document.getElementById("price-item-<?php echo $value;?>").textContent = "<?php echo $row['p_price'];?>";
+                              document.getElementById("price-item-<?php echo $value;?>").textContent = "<?php echo number_format($row['p_price']);?>";
                          </script>
                          <?php
                   }
@@ -160,8 +161,7 @@
                                 changeAmount('delete',pro_id);
                             else
                                 location.reload();
-
-                            // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
+                                // document.getElementById("amount-show-"+pro_id).textContent = old_amount;
                         }break;
 
                         case 'plus':
@@ -208,10 +208,6 @@
                 action_page = "a-delete-product-from-cartlist.php";
               }break;
 
-              default:
-              {
-                  //error
-              }break;
             }
 
             //check before send
@@ -234,7 +230,6 @@
             }
       }
       </script>
-
 
   </body>
 </html>

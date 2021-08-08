@@ -1,5 +1,4 @@
 <?php
-    // require ('../includes/security.php');
     require "./actions/includes/header.php";
     include ('../includes/header.php');
 
