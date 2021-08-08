@@ -43,7 +43,7 @@
                         $oo_date = $row['o_date'];
                         $oo_status = $row['o_status'];
                       ?>
-                            <h3>شماره سفارش : <span id="order-id"><?php echo $orderid;?></span></h3>
+                            <h3>شماره سفارش : <span id="order-id" class="set-the-font"><?php echo $orderid;?></span></h3>
                             <?php
                             switch ($row['o_status'])
                             {
@@ -69,7 +69,7 @@
                             }
                             ?>
 
-                            <h3>وضعیت : <span id="order-status"><?php echo $ostatus_text;?></span></h3>
+                            <h3>وضعیت : <span id="order-status" class="set-the-font"><?php echo $ostatus_text;?></span></h3>
                           </div>
                           <div id="left-order-detail-sub">
 
@@ -84,10 +84,11 @@
 
 
 
-                    //for count total price order
+                    //for count total price order and load items
                     $oo_amounts = array();
                     $oo_price = array();
                     $oo_discount = array();
+                    $oo_pid = array();
 
                     //fetch order items
                     $fetch_orderitems = "SELECT oi_p_id,oi_amount,oi_price,oi_discount FROM t_orders_items WHERE `oi_o_id`='$orderid';";
@@ -97,8 +98,8 @@
                       while($row = $result_fetch_orderitems->fetch_assoc())
                       {
 
-                             fetch_product_information($row['oi_p_id'],$row['oi_amount'],$row['oi_price'],$row['oi_discount']);
-                             //for total cost
+                             //for total cost and load items
+                             array_push($oo_pid,str_replace(",","",$row['oi_p_id']));
                              array_push($oo_amounts,str_replace(",","",$row['oi_amount']));
                              array_push($oo_price,str_replace(",","",$row['oi_price']));
                              array_push($oo_discount,str_replace(",","",$row['oi_discount']));
@@ -109,7 +110,7 @@
 
                     //count total cost
                     $total_order_cost=0;
-                    $total_order_cost=array_map(function ($oo_price,$oo_discount,$oo_amounts)------------------------
+                    $total_order_cost=array_map(function ($oo_price,$oo_discount,$oo_amounts)
                     {
                         $total = $oo_price - $oo_discount;
                         $GLOBALS['$total_order_cost'] += $total*$oo_amounts;
@@ -121,54 +122,49 @@
                   ?>
 
 
-                                              <h3>مبلغ کل : <span id="order-price"><?php echo $cost_tol;?></span></h3>
-                                              <h3>هزینه پست : <span id="order-post-price"><?php echo $oo_post_price;?></span></h3>
-                                              <h3>تاریخ ثبت سفارش : <span id="order-date"><?php echo $oo_date;?></span></h3>
+                                              <h3>مبلغ کل : <span id="order-price" class="set-the-font"><?php echo number_format($cost_tol);?></span></h3>
+                                              <h3>هزینه پست : <span id="order-post-price" class="set-the-font"><?php echo number_format($oo_post_price);?></span></h3>
+                                              <h3>تاریخ ثبت سفارش : <span id="order-date" class="set-the-font"><?php echo $oo_date;?></span></h3>
 
                 </div>
           </div>
 
           <div id="base-products">
-
-
-
-
-
-
-
             <?php
               //set order items
-              function fetch_product_information($productId,$amount,$price,$discount)
+              for ($i=0; $i <= count($oo_pid); $i++)
               {
-                  //fetch product information requirement
-                  $fetch_product_info = "SELECT p_title FROM t_product WHERE `p_id`='$productId';";
-                  $result_product_info = $conn->query($fetch_product_info);
-                  if ($result_product_info->num_rows > 0)
-                  {
-                    while($row = $result_product_info->fetch_assoc())
+                    //fetch product information requirement
+                    $fetch_product_info = "SELECT p_title FROM t_product WHERE `p_id`=$oo_pid[$i];";
+                    $result_product_info = $conn->query($fetch_product_info);
+                    if ($result_product_info->num_rows > 0)
                     {
-                        ?>
-                               <div class="base-product-list">
-                                     <div class="right-side-product-list cursor-pointer">
-                                               <div class="product-picture-style cursor-pointer">
-                                                 <img class="img-style-pro unselectable" src="../assets/img/p-images/<?php echo $productId?>-a.jpg" alt="product-image"/>
-                                                 <h2 class="product-amount-style unselectable"><?php echo $amount;?></h2>
-                                               </div>
-                                               <h2 class="title-product"><?php echo $row['p_title'];?></h2>
-                                     </div>
+                      while($row = $result_product_info->fetch_assoc())
+                      {
+                          ?>
+                                 <div class="base-product-list">
+                                       <div class="right-side-product-list">
+                                                 <div class="product-picture-style cursor-pointer" onclick="window.open('product.php?id=<?php echo $oo_pid[$i];?>')">
+                                                   <img class="img-style-pro unselectable" src="../assets/img/p-images/<?php echo $oo_pid[$i];?>-a.jpg" alt="product-image"/>
+                                                   <h2 class="product-amount-style unselectable set-the-font"><?php echo $oo_amounts[$i];?></h2>
+                                                 </div>
+                                                 <h2 class="title-product"><?php echo $row['p_title'];?></h2>
+                                       </div>
 
-                                     <div class="left-side-product-list">
-                                         <div class="product-amount-price-discount-style">
-                                           <h3>مبلغ : <span><?php echo $price;?></span></h3>
-                                           <h3>تخفیف : <span><?php echo $discount;?></span></h3>
-                                           <h3>تعداد : <span><?php echo $amount;?></span></h3>
-                                         </div>
-                                     </div>
-                               </div>
-                        <?php
+                                       <div class="left-side-product-list">
+                                           <div class="product-amount-price-discount-style">
+                                             <h3>مبلغ : <span class="set-the-font"><?php echo number_format($oo_price[$i]);?></span></h3>
+                                             <h3>تخفیف : <span class="set-the-font"><?php echo number_format($oo_discount[$i]);?></span></h3>
+                                             <h3>تعداد : <span class="set-the-font"><?php echo number_format($oo_amounts[$i]);?></span></h3>
+                                           </div>
+                                       </div>
+                                 </div>
+                          <?php
+                      }
                     }
-                  }
-                }
+              }
+
+
             ?>
 
 
@@ -194,10 +190,6 @@
               <?php
             }
             ?>
-
-
-
-
             </div>
 
           </div>

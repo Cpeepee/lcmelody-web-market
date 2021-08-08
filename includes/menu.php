@@ -14,7 +14,7 @@ session_start();
         </div> -->
 
         <div id="search-box">
-            <img id="search-button" class="unselectable cursor-pointer" src="../assets/img/icons/graysearch-50.png" alt="search-icon" onclick="window.location.href='search.php'"/>
+            <img id="search-button" class="unselectable cursor-pointer" src="../assets/img/icons/graysearch-50.png" alt="search-icon" onclick="searchFunc()"/>
             <input id="search-input" class="set-the-font" type="text" name="searchInput" placeholder="جستجو در ال سی ملودی" dir="rtl">
             <!-- <section id="search-box-suggestions" style="visibility:hidden;">
 
@@ -102,4 +102,21 @@ session_start();
             mainmanu.classList.remove("sticky");
       }
     </script> -->
+
+    <script>
+    //input search if enter pressed from keyboard
+    const search_enter_button = document.getElementById("search-input");
+    search_enter_button.addEventListener("keyup", function(event)
+    {
+        if (event.key === "Enter")
+            searchFunc();
+    });
+
+      function searchFunc() //button search clicked
+      {
+          var search_input_val = document.getElementById("search-input").value;
+          window.location='search.php?searched='+search_input_val;
+      }
+    </script>
+
 </div>

@@ -16,8 +16,11 @@ secqueriies removed chack
 product added mius the product amount if product ended and if exists in cart list remove that
 validation inputs
 check inputs post and get for stop sql injection
-
-
+button my-acount style is bad
+when customer sent response change ticket status to waiting for answer
+refresh page per 1minut ticket
+if ticket status = closed customer cant send response and resposne box will be disable
+if customer is not logged in dont show box sibmut comment on product
 
 ADMIN---------------------------------
 check useless ids and harass id or names from forms
@@ -28,16 +31,16 @@ update documents
 delete order by admin
 log out page and icon
 price and discounts replace . to , and space to ,
-
-
+button send ticket replsonse admin
+when admin sent repsonse to ticket change ticket status to answered
+refresh page per 1minut ticket
 place holders for  inputs
 
 
 GOOD AND TRUE VALUES
 ----------------------
-my-cart (button submit as order not work)
+my-cart (button submit as order not work) button submit unselectable
 my-order (image is not buty)
-order (error not load order by function because query is in query)
 search not work (menu and page)
 product load is realy sick style pro details (discount and percent) image swipe image not work
 add prodcut price o amount o discount ro vared namikone to order item
