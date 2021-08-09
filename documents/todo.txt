@@ -2,86 +2,31 @@ C-DETECTED BUG?? my-orders total cost , oPP add namishe be total cost
 C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket but cant join and response or add appendix to that ticket
 
 CUSTOMER--------------------
-check all forms with bad values
-
-check validation inputs by Js for example login and forget email register and balblalbal
-
-fav icons
 add default.jpg to p-images
 icon slider product.php
-
 
 sql with real values for test project
 check error html from source code page by browser
 full debug
 
 ADMIN---------------------------------
-check useless ids and harass id or names from forms
-
-fix all documents and admin algorightms
-
-check all codes
-
 
 
 NOTES----------------------------------
 - remove ccLIKE and ccDISLIKE from product database ER
--function show_result , validation data write on documnet admin section functions
 -delete banner down from douments
--add a_banner.php to admin algo
--remove target banner top
 -add banner id to banner database doument
 -whire algorightm convert_error_2str
--take maxlenth for admin inputs from database data giving
 -custoemr phone numbeber has been changed from int to varchar cuz int cant be more than 12
--edit product picture changed target=ep for upload_file.php
--check inputs later maybe they have useless id
--add if empty $_POST to all action files
-delete delete me later directories
--make all inputs in action files to lower case !!!!!!!!
+
+
 -add function insql to admin algorightm
 === last code was working on total cost price 000.000.000
 - add algo search and search result
-- check inputs action is empty
 - remove comment verfied and comfirm SS from ER
 - add algo comfirm comment
 - add algo delete comment
 - add admin status on admin and customer ticket messages at ER
-- careful about admin id session used in ticket.php button add appendix for defuatl is wrote 0 admin id instant admin session key
----*********BUG APPENDIX UPLOAD HAVE PROBLEM HOW TO SOLVE THAT? /admin/ticket.php
-----****** BUG actions a-delete-user.php!!!!!! from admin and customer edit page
--****BUG button show owner order not working
----** BUG remoge item from order !
----BUG DELETE PRODUCT
------BUG ADD SEARCH ORDER FOR PAGE ORDERS
----BUG SEARCH COMMENT , ADMIN , Product , Customer are NOT WORKING WITHOUT ERROR !
 --remove p_prictures from t_product ER
 - remove sicky banner from banner ER
 - add tm_id to ticketmessage admin and customer primery key
-===
-ticket
-tickets.php
-login
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-check inputs post and get for stop sql injection
-delete order by admin
-
-
-
-
-
-
-.

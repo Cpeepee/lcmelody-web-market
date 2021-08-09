@@ -22,6 +22,7 @@ if ($name_family == "" || $phone_number == "" || $email == "" || $address == "" 
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
 
+$email = strtolower($email);
 $thequery1 = "INSERT INTO t_customer (c_FL_name,c_phonenumer,c_email,c_address,c_password)
     VALUES ('$name_family','$phone_number','$email','$address','$password');";
 if ($conn->query($thequery1) === TRUE)

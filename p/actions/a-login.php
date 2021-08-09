@@ -10,6 +10,7 @@ if ($email == "" ||$password == "")
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
 
+  $email = strtolower($email);
   $sql_search = "SELECT c_id,c_attempts_TL,c_email,c_password FROM t_customer WHERE `c_email` = '$email';";
   $result_search = $conn->query($sql_search);
   if ($result_search->num_rows > 0)
