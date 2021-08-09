@@ -1,3 +1,18 @@
+-- DROP TABLE t_admin;
+-- DROP TABLE t_banners;
+-- DROP TABLE t_cart_list;
+-- DROP TABLE t_comment_verified;
+-- DROP TABLE t_comment_confirm;
+-- DROP TABLE t_customer;
+-- DROP TABLE t_orders_items;
+-- DROP TABLE t_orders;
+-- DROP TABLE t_product;
+-- DROP TABLE t_ticket_customer_message;
+-- DROP TABLE t_ticket_admin_message;
+-- DROP TABLE t_ticket;
+
+
+
 -- banner
 INSERT INTO t_banners (`b_id`) VALUES ('0');
 
