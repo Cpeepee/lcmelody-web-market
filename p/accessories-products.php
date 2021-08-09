@@ -1,15 +1,6 @@
 <?php
     include ('../includes/header.php');
-
-            $servername = "localhost";
-            $username = "me";
-            $password = "amx";
-            $dbname = "lc3";
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error)
-            {
-              show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
-            }
+    require "../includes/db-connection-without-session.php";
 
             $searched = $_GET['searched'];
 
@@ -140,4 +131,7 @@ else
   <br/>
 </div>
 <br/><br/>
-<?php require "./includes/footer.php";?>
+<?php
+require "./includes/footer.php";
+require './actions/includes/footer.php';
+?>

@@ -225,4 +225,5 @@
 
   </body>
 </html>
-<?php require "./includes/footer.php";?>
+<?php require "./includes/footer.php";
+require './actions/includes/footer.php';?>

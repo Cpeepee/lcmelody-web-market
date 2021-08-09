@@ -1,5 +1,6 @@
 <?php
     include ('../includes/header.php');
+    require "../includes/db-connection-without-session.php";
 ?>
     <title>فروشگاه ال سی ملودی</title>
     <link rel="stylesheet" href="../assets/css/home.css">
@@ -13,15 +14,6 @@
 
 
 <?php
-  $servername = "localhost";
-  $username = "me";
-  $password = "amx";
-  $dbname = "lc3";
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error)
-  {
-    show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
-  }
 
   //fetch special product ids from banner
   $spec_sec_a = array();
@@ -263,25 +255,6 @@
 
   </div>
 </div>
-<?php
-function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
-{
-    if($window=="new")
-    {
-      ?>
-        <script>
-            window.open('http://localhost/lc/p/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
-        </script>
-      <?php
-    }
-    else
-    {
-    ?>
-        <script>
-            window.location=('http://localhost/lc/p/result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
-        </script>
-     <?php
-    }
-}
-?>
-<?php include ('../includes/footer.php'); ?>
+
+<?php include ('../includes/footer.php');
+require './actions/includes/footer.php';?>

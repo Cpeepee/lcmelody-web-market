@@ -1,18 +1,6 @@
 <?php
 session_start();
-
-
-$servername = "localhost";
-$username = "me";
-$password = "amx";
-$dbname = "lc3";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error)
-{
-  show_result("error","خطا در ارتباط با پایگاه داده","","","Database Error","current");
-}
-
-
+require "../../includes/db-connection-without-session.php";
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -63,38 +51,5 @@ if ($email == "" ||$password == "")
                 show_result("error","خطا در ورود","","","Lc Melody","current");
       }
     }
-
-
-
-
-
-
-    //functions message from actions/includes/header.php
-    function show_result($mode="error",$text="result text",$button="",$target="",$title="LC Melody",$window="current")
-    {
-        if($window=="new")
-        {      //IF WANT CHANGE SHOW_RESULT INFO ALSO CHANGE THIS VALUES ON action/header and the-security
-
-          ?>
-            <script>
-                window.open('../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
-            </script>
-          <?php
-        }
-        else
-        {
-        ?>
-            <script>
-                window.location=('../result.php?mode=<?php echo $mode;?>&text=<?php echo $text;?>&button=<?php echo $button;?>&target=<?php echo $target;?>&title=<?php echo $title;?>');
-            </script>
-         <?php
-        }
-
-    }
-
-
-
-
-
 
 require "./includes/footer.php";?>
