@@ -39,12 +39,13 @@ if ($result_search->num_rows > 0)
 {
   while($row = $result_search->fetch_assoc())
   {
+    $row['p_price'] = str_replace(",","",$row['p_price']);
     ?>
                   <div class="item-style def-border set-two-font unselectable">
                     <img class="item-picture-style" src="../../assets/img/p-images/<?php echo $row['p_id'];?>-a.jpg" alt="<?php echo $row['p_title'];?>"/>
                     <h2 class="item-title"><?php echo $row['p_title'];?>
                     </h2>
-                    <h2 class="item-price set-the-font"><?php echo $row['p_price'];?></h2>
+                    <h2 class="item-price set-the-font"><?php echo number_format($row['p_price']);?></h2>
                     <h3 class="item-price-unit">تومان</h3>
                       <div class="cursor-pointer button-remove-style" id="button-remove-x" onclick="window.open('../edit-product.php?id=<?php echo $row['p_id'];?>');">
                         <h2 class="text-button-remove-style">ویرایش</h2>

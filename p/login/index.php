@@ -39,7 +39,6 @@ if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
         </center>
     </div>
 
-x`
 
   </body>
 </html>

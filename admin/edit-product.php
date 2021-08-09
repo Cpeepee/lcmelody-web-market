@@ -21,7 +21,7 @@
 
 
         $pid = (int)$pid;
-        
+
 
         //fetch customer information
         $sql_search = "SELECT p_brand,p_model,p_title,p_description,p_status,p_priority_TS,p_discount,p_summary_desc,p_type,p_price,p_amount FROM t_product WHERE p_id='$pid';";

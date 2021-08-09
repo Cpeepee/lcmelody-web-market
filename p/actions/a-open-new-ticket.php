@@ -1,4 +1,7 @@
-<?php require "./includes/header.php";
+<?php
+// require "./includes/header.php";
+require "../../includes/db-connection-without-session.php";
+
 
 $title = $_POST['title'];
 $email = $_POST['email']; //also can be cid

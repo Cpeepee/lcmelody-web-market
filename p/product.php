@@ -45,10 +45,10 @@
     <div id="base-product-section-one">
         <div id="product-picture-box" class="unselectable def-border">
           <div id="swipe-picture-to-right" class="cursor-pointer swipe-picture-style def-border" onclick="swipePicture('left')">
-            <img src="../assets/img/icons/swiper-right;" alt="swiper-right"/>
+            <img src="../assets/img/icons/slider-right.png" alt="swiper-right" style="width:100%;height:100%;"/>
           </div>
           <div id="swipe-picture-to-left" class="cursor-pointer swipe-picture-style def-border" onclick="swipePicture('right')">
-            <img src="../assets/img/icons/swiper-left;" alt="swiper-left"/>
+            <img src="../assets/img/icons/slider-left.png" alt="swiper-left" style="width:100%;height:100%;"/>
           </div>
           <center>
               <img id="main-picture-product" src="../assets/img/p-images/<?php echo $proId;?>-a.jpg" alt="some"/>

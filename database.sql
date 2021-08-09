@@ -81,14 +81,14 @@ CREATE TABLE t_banners
     `special_product_c` VARCHAR (4) DEFAULT('1'),
     `special_product_d` VARCHAR (4) DEFAULT('2'),
     `special_product_e` VARCHAR (4) DEFAULT('2'),
-    `special_product_f` VARCHAR (4) DEFAULT('2'),
+    `special_product_f` VARCHAR (4) DEFAULT('2')
     -- PRIMARY KEY (`b_id`),
-    FOREIGN KEY (`special_product_a`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`special_product_b`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`special_product_c`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`special_product_d`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`special_product_e`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    FOREIGN KEY (`special_product_f`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
+    -- FOREIGN KEY (`special_product_a`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
+    -- FOREIGN KEY (`special_product_b`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
+    -- FOREIGN KEY (`special_product_c`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
+    -- FOREIGN KEY (`special_product_d`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
+    -- FOREIGN KEY (`special_product_e`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
+    -- FOREIGN KEY (`special_product_f`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_orders_items

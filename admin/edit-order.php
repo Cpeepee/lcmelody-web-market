@@ -52,7 +52,7 @@
 
                     <section id="right-side" class="sides-style">
                       <input type="hidden" name="oid" value="<?php echo $id;?>">
-                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style"><?php echo $id;?></span></h2>
+                      <h2 class="labels-style">شناسه سفارش<span id="order-id" class="second-label-style set-the-font"><?php echo $id;?></span></h2>
                       <div class="divider-inputs">
                         <h2 class="labels-style floatright">وضعیت سفارش</h2>
                           <select id="order-status" class="combobox-style" name="order-status">
