@@ -66,7 +66,7 @@
               }
             }
             else
-              show_result("error","ur cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+              show_result("error","سبد خرید خالی است","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
               foreach ($pro_id_list_for_by_replace_js as $value)
@@ -90,7 +90,7 @@
                   }
                 }
                 else
-                  show_result("error","error while loading product data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                  show_result("error","اطلاعات محصول دریافت نشد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }
 
 
@@ -160,7 +160,7 @@
                                                           var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
                                                           old_amount++;
                                                           if(old_amount>99)
-                                                              alert("max value for amount a product can not be more than 99");
+                                                              alert("تعداد محصول نمی تواند بیشتر از ۹۹ تا بشود");
                                                           else
                                                               document.getElementById("amount-show-"+pro_id).textContent = old_amount;
                                                             // location.reload();
@@ -207,7 +207,7 @@
                                               var old_amount = document.getElementById("amount-show-"+pro_id).textContent;
                                               old_amount++;
                                               if(old_amount>99)
-                                              alert("max value for amount a product can not be more than 99");
+                                              alert("تعداد محصول نمی تواند بیشتر از ۹۹ تا بشود");
                                               else
                                               {
                                                 xhttp.open("GET", "./actions/"+action_page+"?id="+pro_id, true);

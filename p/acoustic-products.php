@@ -118,7 +118,8 @@ if ($result_pro_info->num_rows > 0)
 else
 {
   ?>
-    <h2>not found</h2>
+  <br/>
+  <h2 class="set-the-font">محصولی پیدا نشد</h2>
       <?php
 }
 

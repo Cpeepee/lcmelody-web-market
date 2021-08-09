@@ -127,7 +127,7 @@
             else
             {
               ?>
-                <h2>order by this status not found</h2>
+                <h2>سفارشی با این وضعیت  یافت نشد</h2>
               <?php
               // show_result("error","error while loading order data / order is not exists","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
             }

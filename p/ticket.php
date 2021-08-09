@@ -44,7 +44,7 @@
                 }
               }
               else
-                show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                show_result("error","اطلاعات تیکت دریافت نشد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
           ?>
 
           <h2 id="ticket-title">موضوع:

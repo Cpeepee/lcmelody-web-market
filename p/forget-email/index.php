@@ -11,7 +11,7 @@
             <input id='email' class='text-inputs' type="text" name="nameAndFamily" placeholder="محمد محمدی" autofocus dir='rtl' maxlength="60">
 
             <h3 class='set-the-font'>شماره موبایل خود را وارد کنید</h3>
-            <input id='password' class='text-inputs' type="text" name="phoneNumber" placeholder="09170000000" maxlength="15">
+            <input id='password' class='text-inputs' type="text" name="phoneNumber" placeholder="09123456789" maxlength="15">
 
             <br/><br/>
 

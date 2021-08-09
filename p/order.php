@@ -79,7 +79,7 @@
                     }
                   }
                   else
-                    show_result("error","error while loading customer data","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                    show_result("error","اطلاعات  سفارش دریافت نشد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
 
@@ -106,7 +106,7 @@
                       }
                     }
                     else
-                      show_result("error","error while loading order items","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+                      show_result("error","اطلاعات  محصولات درون این سفارش دریافت نشد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
                     //count total cost
                     $total_order_cost=0;

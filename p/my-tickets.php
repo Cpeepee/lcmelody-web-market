@@ -94,7 +94,7 @@
               else
               {
                 ?>
-                <center><h2>ticket not found</h2></center>
+                <center><h2>تیکتی پیدا نشد</h2></center>
                 <?php
                 // show_result("error","خطا در دریافت اطلاعات تیکت","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
               }

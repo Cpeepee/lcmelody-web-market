@@ -29,7 +29,7 @@
     }
   }
   else
-    show_result("error","error while loading special items","","","Lc Melody","current");
+    show_result("error","محصولات ویژه پیدا نشد","","","Lc Melody","current");
 
 ?>
 
@@ -134,7 +134,7 @@
           }
         }
         else
-            show_result("error","failed to load product information","","","Lc Melody","current");
+            show_result("error","اطلاعات محصول دریافت نشد","","","Lc Melody","current");
 
       }
 
@@ -245,7 +245,7 @@
         }
       }
       else
-          show_result("error","failed to load product information","","","Lc Melody","current");
+          show_result("error","اطلاعات محصول دریافت نشد","","","Lc Melody","current");
 
     }
 

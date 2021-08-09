@@ -33,9 +33,6 @@ if ($result_pro_info->num_rows > 0)
 {
   while($row = $result_pro_info->fetch_assoc())
   {
-        // $pid = $row['p_id'];
-        // $pTitle = $row['p_title'];
-        // $pAmount = $row['p_amount'];
         $pPrice = $row['p_price'];
         $pDiscount = $row['p_discount'];
 
@@ -125,7 +122,8 @@ if ($result_pro_info->num_rows > 0)
 else
 {
   ?>
-    <h2>not found</h2>
+    <br/>
+    <h2 class="set-the-font">محصولی پیدا نشد</h2>
       <?php
 }
 
