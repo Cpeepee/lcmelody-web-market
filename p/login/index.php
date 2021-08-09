@@ -5,7 +5,10 @@ if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
 {
   if(isset($_SESSION["s_customer_id"]))
   {
-    ?><script> window.location = "../client-area.php"; </script><?php
+    if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] === "23df93b500cebFB13a7e240dAL1bee805152f918b5")
+    {
+      ?><script> window.location = "../client-area.php"; </script><?php
+    }
   }
 }
 ?>

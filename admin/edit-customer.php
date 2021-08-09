@@ -19,7 +19,7 @@
         }
 
         $c_id = (int)$c_id;
-        
+
 
 
         //fetch customer information
@@ -79,7 +79,7 @@
                       <br/>
                       <div class="divider-inputs">
                          <h2 class="labels-style floatright">تلاش به ورود</h2>
-                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $c_attempts;?>" name="attempts" maxlength="1">
+                         <input id="user-attemps" class="inputs-style dirltr" type="text" value="<?php echo $c_attempts;?>" name="attempts" maxlength="1"  placeholder="0">
                       </div>
                     </section>
 
