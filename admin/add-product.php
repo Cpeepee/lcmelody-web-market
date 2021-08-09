@@ -78,9 +78,9 @@
             </section>
 
               <section id="base-buttons">
-                  <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره"></button>
-                </form>
+                  <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره">
               </section>
+            </form>
         </section>
 
 

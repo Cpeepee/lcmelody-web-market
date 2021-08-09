@@ -218,7 +218,7 @@
                       ?>
                           <div id="p<?php echo $valuee4;?>" class="divider-product-images">
                             <img class="product-image-style cursor-pointer" src="../assets/img/p-images/<?php echo $valuee4;?>-a.jpg" alt="product-<?php echo $valuee4;?>"/>
-                            <img class="button-product-delete-style cursor-pointer" src="../assets/img/icons/delete-50.png" alt="delete"/  onclick="deleteItem(<?php echo $valuee4;?>)">
+                            <img class="button-product-delete-style cursor-pointer" src="../assets/img/icons/delete-50.png" alt="delete"  onclick="deleteItem(<?php echo $valuee4;?>)"/>
                           </div>
                       <?php
                     }
@@ -234,7 +234,7 @@
           <br/>
 
           <div id="base-buttons">
-            <input id="button-save-order-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
+            <input id="button-save-order-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات">
           </form>
 
             <button id="button-order-owner" class="button-style cursor-pointer" type="button" onclick="window.open('edit-customer.php?id=<?php echo $o_owner;?>');">مشخصات سفارش دهنده</button>

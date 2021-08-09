@@ -105,7 +105,7 @@
           <br/>
           <h3></h3>
           <div id="buttons-base">
-            <input id="button-save-account-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
+            <input id="button-save-account-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات">
           </form>
             <button id="button-delete-account" class="button-style cursor-pointer" type="button" onclick="window.open('./actions/a-delete-user.php?mode=customer&id=<?php echo $c_id;?>');">حذف حساب</button>
           </div>

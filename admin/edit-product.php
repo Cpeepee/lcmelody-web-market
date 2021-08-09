@@ -57,8 +57,8 @@
         <section id="parrent-section-style">
             <h1 style="font-size:35px;margin:15px 2.50%;">ویرایش محصول</h1>
             <div id="buttons-divider">
+              <form action="./actions/a-edit-product.php" method="post">
                   <section id="right-side" class="sides-style">
-      <form action="./actions/a-edit-product.php" method="post">
 
                     <div class="divider-inputs">
                       <h2 class="labels-style floatright">عنوان محصول</h2>
@@ -115,6 +115,7 @@
                     </div>
                   </section>
               </div>
+
               <section id="section-more-information">
                 <div id="divider-techniocal-info">
                    <h2 class="title-more-description">مشخصات فنی</h2>
@@ -153,9 +154,9 @@
 
               <section id="base-buttons">
                   <input id="button-save-edits-product" class="style-buttons cursor-pointer" type="submit" value="ذخیره تغییرات">
-                </form>
                 <button id="button-delete-product" class="style-buttons cursor-pointer" type="button" onclick="window.open('./actions/a-delete-product.php?id=<?php echo $pid;?>');">حذف محصول</button>
               </section>
+            </form>
         </section>
 
 

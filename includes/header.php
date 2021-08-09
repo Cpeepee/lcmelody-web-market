@@ -6,4 +6,3 @@
     <link rel="stylesheet" href="../assets/css/banner.css">
     <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <!-- <script type="text/javascript" src="./global.js"></script> -->

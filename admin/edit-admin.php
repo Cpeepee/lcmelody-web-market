@@ -89,7 +89,7 @@ include ('./includes/the-banner.php'); ?>
           <br/>
           <h3></h3>
           <div id="buttons-base">
-            <input id="button-save-account-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات"></input>
+            <input id="button-save-account-edits" class="button-style cursor-pointer" type="submit" value="ذخیره تغییرات">
             </form>
             <button id="button-delete-account" class="button-style cursor-pointer" type="button" onclick="window.open('./actions/a-delete-user.php?mode=admin&id=<?php echo $id;?>');">حذف حساب</button>
           </div>

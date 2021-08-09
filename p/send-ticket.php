@@ -13,10 +13,10 @@
 
   <div id="base-send-ticket" class="def-border set-two-font">
     <h1 id="title" class="set-the-font">ارسال پیام به پشتیبانی</h1>
+    <form action="./actions/a-open-new-ticket.php" method="post">
       <div id="base-title-email">
         <div id="title-right" class="style-title-email-sides">
           <h2 class="set-the-font style-label">موضوع</h2>
-    <form action="./actions/a-open-new-ticket.php" method="post">
           <input id="title-ticket" class="input-style def-border set-two-font" type="text" name="title" value="">
         </div>
 
@@ -56,14 +56,13 @@
 
       <div id="base-buttons" class="set-the-font cursor-pointer">
         <input id="send-button" class="unselectable buttons-style button-text-style" type="submit" value="ارسال">
-      </form>
           <div id="cancel-button" class="unselectable buttons-style" onclick="window.location=('index.php')">
+          </form>
             <h2 class="button-text-style">لغو</h2>
           </div>
       </div>
     <br/>
   </div>
-  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
   </body>
 </html>

@@ -67,7 +67,6 @@ switch ($mode)
           <?php echo $text;?>
         </h1>
 
-        </script>
         <?php
         if($button!="")
         {
