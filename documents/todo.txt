@@ -2,28 +2,11 @@ C-DETECTED BUG?? my-orders total cost , oPP add namishe be total cost
 C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket but cant join and response or add appendix to that ticket
 
 CUSTOMER--------------------
-
-sql with real values for test project
-check error html from source code page by browser
-full debug
-
-
 edit banner top
 add default.jpg to p-images
 icon slider product.php
 
 NOTES ER DOCUMENT ----------------------------------
-- remove ccLIKE and ccDISLIKE from product database ER
-- delete banner down from douments
-- add banner id to banner database doument
-- whire algorightm convert_error_2str
-- custoemr phone numbeber has been changed from int to varchar cuz int cant be more than 12
 - add algo search and search result
-- remove comment verfied and comfirm SS from ER
-- add algo comfirm comment
 - add algo delete comment
-- add admin status on admin and customer ticket messages at ER
-- remove p_prictures from t_product ER
-- remove sicky banner from banner ER
-- add tm_id to ticketmessage admin and customer primery key
--remove visited from datanase ER
+- add algo comfirm comment
