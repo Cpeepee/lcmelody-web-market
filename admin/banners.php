@@ -1,5 +1,4 @@
 <?php require './actions/includes/header.php';?>
-<!-- <php require ('./includes/the-security.php'); ?> -->
 <?php include ('./includes/the-header.php');?>
 <title>ویرایش بنر  - ال سی ملودی</title>
 <link rel="stylesheet" href="./assets/css/banners.css">

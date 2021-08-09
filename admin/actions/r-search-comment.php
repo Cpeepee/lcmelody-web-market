@@ -30,9 +30,6 @@
 $searched = $_POST['q'];
 $searched = strtolower($searched);
 
-// $sql_search_cc = "SELECT  cc_c_id,a_email FROM t_admin WHERE a_email LIKE '%$searched%' OR a_id LIKE '%$searched%';";
-
-
 //fetch Comment Confirm
 $sql_search_cc = "SELECT cc_c_id,cc_p_id,cc_text FROM t_comment_confirm WHERE cc_text LIKE '%$searched%' OR cc_c_id LIKE '%$searched%' OR cc_p_id LIKE '%$searched%';";
 $result_search_cc = $conn->query($sql_search_cc);

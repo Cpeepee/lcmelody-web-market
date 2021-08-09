@@ -17,7 +17,6 @@ session_start();
             <img id="search-button" class="unselectable cursor-pointer" src="../assets/img/icons/graysearch-50.png" alt="search-icon" onclick="searchFunc()"/>
             <input id="search-input" class="set-the-font" type="text" name="searchInput" placeholder="جستجو در ال سی ملودی" dir="rtl">
             <!-- <section id="search-box-suggestions" style="visibility:hidden;">
-
                 <div class="searched-item-style cursor-pointer unselectable">
                   <h3>the suggewstion from the fg mwegjh retj ghjioethj oitrjhio rjtoi hjiortj hoijrtio hiortj iohjtrio hjiotr jhoijr toihjoirgoirej iogjoirgggggggggggggggggggggggggggggggggggggge joig re 1g2re3 1g23er 1g231er 23g1 23r1 g32er1 32g1er32server </h3>
                 </div>

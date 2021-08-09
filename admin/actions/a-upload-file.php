@@ -13,9 +13,6 @@ $id = (int)$id;
 $place = (int)$place;
 
 
-// $uploaded_file = $_POST['uploaded_file'];
-
-
           switch ($target)
           {
             case 'p':
@@ -224,21 +221,6 @@ $place = (int)$place;
             }
               break;
           }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 require "./includes/footer.php";?>

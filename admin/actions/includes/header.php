@@ -1,15 +1,9 @@
 <?php
 session_start();
-// $_SESSION["s_admin_id"] = $admininfo['id'];
-// $_SESSION["state_login"] = true;
-// $_SESSION["user_type"] = "3e64Bi1LebFB13a7e240de6b54IR44c4413161400";
-
-//database host info
-/*
+/*database host info
 $username = "seniorad_lc3";
 $password = "Mx6pUGixG9Ytw6Z";
 $dbname = "seniorad_lc3";
-
 */
 
 
