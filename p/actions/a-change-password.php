@@ -8,9 +8,9 @@ if ($pass == "")
 
     $thequery1 = "UPDATE t_customer SET `c_password` = '$pass' WHERE `c_id`='$customerSessionId';";
     if ($conn->query($thequery1) === TRUE)
-          show_result("success","password updated","","","Lc Melody","current");
+          show_result("success","کلمه عبور شما با موفقیت تغییر یافت","","","Lc Melody","current");
     else
-          show_result("error","password is not update","","","Lc Melody","current");
+          show_result("error","کلمه عبور شما تغییر نیافت","","","Lc Melody","current");
 
 
 

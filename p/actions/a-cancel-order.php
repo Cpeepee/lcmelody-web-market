@@ -10,9 +10,9 @@ if ($id =="")
 
     $thequery1 = "UPDATE t_orders  SET `o_status` = '0' WHERE `o_id`='$id' AND `o_owner_cid`='$customerSessionId');";
     if ($conn->query($thequery1) === TRUE)
-          show_result("success","that order has been canceled successfully","","","Lc Melody","current");
+          show_result("success","سفارش با موفقیت لغو شد","","","Lc Melody","current");
     else
-          show_result("error","order is not cancled","","","Lc Melody","current");
+          show_result("error","این سفارش قابل لغو شدن نیست","","","Lc Melody","current");
 
 
 

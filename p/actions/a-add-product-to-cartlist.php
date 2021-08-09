@@ -8,7 +8,6 @@ if ($pid == "")
 }
 
 
-
     $thequery1 = "INSERT INTO t_cart_list (cl_c_id,cl_p_id,cl_p_amount) VALUES ('$customerSessionId','$pid','1');";
     if ($conn->query($thequery1) === TRUE)
     {
@@ -17,8 +16,7 @@ if ($pid == "")
       <?php
     }
     else
-          show_result("error","error while adding cart list maybe its exists","","","Lc Melody","current");
-
+        show_result("error","این محصول در سبد خرید شما موجود میباشد","","","Lc Melody","current");
 
 
 require "./includes/footer.php";?>

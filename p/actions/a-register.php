@@ -25,8 +25,9 @@ if ($name_family == "" || $phone_number == "" || $email == "" || $address == "" 
 $thequery1 = "INSERT INTO t_customer (c_FL_name,c_phonenumer,c_email,c_address,c_password)
     VALUES ('$name_family','$phone_number','$email','$address','$password');";
 if ($conn->query($thequery1) === TRUE)
-      show_result("success","account is created successfully","login","./login/index.php","Lc Melody","current");
+      show_result("success","حساب شما با موفقیت ساخته شد",
+      "ورود به حساب","./login/index.php","Lc Melody","current");
 else
-      show_result("error","erro while create account","","","Lc Melody","current");
+      show_result("error","حساب شما ساخته نشد <br/>لطفا از صحت اطلاعات وارد شده اطمینان حاصل کنید","","","Lc Melody","current");
 
 require "./includes/footer.php";?>

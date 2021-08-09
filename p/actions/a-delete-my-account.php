@@ -10,12 +10,12 @@
       $delete_ticket_customer_with_passive_id_dependency = "DELETE FROM t_ticket WHERE `t_email`='$customerSessionId';";
       if ($conn->query($delete_ticket_customer_with_passive_id_dependency) === TRUE)
       {
-        show_result("success","مشتری با موفقیت حذف شد","","","Lc Melody","current");
+        show_result("success","حساب شما با موفقیت حذف شد","","","Lc Melody","current");
+        session_destroy();
       }
       else
       {
-        show_result("error","مشتری حذف نشد","","","Lc Melody","current");
+        show_result("error","حساب شما حذف نشد","","","Lc Melody","current");
       }
-      session_destroy();
 
 require "./includes/footer.php";?>

@@ -13,9 +13,9 @@ if ($firstname == "" || $lastname == "" || $phonenumber == "" || $email == "" ||
 
     $thequery1 = "UPDATE t_customer SET `c_FL_name`='$firstname $lastname',`c_phonenumer`='$phonenumber',`c_email`='$email',`c_address`='$address' WHERE `c_id`='$customerSessionId';";
     if ($conn->query($thequery1) === TRUE)
-          show_result("success","customer edited","","","Lc Melody","current");
+          show_result("success","اطلاعات حساب با موفقیت ویرایش شد","","","Lc Melody","current");
     else
-          show_result("error","customer is not edit","","","Lc Melody","current");
+          show_result("error","اطلاعات حساب ویرایش نشد","","","Lc Melody","current");
 
 
 

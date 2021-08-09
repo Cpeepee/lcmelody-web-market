@@ -18,10 +18,10 @@ if ($email == "")
             $txt = "Your password is : ".$row['c_password'];
             $headers = "From: info@lcmelody.ir" . "\r\n";
             mail($email,$subject,$txt,$headers);
-            show_result("success","Please check your email<br/>the password has been sent to your email","","","Lc Melody","current");
+            show_result("success","کلمه عبور به پست الکترونیکی شما ارسال شد","","","Lc Melody","current");
         }
       }
       else
-        show_result("error","incorrect email account","","","Lc Melody","current");
+        show_result("error","پست الکترونیکی وارد شده معتبر نمی باشد","","","Lc Melody","current");
 
 require "./includes/footer.php";?>

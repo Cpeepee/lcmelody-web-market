@@ -23,13 +23,13 @@ if ($email == "" ||$password == "")
     }
   }
   else
-    show_result("error","incorrect email","","","Lc Melody","current");
+    show_result("error","پست الکترونیکی وارد شده معتبر نمی باشد","","","Lc Melody","current");
 
 
     $c_attempts = (int)$c_attempts;
     if($c_attempts >= 5)
     {
-      show_result("error","this account is blocked","","","Lc Melody","current");
+      show_result("error","این حساب مسدود شده است","","","Lc Melody","current");
     }
     else
     {

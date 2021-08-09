@@ -11,14 +11,14 @@ if ($tid == "" || $text_response =="")
 
     $thequery1 = "INSERT INTO t_ticket_customer_message (tm_t_id,tm_c_id,tm_message_text) VALUES ('$tid','$customerSessionId','$text_response');";
     if ($conn->query($thequery1) === FALSE)
-          show_result("error","message not sent","","","Lc Melody","current");
+          show_result("error","پیام شما ارسال نشد","","","Lc Melody","current");
 
 
 
     //update status ticket to customer is waiting for answer
     $update_status_ticket = "UPDATE t_ticket SET `t_status` = '3' WHERE `t_id`='$tid';";
     if ($conn->query($update_status_ticket) === FALSE)
-          show_result("error","status ticket is not update","","","Lc Melody","current");
+          show_result("error","خطایی در ویرایش وضعیت این تیکت رخ داده است","","","Lc Melody","current");
 
 
 
@@ -34,7 +34,7 @@ if ($tid == "" || $text_response =="")
             }
           }
           else
-              show_result("error","errro while load ticket message id to prepare to load appendix","","","Lc Melody","current");
+              show_result("error","خطا در هنگام دریافت شناسه تیکت رخ داده<br/>در حال حاضر امکان افزودن ضمیمه وجود ندارد","","","Lc Melody","current");
 
 
 require "./includes/footer.php";?>

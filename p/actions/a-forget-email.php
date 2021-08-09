@@ -15,11 +15,11 @@ if ($name_family == "" ||$phone_number == "")
   {
     while($row = $result_search->fetch_assoc())
     {
-      show_result("success","ur email is : ".$row['c_email'],"","","Lc Melody","current");
+      show_result("success","پست الکترونیکی شما : ".$row['c_email']." میباشد ","","","Lc Melody","current");
     }
   }
   else
-    show_result("error","name family and phone is not ok","","","Lc Melody","current");
+    show_result("error","نام و نام خانوادگی یا شماره تلفن جهت بازیابی پست الکترونیکی معتبر نمی باشد","","","Lc Melody","current");
 
 
 require "./includes/footer.php";

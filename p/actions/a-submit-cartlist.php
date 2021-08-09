@@ -20,7 +20,7 @@
       }
     }
     else
-      show_result("error","error while load cart list maybe customer cart list is empty","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
+      show_result("error","کارت لیست شما خالی میباشد","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 
 
     //get that products information
@@ -44,8 +44,14 @@
         }
       }
       else
-        show_result("error","product not found or this amount ur using are not avaliable right now in storage","","","Lc Melody","current");
+        show_result("error","موجودی محصول به انداز کافی نمیباشد","","","Lc Melody","current");
     }
+    /*------------------
+    here can add code [use $pid_amounts_not_available array] instead above error message
+        (to customer for that products are not enough amount do you want continue?)
+    ------------------*/
+
+
 
 
     //check amounts are enough
@@ -58,11 +64,6 @@
 
 
 
-    /*------------------
-    here can add code [use $pid_amounts_not_available array] in this case i dont use confirm message and just dont save that items as order item in order customer
-        (to customer for that products are not enough amount do you want continue?)
-    ------------------*/
-
 
 
 
@@ -70,7 +71,7 @@
     $current_time = date("Y-m-d h-m-s");
     $save_as_order = "INSERT INTO t_orders (`o_owner_cid`,`o_date`) VALUES ('$customerSessionId','$current_time');";
     if ($conn->query($save_as_order) === FALSE)
-          show_result("error","order is not created","","","Lc Melody","current");
+          show_result("error","سفارش ثبت نشد","","","Lc Melody","current");
 
 
 
@@ -85,7 +86,7 @@
       }
     }
     else
-        show_result("error","order id is not found","","","Lc Melody","current");
+        show_result("error","شناسه سفارش پیدا نشد","","","Lc Melody","current");
 
 
 
@@ -94,13 +95,13 @@
     {
       $add_item_to_order = "INSERT INTO t_orders_items (`oi_o_id`,`oi_p_id`,`oi_amount`,`oi_price`,`oi_discount`) VALUES ('$order_created_id','$collect_p_id[$a]','$collect_p_amount[$a]','$collect_p_price[$a]','$collect_p_discount[$a]');";
       if ($conn->query($add_item_to_order) === FALSE )
-          show_result("error","a product can not add to order item!","","","Lc Melody","current");
+          show_result("error","خطایی در هنگام افزودن یک محصول به سفارش رخ داده است","","","Lc Melody","current");
 
       //minus amount product was added to an order (order item) from product table
       $new_amount_pro = $collect_amount_avaliable[$a] - $collect_p_amount[$a];
       $minus_amount_product = "UPDATE t_product SET `p_amount`='$new_amount_pro' WHERE `p_id`='$collect_p_id[$a]';";
       if ($conn->query($minus_amount_product) === FALSE)
-          show_result("error","a product can not add to order item!","","","Lc Melody","current");
+          show_result("error","موجودی محصول بروزرسانی نشد","","","Lc Melody","current");
     }
 
 
@@ -110,11 +111,12 @@
     {
       $delete_from_cartlist = "DELETE FROM t_cart_list WHERE `cl_c_id` = '$customerSessionId' AND `cl_p_id` ='$collect_p_id[$a]';";
       if ($conn->query($delete_from_cartlist) === FALSE )
-          show_result("error","can not remove added product to order from cart list","","","Lc Melody","current");
+          show_result("error","خطایی هنگام حذف محصولات ثبت شده در سفارش از سبد خرید رخ داده است","","","Lc Melody","current");
     }
 
 
-    show_result("success","your order is created successfully","join","order.php?id=".$order_created_id,"Lc Melody","current");
+    show_result("success","سفارش با موفقیت ثبت شد",
+    "نمایش سفارش","order.php?id=".$order_created_id,"Lc Melody","current");
 
 
 require "./includes/footer.php";?>
