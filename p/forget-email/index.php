@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
 <title>فراموشی پست الکترونیک - ال سی ملودی</title>
 <link rel="stylesheet" href="../../assets/css/forget-email.css">
 <?php include ('../../includes/close-head.php');?>

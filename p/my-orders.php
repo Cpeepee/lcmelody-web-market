@@ -25,7 +25,6 @@
 
         <div id="base-orders" class="def-border set-two-font">
 
-        <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
           <div id="menu-order" class="set-two-font unselectable">
 
@@ -82,11 +81,9 @@
         ?>
 
             </div>
-            <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
             <br/> <!-- to fix the main menu javascript problem-->
 
-            <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
             <?php
             //fetch order details
@@ -108,12 +105,6 @@
                        </div>
                        <div class="base-pictures-and-button-details">
                          <div id="pictures-box-<?php echo $row['o_id'];?>" class="pictures-box-style">
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
-                           <!-- <img class="picture-style" src="../assets/img/p-images/p100.jpg" alt="some-alt-is-here"/> -->
                          </div>
                          <div id="btn-show-me-this-order-detials-<?php echo $row['o_id'];?>" class="btn-show-me-detials-style def-border cursor-pointer"  onclick="window.location=('order.php?id=<?php echo $row['o_id'];?>')">
                              <h2 class="set-the-font txt-btn-show-order-style">مشاهده سفارش</h2>
@@ -213,8 +204,6 @@
 
 
             ?>
-            <!-- <div id="order-abcxyz123" class="order-style unselectable"> -->
-            <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
 

@@ -20,7 +20,6 @@
                       <div id="base-cartlist-items" class="def-border set-two-font"> <!-- exipred note :the height #base-cartlist-items must calclate before show , height = x*y  ;note(x=count of items in cartlist)&(y=235px per one item)-->
                         <h1>سبد خرید</h1>
 
-                      <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
             <?php
             //for total-cost
@@ -103,7 +102,6 @@
               }, $product_price_collector,$product_amount_collector,$product_discount_collector);
               $cost_tol = $GLOBALS['$total_order_costs']+15000;
           ?>
-          <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
             <div id="base-average-price-buttons" class="set-two-font">
                 <div id="base-total-prices">
@@ -120,9 +118,8 @@
           </script>
 
 
-          <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
           <br/><br/> <!-- while scrolling down , the menu javascript code have problem (when items are less than 5) this BRs fix this issues (auto scroll to up)-->
-          <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
           </div>
       </div>
 

@@ -2,8 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-
 
 <title>حساب کاربری - ال سی ملودی</title>
 <link rel="stylesheet" href="../assets/css/login-register.css">

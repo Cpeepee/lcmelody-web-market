@@ -12,7 +12,10 @@ if(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)
   }
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
 <title>ورود به حساب - ال سی ملودی</title>
 <link rel="stylesheet" href="../../assets/css/login.css">
 <?php include ('../../includes/close-head.php');?>

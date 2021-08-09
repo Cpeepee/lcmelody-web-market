@@ -7,7 +7,6 @@ CREATE TABLE t_customer
     `c_email` VARCHAR (60) NOT NULL,
     `c_attempts_TL` INT (1) DEFAULT('0'),
     `c_address` TEXT (250) NOT NULL,
-    -- `c_thememode` VARCHAR (1) NOT NULL,
     `c_registration` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`c_id`)
 
@@ -43,16 +42,11 @@ CREATE TABLE t_product
     `p_title` VARCHAR (65) NOT NULL,
     `p_description` TEXT (2000) NOT NULL,
     `p_status` INT (5) DEFAULT('0'),
-    -- `p_CC_like` INT (4) NOT NULL DEFAULT('0'),
-    -- `p_CC_dislike` INT (4) NOT NULL DEFAULT('0'),
     `p_priority_TS` INT (1) DEFAULT('0'),
     `p_discount` VARCHAR (10) DEFAULT('0'),
     `p_summary_desc` varchar(1000) NOT NULL,
-    -- `p_visited` INT (20) DEFAULT('0'),
-    -- `p_guest_visited` INT (30) DEFAULT('0'),
     `p_type` VARCHAR (15) DEFAULT('0'),
     `p_price` VARCHAR (10) DEFAULT('1,000'),
-    -- `p_pictures` TEXT (500) NOT NULL DEFAULT('0'),
     `p_creator_aid` INT (1) NOT NULL,
     `p_amount` INT (3) DEFAULT('0'),
     `p_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -82,13 +76,6 @@ CREATE TABLE t_banners
     `special_product_d` VARCHAR (4) DEFAULT('2'),
     `special_product_e` VARCHAR (4) DEFAULT('2'),
     `special_product_f` VARCHAR (4) DEFAULT('2')
-    -- PRIMARY KEY (`b_id`),
-    -- FOREIGN KEY (`special_product_a`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    -- FOREIGN KEY (`special_product_b`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    -- FOREIGN KEY (`special_product_c`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    -- FOREIGN KEY (`special_product_d`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    -- FOREIGN KEY (`special_product_e`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
-    -- FOREIGN KEY (`special_product_f`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_orders_items
@@ -119,7 +106,6 @@ CREATE TABLE t_comment_verified
   `cv_c_id` INT (4) NOT NULL,
   `cv_p_id` INT (3) NOT NULL,
   `cv_text` VARCHAR (301) NOT NULL,
-  -- `cv_SS` INT (1) NOT NULL,
   `cv_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cv_c_id`,`cv_p_id`),
   FOREIGN KEY (`cv_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
@@ -132,7 +118,6 @@ CREATE TABLE t_comment_confirm
   `cc_c_id` INT (4) NOT NULL,
   `cc_p_id` INT (3) NOT NULL,
   `cc_text` VARCHAR (301) NOT NULL,
-  -- `cv_SS` INT (1) NOT NULL,
   `cc_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cc_c_id`,`cc_p_id`),
   FOREIGN KEY (`cc_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,

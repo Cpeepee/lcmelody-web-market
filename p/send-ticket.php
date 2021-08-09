@@ -11,7 +11,6 @@
     include ('../includes/menu.php');
 ?>
 
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
   <div id="base-send-ticket" class="def-border set-two-font">
     <h1 id="title" class="set-the-font">ارسال پیام به پشتیبانی</h1>
       <div id="base-title-email">
@@ -58,9 +57,6 @@
       <div id="base-buttons" class="set-the-font cursor-pointer">
         <input id="send-button" class="unselectable buttons-style button-text-style" type="submit" value="ارسال">
       </form>
-          <!-- <div > -->
-            <!-- <h2 class="">ارسال</h2> -->
-          <!-- </div> -->
           <div id="cancel-button" class="unselectable buttons-style" onclick="window.location=('index.php')">
             <h2 class="button-text-style">لغو</h2>
           </div>
