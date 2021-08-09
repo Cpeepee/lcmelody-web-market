@@ -33,7 +33,7 @@
 
 <?php
 //fetch info
-$fetch_product_info = "SELECT p_id,p_title,p_amount,p_discount,p_price,p_summary_desc,p_description FROM t_product WHERE `p_title` LIKE '%$searched%' OR `p_brand` LIKE '%$searched%' OR `p_model` ORDER BY `p_amount` DESC;";
+$fetch_product_info = "SELECT p_id,p_title,p_amount,p_discount,p_price FROM t_product WHERE `p_title` LIKE '%$searched%' OR `p_brand` LIKE '%$searched%' OR `p_model` ORDER BY `p_amount` DESC;";
 // OR `p_type` LIKE '%$searched%' OR LIKE '%$searched%' OR `p_description` LIKE '%$searched%' OR `p_summary_desc` LIKE '%$searched%'
 
 $result_pro_info = $conn->query($fetch_product_info);

@@ -1,5 +1,4 @@
 <?php
-    // require ('../includes/security.php');
     include ('../includes/header.php');
 ?>
     <title>فروشگاه ال سی ملودی</title>
@@ -25,25 +24,24 @@
   }
 
   //fetch special product ids from banner
-  $special_products = "SELECT special_product_a,special_product_b,special_product_c,special_product_d,special_product_e,special_product_f FROM t_banners;";
-  $result_search_special_products = $conn->query($special_products);
-  if ($result_search_special_products->num_rows > 0)
+  $spec_sec_a = array();
+  $spec_sec_b = array();
+  $id_specials = "SELECT special_product_a,special_product_b,special_product_c,special_product_d,special_product_e,special_product_f FROM t_banners WHERE `b_id`='0';";
+  $result_id_sepcials = $conn->query($id_specials);
+  if ($result_id_sepcials->num_rows > 0)
   {
-    while($row = $result_search_special_products->fetch_assoc())
+    while($row = $result_id_sepcials->fetch_assoc())
     {
-        $special_a = $row['special_product_a'];
-        $special_b = $row['special_product_b'];
-        $special_c = $row['special_product_c'];
-        $special_d = $row['special_product_d'];
-        $special_e = $row['special_product_e'];
-        $special_f = $row['special_product_f'];
+        array_push($spec_sec_a,$row['special_product_a'],$row['special_product_b'],$row['special_product_c']);
+        array_push($spec_sec_b,$row['special_product_d'],$row['special_product_e'],$row['special_product_f']);
     }
   }
   else
     show_result("error","error while loading special items","","","Lc Melody","current");
 
-
 ?>
+
+
 
 
 <div id="offer-a">
@@ -52,102 +50,104 @@
   <div class="base-sepcial-product-a-b">
     <?php
 
-    function load_special_product($special)
-    {
-      //fetch product info
-      $special_products = "SELECT p_title,p_price,p_amount,p_discount FROM t_product WHERE `p_id`='$special';";
-      $result_search_special_products = $conn->query($special_products);
-      if ($result_search_special_products->num_rows > 0)
+      foreach ($spec_sec_a as $value)
       {
-        while($row = $result_search_special_products->fetch_assoc())
+        //fetch info
+        $value = (int)$value;
+        $fetch_product_info = "SELECT p_title,p_amount,p_discount,p_price FROM t_product WHERE `p_id`='$value';";
+
+        $result_pro_info = $conn->query($fetch_product_info);
+        if ($result_pro_info->num_rows > 0)
         {
+          while($row = $result_pro_info->fetch_assoc())
+          {
+                $pPrice = $row['p_price'];
+                $pDiscount = $row['p_discount'];
 
-            ?>
-            <div class="product-style  unselectable">
-                <div class="product-one-titles-box">
-                  <img class="product-picture" src="../assets/img/p-images/<?php echo $special_a;?>-a.jpg" alt="product-image"/>
-                    <h2 class="product-title"><?php echo $row['p_title'];?></h2>
-                </div>
-                <div class="product-detials-box">
-                    <?php
-                      if($row['p_amount'] ==0 || $row['p_amount'] =="0")
-                      {
-                        ?>
-                        <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
-                        <?php
-                      }
-                      else
-                      {aa
-                        ?>
-                        <h3 class="product-discount-priced set-the-font"><del><?php echo $row['p_discount'];?></del></h3>
-                        <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
-                        <?php
-                      }
-                    ?>
 
-                    <h2 class="product-price-with-offer-and-counter set-the-font"><?php echo $row['p_price'];?>۹,۹۹۹,۹۹۹</h2>
+                $row['p_amount'] = (int)$row['p_amount'];
+                ?>
+                <div class="product-style unselectable" onclick="window.open('product.php?id=<?php echo $value;?>')">
+                    <div class="product-one-titles-box">
+                        <img class="product-picture" src="../assets/img/p-images/<?php echo $value;?>-a.jpg" alt="product-image"/>
+                        <h2 class="product-title"><?php echo $row['p_title'];?></h2>
+                    </div>
+
                     <?php
-                    if($row['p_amount']<= 9)
+                    //check amount
+                    if($row['p_amount'] == 0 || $row['p_amount'] == "0")
                     {
                       ?>
-                      <h3 class="product-counter-with-offer set-the-font"><span><?php echo $row['p_amount'];?></span> عدد باقی مانده</h3>
+                      <div class="product-detials-box">
+                        <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
+                      </div>
                       <?php
                     }
-                    ?>
-                </div>
-            </div>
-            <?php
-        }
-      }
-      else
-        show_result("error","error while loading special items","","","Lc Melody","current");
+                    else
+                    {
+                      if($row['p_discount'] == 0 || $row['p_discount'] == "0")
+                      {
+                          ?>
+                              <div class="product-detials-box">
+                                  <h3 class="unit-no-offer-and-counter set-the-font">تومان</h3>
+                                  <h2 class="product-price-no-offer-and-counter set-the-font"><?php echo $row['p_price'];?></h2>
+                              </div>
+                          <?php
+                      }
+                      else
+                      {
+                        ?>
+                        <div class="product-detials-box">
+                            <div class="product-discount-box">
+                              <?php
+                                  //count pecent discount
+                                  $pPrice = str_replace(",","",$pPrice);
+                                  $pPrice = (int)$pPrice;
 
-    }
+                                  $pDiscount = str_replace(",","",$pDiscount);
+                                  $pDiscount = (int)$pDiscount;
+
+                                  $count_percent = $pDiscount/$pPrice;
+                                  $percent_friendly = number_format( $count_percent * 100);
+                              ?>
+                              <h3 class="product-discount-number set-the-font"><center><?php echo $percent_friendly;?><span class="percentage-symbol">٪</span></center></h3>
+                            </div>
+                            <h3 class="product-discount-priced set-the-font"><del><?php echo $row['p_price'];?></del></h3>
+                            <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
+                            <?php
+
+                                  //count price with discount
+                                  $final_price = $pPrice - $pDiscount;
+                                  $final_price = number_format($final_price);
+
+                            ?>
+                            <h2 class="product-price-with-offer-and-counter set-the-font"><?php echo $final_price;?></h2>
+                            <?php
+                            //check last amounts
+                            if($row['p_amount'] <= 9)
+                            {
+                              ?>
+                              <h3 class="product-counter-with-offer set-the-font"><span><?php echo $row['p_amount'];?></span> عدد باقی مانده</h3>
+                              <?php
+                            }
+                            ?>
+                        </div>
+                        <?php
+                      }
+                    }
+                    ?>
+
+                </div>
+                <?php
+          }
+        }
+        else
+            show_result("error","failed to load product information","","","Lc Melody","current");
+
+      }
+
 
     ?>
-    <div class="product-style  unselectable"  onclick="window.location.href='product.php'">
-        <div class="product-one-titles-box">
-            <img class="product-picture" src="../assets/img/p-images/p300.jpg" alt="product-image"/>
-            <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-        </div>
-        <div class="product-detials-box">
-            <h3 class="unit-no-offer-and-counter set-the-font">تومان</h3>
-            <h2 class="product-price-no-offer-and-counter set-the-font">۹۹,۹۹۹,۹۹۹</h2>
-        </div>
-    </div>
-
-
-
-
-    <div class="product-style  unselectable">
-        <div class="product-one-titles-box">
-            <img class="product-picture" src="../assets/img/p-images/p2000.jpg" alt="product-image"/>
-            <h2 class="product-title"> Shure SM-fifty Shure SM- fifty sixShure SSM-fifty sixM-fifty  SSM-fifty sixM-fifty SSM-fifty sixM-fifty</h2>
-        </div>
-        <div class="product-detials-box">
-          <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
-        </div>
-    </div>
-
-
-
-
-    <div class="product-style  unselectable">
-        <div class="product-one-titles-box">
-          <img class="product-picture" src="../assets/img/p-images/p1000.jpg" alt="product-image"/>
-            <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-        </div>
-        <div class="product-detials-box">
-            <!-- <div class="product-discount-box">
-              <h3 class="product-discount-number set-the-font"><center>۱۲<span class="percentage-symbol">٪</span></center></h3>
-            </div> -->
-            <h3 class="product-discount-priced set-the-font"><del>۹۹,۹۹۹,۹۹۹</del></h3>
-            <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
-            <h2 class="product-price-with-offer-and-counter set-the-font">۹۹,۹۹۹,۹۹۹</h2>
-            <h3 class="product-counter-with-offer set-the-font"><span>۵</span> عدد باقی مانده</h3>
-        </div>
-    </div>
-
 
 
   </div>
@@ -159,42 +159,108 @@
 
   <div class="base-sepcial-product-a-b">
 
-    <div class="product-style  unselectable">
-      <div class="product-one-titles-box">
-        <img class="product-picture" src="../assets/img/p-images/p300.jpg" alt="product-image"/>
-        <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-      </div>
-        <div class="product-detials-box">
-            <h3 class="unit-no-offer-with-counter set-the-font">تومان</h3>
-            <h2 class="product-price-no-offer-with-counter set-the-font">۹۹,۹۹۹</h2>
-            <h3 class="product-counter-no-offer set-the-font"><span id="remaining-amoun">۵</span> عدد باقی مانده</h3>
-        </div>
-    </div>
+    <?php
 
-    <div class="product-style  unselectable">
-        <div class="product-one-titles-box">
-            <img class="product-picture" src="../assets/img/p-images/p100.jpg" alt="product-image"/>
-            <h2 class="product-title"> Shure SM-fifty Shure SM- fifty sixShure SSM-fifty sixM-fifty</h2>
-        </div>
-        <div class="product-detials-box">
-          <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
-        </div>
-    </div>
+    foreach ($spec_sec_b as $value)
+    {
+      //fetch info
+      $value = (int)$value;
+      $fetch_product_info = "SELECT p_title,p_amount,p_discount,p_price FROM t_product WHERE `p_id`='$value';";
 
-    <div class="product-style  unselectable">
-        <div class="product-one-titles-box">
-          <img class="product-picture" src="../assets/img/p-images/p1000.jpg" alt="product-image"/>
-            <h2 class="product-title"> میکروفن داینامیک شور Shure SM-fifty sixShure SSM-fifty sixM-fifty</h2>
-        </div>
-        <div class="product-detials-box">
-            <!-- <div class="product-discount-box">
-              <h3 class="product-discount-number set-the-font"><center>۱۲<span class="percentage-symbol">٪</span></center></h3>
-            </div> -->
-            <h3 class="product-discount-priced set-the-font"><del>۹۹,۹۹۹,۹۹۹</del></h3>
-            <h3 class="unit-no-counter-with-offer set-the-font">تومان</h3>
-            <h2 class="product-price-no-counter-with-offer set-the-font">۹۹,۹۹۹,۹۹۹</h2>
-        </div>
-    </div>
+      $result_pro_info = $conn->query($fetch_product_info);
+      if ($result_pro_info->num_rows > 0)
+      {
+        while($row = $result_pro_info->fetch_assoc())
+        {
+              $pPrice = $row['p_price'];
+              $pDiscount = $row['p_discount'];
+
+
+              $row['p_amount'] = (int)$row['p_amount'];
+              ?>
+              <div class="product-style unselectable" onclick="window.open('product.php?id=<?php echo $value;?>')">
+                  <div class="product-one-titles-box">
+                      <img class="product-picture" src="../assets/img/p-images/<?php echo $value;?>-a.jpg" alt="product-image"/>
+                      <h2 class="product-title"><?php echo $row['p_title'];?></h2>
+                  </div>
+
+                  <?php
+                  //check amount
+                  if($row['p_amount'] == 0 || $row['p_amount'] == "0")
+                  {
+                    ?>
+                    <div class="product-detials-box">
+                      <h3 class="product-is-unavailable set-the-font">ناموجود</h3>
+                    </div>
+                    <?php
+                  }
+                  else
+                  {
+                    if($row['p_discount'] == 0 || $row['p_discount'] == "0")
+                    {
+                        ?>
+                            <div class="product-detials-box">
+                                <h3 class="unit-no-offer-and-counter set-the-font">تومان</h3>
+                                <h2 class="product-price-no-offer-and-counter set-the-font"><?php echo $row['p_price'];?></h2>
+                            </div>
+                        <?php
+                    }
+                    else
+                    {
+                      ?>
+                      <div class="product-detials-box">
+                          <div class="product-discount-box">
+                            <?php
+                                //count pecent discount
+                                $pPrice = str_replace(",","",$pPrice);
+                                $pPrice = (int)$pPrice;
+
+                                $pDiscount = str_replace(",","",$pDiscount);
+                                $pDiscount = (int)$pDiscount;
+
+                                $count_percent = $pDiscount/$pPrice;
+                                $percent_friendly = number_format( $count_percent * 100);
+                            ?>
+                            <h3 class="product-discount-number set-the-font"><center><?php echo $percent_friendly;?><span class="percentage-symbol">٪</span></center></h3>
+                          </div>
+                          <h3 class="product-discount-priced set-the-font"><del><?php echo $row['p_price'];?></del></h3>
+                          <h3 class="unit-with-offer-and-counter set-the-font">تومان</h3>
+                          <?php
+
+                                //count price with discount
+                                $final_price = $pPrice - $pDiscount;
+                                $final_price = number_format($final_price);
+
+                          ?>
+                          <h2 class="product-price-with-offer-and-counter set-the-font"><?php echo $final_price;?></h2>
+                          <?php
+                          //check last amounts
+                          if($row['p_amount'] <= 9)
+                          {
+                            ?>
+                            <h3 class="product-counter-with-offer set-the-font"><span><?php echo $row['p_amount'];?></span> عدد باقی مانده</h3>
+                            <?php
+                          }
+                          ?>
+                      </div>
+                      <?php
+                    }
+                  }
+                  ?>
+
+              </div>
+              <?php
+        }
+      }
+      else
+          show_result("error","failed to load product information","","","Lc Melody","current");
+
+    }
+
+    ?>
+
+
+
   </div>
 </div>
 <?php
