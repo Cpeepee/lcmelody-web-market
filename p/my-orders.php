@@ -7,7 +7,7 @@
 
 
 ?>
-    <title>سبد خرید</title>
+    <title>سفارشات من</title>
     <link rel="stylesheet" href="../assets/css/orders.css">
 
 <?php

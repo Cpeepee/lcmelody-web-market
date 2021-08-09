@@ -21,6 +21,14 @@ $pstatus = (int)$pstatus;
 $ppriority = (int)$ppriority;
 $pdiscount = (int)$pdiscount;
 $pamount = (int)$pamount;
+
+$pdiscount = str_replace(" ","",$pdiscount);
+$pdiscount = str_replace(",","",$pdiscount);
+$pdiscount = str_replace(".","",$pdiscount);
+$pprice = str_replace(" ","",$pprice);
+$pprice = str_replace(".","",$pprice);
+$pprice = str_replace(",","",$pprice);
+
 $adminSessionId = $_SESSION["s_admin_id"];
  // COMMENT DATA : p_status = pvisible , p_type = ptype (group (dastebandi)) ,p_summary_desc = p techincal
  $thequery = "INSERT INTO t_product (p_title,p_type,p_discount,p_amount,p_priority_TS,p_status,p_brand,p_model,p_price,p_summary_desc,p_description,p_creator_aid)

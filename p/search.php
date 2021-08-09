@@ -7,7 +7,7 @@
 
 ?>
 
-    <title>فروشگاه ال سی ملودی</title>
+    <title>جستجوی محصول - فروشگاه ال سی ملودی</title>
     <link rel="stylesheet" href="../assets/css/search.css">
 <?php
     include ('../includes/close-head.php');

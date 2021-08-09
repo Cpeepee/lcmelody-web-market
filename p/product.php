@@ -33,7 +33,7 @@
         //fetch comments
 
     ?>
-        <title>میکروفن داینامیک شور مدل SM</title>
+        <title><?php echo $pTitle;?></title>
         <link rel="stylesheet" href="../assets/css/product.css">
     <?php
         include ('../includes/close-head.php');

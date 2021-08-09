@@ -2,36 +2,35 @@ C-DETECTED BUG?? my-orders total cost , oPP add namishe be total cost
 C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket but cant join and response or add appendix to that ticket
 
 CUSTOMER--------------------
-include db connection + function show result to pages
-
-titles forms
 check error html from source code page by browser
+
 error/success messages to persian
+
 check all forms with bad values
-check footer for close connections
-check validation inputs
+
+check validation inputs by Js for example login and forget email register and balblalbal
 
 fav icons
 add default.jpg to p-images
 icon slider product.php
 
+
+sql with real values for test project
 full debug
 
 ADMIN---------------------------------
-when price and discouunt a product eidted or added style number_format do that before save
-price and discounts replace . to , and space to ,
-
-button send ticket replsonse admin
 place holders for inputs
+
 check useless ids and harass id or names from forms
-admin can modify logo icon and fav icon and upload those
-remove ccLIKE and ccDISLIKE from product database ER
+
 fix all documents and admin algorightms
+
 check all codes
 
 
 
 NOTES----------------------------------
+- remove ccLIKE and ccDISLIKE from product database ER
 -function show_result , validation data write on documnet admin section functions
 -delete banner down from douments
 -add a_banner.php to admin algo

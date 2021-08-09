@@ -2,7 +2,7 @@
     require "./actions/includes/header.php";
     include ('../includes/header.php');
 ?>
-    <title>تیکت</title>
+    <title>تیکت های من</title>
     <link rel="stylesheet" href="../assets/css/tickets.css">
 
 <?php

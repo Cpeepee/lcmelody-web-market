@@ -9,7 +9,7 @@
         show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
     }
 ?>
-    <title>سبد خرید</title>
+    <title>اطلاعات سفارش</title>
     <link rel="stylesheet" href="../assets/css/order.css">
 
 <?php

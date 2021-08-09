@@ -3,7 +3,7 @@
 
     include ('../includes/header.php');
 ?>
-    <title>فروشگاه ال سی ملودی</title>
+    <title>ارسال تیکت </title>
     <link rel="stylesheet" href="../assets/css/send-ticket.css">
 <?php
     include ('../includes/close-head.php');

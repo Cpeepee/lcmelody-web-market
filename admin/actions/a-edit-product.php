@@ -21,11 +21,17 @@ if ($id=="" || $ptitle == "" || $pgroup == "" || $pdiscount == "" || $pamount ==
 
 
 
-
-
 $id = (int)$id;
 $ppriority = (int)$ppriority;
 $pvisible = (int)$pvisible;
+
+$pdiscount = str_replace(" ","",$pdiscount);
+$pdiscount = str_replace(",","",$pdiscount);
+$pdiscount = str_replace(".","",$pdiscount);
+$pprice = str_replace(" ","",$pprice);
+$pprice = str_replace(".","",$pprice);
+$pprice = str_replace(",","",$pprice);
+
 
  $thequery = "UPDATE t_product SET `p_title` = '$ptitle',`p_type`= '$pgroup',
  `p_discount`= '$pdiscount',`p_amount`= '$pamount',`p_priority_TS`= '$ppriority',`p_status`= '$pvisible' ,
