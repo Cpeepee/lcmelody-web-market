@@ -26,3 +26,4 @@ NOTES ER DOCUMENT ----------------------------------
 - remove p_prictures from t_product ER
 - remove sicky banner from banner ER
 - add tm_id to ticketmessage admin and customer primery key
+-remove visited from datanase ER

@@ -1,14 +1,14 @@
 CREATE TABLE t_customer
 (
-    `c_id` INT (4) NOT NULL AUTO_INCREMENT,
+    `c_id` INT (4) AUTO_INCREMENT,
     `c_FL_name` VARCHAR (60) NOT NULL,
     `c_password` VARCHAR (250) NOT NULL,
     `c_phonenumer` VARCHAR (15) NOT NULL,
     `c_email` VARCHAR (60) NOT NULL,
-    `c_attempts_TL` INT (1) NOT NULL DEFAULT('0'),
+    `c_attempts_TL` INT (1) DEFAULT('0'),
     `c_address` TEXT (250) NOT NULL,
     -- `c_thememode` VARCHAR (1) NOT NULL,
-    `c_registration` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `c_registration` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`c_id`)
 
 );
@@ -17,7 +17,7 @@ CREATE TABLE t_admin
 (
     `a_id` INT (1) NOT NULL AUTO_INCREMENT,
     `a_email` VARCHAR (50) NOT NULL,
-    `a_attempts_TL` INT (1) NOT NULL,
+    `a_attempts_TL` INT (1) DEFAULT('0'),
     `a_first_pass` VARCHAR (250) NOT NULL,
     `a_second_pass` VARCHAR (250) NOT NULL,
     `a_third_pass` VARCHAR (250) NOT NULL,
@@ -31,58 +31,58 @@ CREATE TABLE t_ticket
     `t_status` INT (1) DEFAULT('3'),
     `t_email` VARCHAR (60) NOT NULL,
     `t_main_text` TEXT (2500) NOT NULL,
-    `t_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `t_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`t_id`)
 );
 
 CREATE TABLE t_product
 (
-    `p_id` INT (3) NOT NULL AUTO_INCREMENT,
+    `p_id` INT (3) AUTO_INCREMENT,
     `p_brand` VARCHAR (15) NOT NULL,
     `p_model` VARCHAR (15) NOT NULL,
     `p_title` VARCHAR (65) NOT NULL,
     `p_description` TEXT (2000) NOT NULL,
-    `p_status` INT (5) NOT NULL DEFAULT('0'),
+    `p_status` INT (5) DEFAULT('0'),
     -- `p_CC_like` INT (4) NOT NULL DEFAULT('0'),
     -- `p_CC_dislike` INT (4) NOT NULL DEFAULT('0'),
-    `p_priority_TS` INT (1) NOT NULL DEFAULT('0'),
-    `p_discount` VARCHAR (10) NOT NULL DEFAULT('0'),
+    `p_priority_TS` INT (1) DEFAULT('0'),
+    `p_discount` VARCHAR (10) DEFAULT('0'),
     `p_summary_desc` varchar(1000) NOT NULL,
-    `p_visited` INT (20) NOT NULL DEFAULT('0'),
-    `p_guest_visited` INT (30) NOT NULL DEFAULT('0'),
-    `p_type` VARCHAR (15) NOT NULL DEFAULT('0'),
-    `p_price` VARCHAR (10) NOT NULL DEFAULT('1,000'),
+    -- `p_visited` INT (20) DEFAULT('0'),
+    -- `p_guest_visited` INT (30) DEFAULT('0'),
+    `p_type` VARCHAR (15) DEFAULT('0'),
+    `p_price` VARCHAR (10) DEFAULT('1,000'),
     -- `p_pictures` TEXT (500) NOT NULL DEFAULT('0'),
     `p_creator_aid` INT (1) NOT NULL,
-    `p_amount` INT (3) NOT NULL DEFAULT('0'),
-    `p_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `p_amount` INT (3) DEFAULT('0'),
+    `p_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`p_id`),
     FOREIGN KEY (`p_creator_aid`) REFERENCES t_admin(`a_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_orders
 (
-    `o_id` INT (4) NOT NULL AUTO_INCREMENT,
-    `o_status` INT (1) NOT NULL DEFAULT('2'),
+    `o_id` INT (4) AUTO_INCREMENT,
+    `o_status` INT (1) DEFAULT('2'),
     `o_PP` VARCHAR(11) DEFAULT('15000'),
     `o_PTC` VARCHAR (20) DEFAULT('0'),
     `o_PSC` INT (1) DEFAULT('0'),
     `o_owner_cid` INT (4) NOT NULL,
-    `o_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `o_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`o_id`),
     FOREIGN KEY (`o_owner_cid`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE
 );
 
 CREATE TABLE t_banners
 (
-    `b_id` INT (1) NOT NULL,
-    `special_product_a` VARCHAR (4) DEFAULT('0'),
-    `special_product_b` VARCHAR (4) DEFAULT('0'),
-    `special_product_c` VARCHAR (4) DEFAULT('0'),
-    `special_product_d` VARCHAR (4) DEFAULT('0'),
-    `special_product_e` VARCHAR (4) DEFAULT('0'),
-    `special_product_f` VARCHAR (4) DEFAULT('0'),
-    PRIMARY KEY (`b_id`),
+    `b_id` INT (1) DEFAULT('0'),
+    `special_product_a` VARCHAR (4) DEFAULT('1'),
+    `special_product_b` VARCHAR (4) DEFAULT('1'),
+    `special_product_c` VARCHAR (4) DEFAULT('1'),
+    `special_product_d` VARCHAR (4) DEFAULT('2'),
+    `special_product_e` VARCHAR (4) DEFAULT('2'),
+    `special_product_f` VARCHAR (4) DEFAULT('2'),
+    -- PRIMARY KEY (`b_id`),
     FOREIGN KEY (`special_product_a`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
     FOREIGN KEY (`special_product_b`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
     FOREIGN KEY (`special_product_c`) REFERENCES t_product(`p_id`) ON DELETE CASCADE,
@@ -133,7 +133,7 @@ CREATE TABLE t_comment_confirm
   `cc_p_id` INT (3) NOT NULL,
   `cc_text` VARCHAR (301) NOT NULL,
   -- `cv_SS` INT (1) NOT NULL,
-  `cc_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `cc_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cc_c_id`,`cc_p_id`),
   FOREIGN KEY (`cc_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
   FOREIGN KEY (`cc_p_id`) REFERENCES t_product(`p_id`) ON DELETE CASCADE
@@ -142,12 +142,12 @@ CREATE TABLE t_comment_confirm
 
 CREATE TABLE t_ticket_customer_message
 (
-    `tm_id` INT (4) NOT NULL AUTO_INCREMENT,
+    `tm_id` INT (4) AUTO_INCREMENT,
     `tm_t_id` INT (5) NOT NULL,
     `tm_c_id` INT (4) NOT NULL,
     `tm_message_text` TEXT (2500) NOT NULL,
     `tm_appendixes` VARCHAR (650),
-    `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `tm_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('0'),
     PRIMARY KEY (`tm_id`),
     FOREIGN KEY (`tm_c_id`) REFERENCES t_customer(`c_id`) ON DELETE CASCADE,
@@ -156,12 +156,12 @@ CREATE TABLE t_ticket_customer_message
 
 CREATE TABLE t_ticket_admin_message
 (
-    `tm_id` INT (4) NOT NULL AUTO_INCREMENT,
+    `tm_id` INT (4) AUTO_INCREMENT,
     `tm_t_id` INT (5) NOT NULL,
     `tm_a_id` INT (1) NOT NULL,
     `tm_message_text` TEXT (2500) NOT NULL,
     `tm_appendixes` VARCHAR (500),
-    `tm_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `tm_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `tm_admin_mode` INT (1) DEFAULT('1'),
     PRIMARY KEY (`tm_id`),
     FOREIGN KEY (`tm_a_id`) REFERENCES t_admin(`a_id`) ON DELETE CASCADE,
