@@ -28,22 +28,18 @@
 
 
 <div id="offer-a">
-  <h2 class="title-offer-a-b set-the-font" style="text-align:center;">نتیجه جستجو</h2>
+  <h2 class="title-offer-a-b set-the-font" style="text-align:center;">تجهیزات استودیویی</h2>
   <div class="base-sepcial-product-a-b">
 
 <?php
 //fetch info
-$fetch_product_info = "SELECT p_id,p_title,p_amount,p_discount,p_price FROM t_product WHERE `p_title` LIKE '%$searched%' OR `p_brand` LIKE '%$searched%' OR `p_model` ORDER BY `p_amount` DESC;";
-// OR `p_type` LIKE '%$searched%' OR LIKE '%$searched%' OR `p_description` LIKE '%$searched%' OR `p_summary_desc` LIKE '%$searched%'
+$fetch_product_info = "SELECT p_id,p_title,p_amount,p_discount,p_price FROM t_product WHERE `p_type` LIKE '%studio%' OR `p_type` LIKE '%استودیویی%' OR `p_type` LIKE '%استودیو%' ORDER BY `p_amount` DESC;";
 
 $result_pro_info = $conn->query($fetch_product_info);
 if ($result_pro_info->num_rows > 0)
 {
   while($row = $result_pro_info->fetch_assoc())
   {
-        // $pid = $row['p_id'];
-        // $pTitle = $row['p_title'];
-        // $pAmount = $row['p_amount'];
         $pPrice = $row['p_price'];
         $pDiscount = $row['p_discount'];
 
