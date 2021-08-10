@@ -1,6 +1,0 @@
-C-DETECTED BUG?? my-orders total cost , oPP add namishe be total cost
-C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket but cant join and response or add appendix to that ticket
-
-CUSTOMER--------------------
-edit banner top
-add default.jpg to p-images
