@@ -211,7 +211,6 @@
 
                   <h2 id="products-title">محصولات</h2>
                   <section id="section-product-list" class="unselectable">
-
                     <?php
                     foreach ($o_products as $valuee4)
                     {
