@@ -4,9 +4,3 @@ C-DETECTED BUG?? ticket.php , customer is not logged in just can open new ticket
 CUSTOMER--------------------
 edit banner top
 add default.jpg to p-images
-icon slider product.php
-
-NOTES ER DOCUMENT ----------------------------------
-- add algo search and search result
-- add algo delete comment
-- add algo comfirm comment
