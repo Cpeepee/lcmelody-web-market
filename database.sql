@@ -18,8 +18,8 @@ CREATE TABLE t_admin
     `a_email` VARCHAR (50) NOT NULL,
     `a_attempts_TL` INT (1) DEFAULT('0'),
     `a_first_pass` VARCHAR (250) NOT NULL,
-    `a_second_pass` VARCHAR (250) NOT NULL,
-    `a_third_pass` VARCHAR (250) NOT NULL,
+    -- `a_second_pass` VARCHAR (250) NOT NULL,
+    -- `a_third_pass` VARCHAR (250) NOT NULL,
     PRIMARY KEY (`a_id`)
 );
 

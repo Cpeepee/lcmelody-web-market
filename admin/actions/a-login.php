@@ -18,8 +18,8 @@ if ($conn->connect_error)
 
 $email = $_POST['email'];
 $password1 = $_POST['password-a'];
-$password2 = $_POST['password-b'];
-$password3 = $_POST['password-c'];
+// $password2 = $_POST['password-b'];
+// $password3 = $_POST['password-c'];
 
 $email = strtolower($email);
 
@@ -29,14 +29,14 @@ $email = strtolower($email);
 // $password3 = md5($password3);
 
 
-if ($email== "" ||$password1== "" ||$password2== "" ||$password3== "")
+if ($email== "" ||$password1== "")
 {
   show_result("error","لطفا مقادیر معتبر را وارد کنید","","","Lc Melody","current"); //mode , text , button lable , button target ,title , window (current)
 }
 
 
 //fetch admin info
-$sql_search = "SELECT a_id,a_email,a_attempts_TL,a_first_pass,a_second_pass,a_third_pass FROM t_admin WHERE a_email='$email';";
+$sql_search = "SELECT a_id,a_email,a_attempts_TL,a_first_pass FROM t_admin WHERE a_email='$email';";
 $result_search = $conn->query($sql_search);
 if ($result_search->num_rows > 0)
 {
@@ -46,8 +46,8 @@ if ($result_search->num_rows > 0)
     $ad_email = $row['a_email'];
     $ad_attempts = $row['a_attempts_TL'];
     $ad_pass1 = $row['a_first_pass'];
-    $ad_pass2 = $row['a_second_pass'];
-    $ad_pass3 = $row['a_third_pass'];
+    // $ad_pass2 = $row['a_second_pass'];
+    // $ad_pass3 = $row['a_third_pass'];
   }
 }
 else
@@ -62,7 +62,7 @@ if($ad_attempts >= 5)
 else
 {
   //check login information
-  if($password1 == $ad_pass1 && $password2 == $ad_pass2 && $password3 == $ad_pass3)
+  if($password1 == $ad_pass1)
   {
     $_SESSION["s_admin_id"] = $ad_id;
     $_SESSION["state_login"] = true;

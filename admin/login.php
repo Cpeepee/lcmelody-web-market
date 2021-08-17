@@ -15,12 +15,6 @@
             <h3 class='set-the-font'>کلمه عبور خود را وارد کنید</h3>
             <input id='password-a' class='text-inputs' type="password" name="password-a" placeholder="************" dir="ltr">
 
-            <h3 class='set-the-font'>کلمه عبور خود را وارد کنید</h3>
-            <input id='password-b' class='text-inputs' type="password" name="password-b" placeholder="************" dir="ltr">
-
-            <h3 class='set-the-font'>کلمه عبور خود را وارد کنید</h3>
-            <input id='password-c' class='text-inputs' type="password" name="password-c" placeholder="************" dir="ltr">
-
             <br/><br/>
 
             <input class='buttons set-the-font' type="submit" name="login" value="ورود">
