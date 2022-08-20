@@ -81,6 +81,89 @@ A simple web market, with persian language
 
 
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 __________________________________________________________
 # Admin Side ScreenShots
+
+
+## login page
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-41-59.png)
+
+## products
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-18.png)
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-31.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-39.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-43.png)
+
+
+## orders
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-47.png)
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-42-52.png)
+
+
+## users/customers
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-18.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-22.png)
+
+
+## admins
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-27.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-31.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-35.png)
+
+## banner
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-43-55.png)
+
+## comments
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-57-28.png)
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-58-24.png)
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-58-35.png)
+
+
+
+
+
+
+
+
+
+## tickets
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-48-47.png)
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-48-59.png)
+
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-49-04.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-49-46.png)
+
+
+![admin-area-screenshots](http://mewware.com/mewware/p-lcmelody-sss/lcmelody-sss/admin-panel/Screenshot%20from%202022-08-20%2009-49-30.png)
+
+
